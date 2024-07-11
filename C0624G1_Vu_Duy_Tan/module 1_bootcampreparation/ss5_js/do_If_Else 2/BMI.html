@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI</title>
+    <style>
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            margin: 0;
+            text-align: center;
+        }
+        
+        div {
+            margin: 10px;
+        }
+        
+        div input {
+            width: 50%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            box-sizing: border-box;
+        }
+        
+        button {
+            background-color: green;
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+        
+        button:hover {
+            background-color: rgb(88, 185, 88);
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Tính chỉ số cân nặng</h1>
+    <div>
+        <label for="weight">
+            Nhập cân nặng: (kg)
+        </label>
+        <input type="number" id="weight" placeholder="ex: 50kg">
+    </div>
+    <div>
+        <label for="height">
+            Nhập chiều cao: (m)
+        </label>
+        <input type="number" id="height" placeholder="ex: 1.75m">
+    </div>
+    <div>
+        <button onclick="check()">Kiểm tra</button>
+        <p id="result"></p>
+    </div>
+
+    <script>
+        function check() {
+            let weight = parseFloat(document.getElementById('weight').value);
+            let height = parseFloat(document.getElementById('height').value);
+            let bmi = weight / (height ^ 2);
+            if (weight == 0 || height == 0) {
+                alert('Vui lòng nhập đúng thông tin')
+            } else if (isNaN(bmi) || bmi === Infinity || bmi === 0) {
+                resultText = "Vui lòng nhập số hợp lệ cho cân nặng và chiều cao.";
+            } else if (bmi < 18.5) {
+                resultText = "Chỉ số BMI của bạn là: " + bmi + ". Bạn bị Thiếu cân";
+            } else if (bmi < 25.0) {
+                resultText = "Chỉ số BMI của bạn là: " + bmi + ". Bạn có chỉ số Bình thường";
+            } else if (bmi < 30.0) {
+                resultText = "Chỉ số BMI của bạn là: " + bmi + ". Bạn bị Thừa cân";
+            } else {
+                resultText = "Chỉ số BMI của bạn là: " + bmi + ". Bạn bị Béo phì";
+            }
+
+            document.getElementById('result').innerHTML = resultText;
+        }
+    </script>
+</body>
+</body>
+
+</html>
