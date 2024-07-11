@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Máy Tính Đơn Giản</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #e0e0e0;
+            margin: 0;
+        }
+        
+        .calculator {
+            margin-top: 20px;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        
+        .display {
+            width: 100%;
+            height: 60px;
+            text-align: right;
+            font-size: 32px;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: none;
+            border-bottom: 2px solid #ccc;
+            box-sizing: border-box;
+        }
+        
+        .buttons {
+            width: 100%;
+            text-align: center;
+        }
+        
+        .buttons button {
+            width: 70px;
+            height: 70px;
+            margin: 5px;
+            font-size: 24px;
+            border-radius: 10px;
+        }
+        
+        .buttons button:active {
+            transform: scale(0.95);
+        }
+        
+        .buttons button.keys {
+            background-color: #f2f2f2;
+            color: #000000;
+        }
+        
+        .buttons button.keys:active {
+            background-color: #d4d4d4;
+        }
+        
+        .buttons button.special {
+            background-color: #ff6666;
+            color: #ffffff;
+        }
+        
+        .buttons button.special:active {
+            background-color: #cc5252;
+        }
+        
+        .buttons button.equal {
+            background-color: #66b3ff;
+            color: #ffffff;
+        }
+        
+        .buttons button.equal:active {
+            background-color: #4a8bcc;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="calculator">
+        <input type="text" class="display" id="displayInput" disabled value="0">
+        <div class="buttons">
+            <div>
+                <button onclick="appendToDisplay('1')"> 1 </button>
+                <button onclick="appendToDisplay('2')"> 2 </button>
+                <button onclick="appendToDisplay('3')"> 3 </button>
+                <button class="keys" onclick="appendToDisplay('+')"> + </button>
+            </div>
+            <div>
+                <button onclick="appendToDisplay('4')"> 4 </button>
+                <button onclick="appendToDisplay('5')"> 5 </button>
+                <button onclick="appendToDisplay('6')"> 6 </button>
+                <button class="keys" onclick="appendToDisplay('-')"> - </button>
+            </div>
+            <div>
+                <button onclick="appendToDisplay('7')"> 7 </button>
+                <button onclick="appendToDisplay('8')"> 8 </button>
+                <button onclick="appendToDisplay('9')"> 9 </button>
+                <button class="keys" onclick="appendToDisplay('*')"> x </button>
+            </div>
+            <div>
+                <button class="special" onclick="clearDisplay()"> AC </button>
+                <button onclick="appendToDisplay('0')"> 0 </button>
+                <button class="equal" onclick="calculateResult()"> = </button>
+                <button class="keys" onclick="appendToDisplay('/')"> /</button>
+
+            </div>
+        </div>
+
+        <script>
+            function appendToDisplay(value) {
+                const display = document.getElementById('displayInput');
+                if (display.value === '0' && value !== '.') {
+                    display.value = value;
+                } else {
+                    display.value = display.value + value;
+                }
+            }
+
+            function clearDisplay() {
+                document.getElementById('displayInput').value = '0';
+            }
+
+            function calculateResult() {
+                const display = document.getElementById('displayInput');
+                display.value = eval(display.value);
+            }
+        </script>
+
+</body>
+
+</html>
