@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <label for="mounth">Nhập số tháng: </label>
+    <input type="number" id="mounth">
+    <button onclick="checkMounth()">Check</button>
+    <p id="result"></p>
+
+    <script>
+        function checkMounth() {
+            let mounth = parseInt(document.getElementById('mounth').value);
+            let mounthJS = document.getElementById('result');
+            switch (mounth) {
+                case 1:
+                case 3:
+                case 5:
+                case 7:
+                case 8:
+                case 10:
+                case 12:
+                    mounthJS.innerHTML = "Result: Tháng này có 31 ngày";
+                    break;
+                case 4:
+                case 6:
+                case 9:
+                case 11:
+                    mounthJS.innerHTML = "Result: Tháng này có 30 ngày"
+                    break;
+                case 2:
+                    let year = +prompt("Nhập số năm: ")
+                    if ((year % 4 == 0 && year % 100 !== 0) || year % 400 == 0) {
+                        mounthJS.innerHTML = "Result: Tháng này có 29 ngày";
+                    } else mounthJS.innerHTML = "Result: Tháng này có 28 ngày";
+                    break;
+            }
+        }
+    </script>
+</body>
+
+</html>
+</body>
+
+</html>

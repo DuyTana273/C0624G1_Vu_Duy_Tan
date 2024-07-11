@@ -1,0 +1,64 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Check Leap Year</title>
+</head>
+
+<body>
+    <h1>Kiểm tra năm nhuận</h1>
+    <script>
+        let year = parseFloat(prompt("Enter a year"));
+        let isLeapYear = false;
+
+        if (year % 4 == 0) {
+            if (year % 100 == 0) {
+                if (year % 400 == 0) {
+                    isLeapYear = true;
+                }
+            } else {
+                isLeapYear = true;
+            }
+        }
+
+        if (isLeapYear) {
+            alert(year + " is a leap year");
+        } else {
+            alert(year + " is NOT a leap year");
+        }
+    </script>
+</body>
+
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Leap year</title>
+</head>
+
+<body>
+    <div>
+        <label for="year">Nhập số năm</label>
+        <input type="number" id="year">
+        <button onclick="isLeapYear()">Check</button>
+        <p id="result"></p>
+    </div>
+    <script>
+        function isLeapYear() {
+            let resultJS = document.getElementById('result');
+            let yearJS = parseInt(document.getElementById('year').value);
+            if ((yearJS % 4 === 0 && yearJS % 100 !== 0) || yearJS % 400 === 0) {
+                resultJS.innerHTML = "Là năm nhuận";
+            } else {
+                resultJS.innerHTML = "Không là năm nhuận";
+            }
+        }
+    </script>
+</body>
+
+</html>

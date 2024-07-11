@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Simple Forms</title>
+    <style>
+        body {
+            background-color: #E0FFFF;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        
+        .form-container {
+            display: flex;
+            justify-content: space-between;
+            width: 80%;
+        }
+        
+        .form-header {
+            background-color: #FF4500;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+        
+        .label {
+            color: #0000FF;
+            display: block;
+            margin-bottom: 5px;
+        }
+        
+        .input-group {
+            margin-bottom: 15px;
+        }
+        
+        input[type="text"],
+        input[type="email"],
+        input[type="date"],
+        input[type="tel"],
+        textarea,
+        select {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+        }
+        
+        button {
+            padding: 10px 20px;
+            background-color: #FF4500;
+            color: white;
+            border: none;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+        
+        button:hover {
+            background-color: #FF6347;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="form-container">
+        <form>
+            <div class="form-header">SỞ THÍCH CỦA BẠN</div>
+            <div class="input-group">
+                <label class="label" for="name">Họ và tên:</label>
+                <input type="text" id="name" name="name">
+            </div>
+            <div class="input-group">
+                <label class="label" for="email">Email:</label>
+                <input type="email" id="email" name="email">
+            </div>
+
+            <div class="input-group">
+                <label class="label">Sở thích:</label><br>
+                <label class="hobby-label"><input type="checkbox" name="hobby"> Thể thao</label>
+
+                <label class="hobby-label"><input type="checkbox" name="hobby"> Âm nhạc</label>
+                <label class="hobby-label"><input type="checkbox" name="hobby"> Đọc sách</label><br>
+                <label class="hobby-label"><input type="checkbox" name="hobby"> Lướt web</label>
+                <label class="hobby-label"><input type="checkbox" name="hobby"> Chơi game</label>
+                <label class="hobby-label"><input type="checkbox" name="hobby"> Điện ảnh</label><br>
+                <label class="hobby-label"><input type="checkbox" name="hobby"> Du lịch</label>
+            </div>
+            <div>
+                <button type="submit" class="btn">Gửi thông tin</button>
+                <button type="reset" class="btn">Nhập lại</button>
+            </div>
+        </form>
+
+        <form>
+            <div class="form-header">ĐĂNG KÝ HỌC VIÊN</div>
+            <div class="input-group">
+                <label class="label" for="name">Họ và tên:</label>
+                <input type="text" id="name" name="name">
+            </div>
+            <div class="input-group">
+                <label class="label" for="ngay-sinh">Ngày sinh:</label>
+                <input type="date" id="ngay-sinh" name="date">
+            </div>
+            <div class="input-group">
+                <label class="label">Giới tính:</label>
+                <label class="hobby-label"><input type="radio" name="gender" value="nam"> Nam</label>
+                <label class="hobby-label"><input type="radio" name="gender" value="nu"> Nữ</label>
+            </div>
+            <div class="input-group">
+                <label class="label" for="address">Địa chỉ:</label>
+                <textarea id="dia-chi" name="address"></textarea>
+            </div>
+            <div class="input-group">
+                <label class="label" for="class">Lớp:</label>
+                <select id="class" name="class"> 
+                    <option value="">— Chọn lớp —</option> 
+                    <option value="class1">Lớp 1</option> 
+                    <option value="class2">Lớp 2</option> 
+                    <option value="class3">Lớp 3</option> 
+                </select>
+            </div>
+
+            <div class="input-group">
+
+                <label class="label" for="email">Email:</label>
+                <input type="email" id="email" name="email">
+            </div>
+            <div class="input-group">
+                <label class="label" for="phone">Điện thoại:</label>
+                <input type="tel" id="phone" name="dien-thoai">
+            </div>
+            <div>
+                <button type="submit" class="btn">Đăng ký</button>
+                <button type="reset" class="btn">Nhập lại</button>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Survey Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            max-width: 800px;
+            margin: 0 auto;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        #change-color {
+            background-color: yellow;
+        }
+        
+        h1 {
+            margin-top: 0;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        
+        input[type="text"],
+        input[type="email"],
+        input[type="number"],
+        input[type="date"],
+        textarea,
+        select {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        
+        input[type="radio"],
+        input[type="checkbox"] {
+            display: flex;
+            margin-right: 10px;
+        }
+        
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        
+        button:hover {
+            background-color: #45a049;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        
+        table th,
+        table td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: center;
+        }
+        
+        table th {
+            background-color: #f2f2f2;
+        }
+        
+        table tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        
+        table tr:nth-child(odd) {
+            background-color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Market Research Survey</h1>
+        <p>Please take a few moments to complete this satisfaction survey.</p>
+
+        <form>
+            <div class="form-group">
+                <label for="age-range">What is your age range?</label>
+                <select id="age-range" name="age-range">
+                    <option value="18-24">18-24</option>
+                    <option value="25-34">25-34</option>
+                    <option value="35-44">35-44</option>
+                    <option value="45-54">45-54</option>
+                    <option value="55+">55+</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="income-range">What is your yearly income range?</label>
+                <select id="income-range" name="income-range">
+                    <option value="under-25k">$0 - $25,000</option>
+                    <option value="25k-50k">$25,000 - $50,000</option>
+                    <option value="50k-75k">$50,000 - $75,000</option>
+                    <option value="75k-100k">$75,000 - $100,000</option>
+                    <option value="over-100k">$100,000+</option>
+                </select>
+            </div>
+
+            <div class="form-group" id="change-color">
+                <label>Gender Identity</label>
+                <div>
+                    <input type="radio" id="male" name="gender" value="male">
+                    <label for="male">Male</label>
+                </div>
+                <div>
+                    <input type="radio" id="female" name="gender" value="female">
+                    <label for="female">Female</label>
+                </div>
+                <div>
+                    <input type="radio" id="nonbinary" name="gender" value="nonbinary">
+                    <label for="nonbinary">Nonbinary</label>
+                </div>
+                <div>
+                    <input type="radio" id="other" name="gender" value="other">
+                    <label for="other">Other</label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Which of the following products have you purchased in the last 2 months? Please check all that apply.</label>
+                <div>
+                    <input type="checkbox" id="product1" name="product" value="product1">
+                    <label for="product1">Product 1</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="product2" name="product" value="product2">
+                    <label for="product2">Product 2</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="product3" name="product" value="product3">
+                    <label for="product3">Product 3</label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>How often would you use our new product?</label>
+                <div>
+                    <input type="radio" id="daily" name="frequency" value="daily">
+                    <label for="daily">Daily</label>
+                </div>
+                <div>
+                    <input type="radio" id="weekly" name="frequency" value="weekly">
+                    <label for="weekly">Weekly</label>
+                </div>
+                <div>
+                    <input type="radio" id="monthly" name="frequency" value="monthly">
+                    <label for="monthly">Monthly</label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>What would you pay for the new product?</label>
+                <div>
+                    <label for="dollars">Dollars</label>
+                    <input type="number" id="dollars" name="dollars" min="0">
+                </div>
+                <div>
+                    <label for="cents">Cents</label>
+                    <input type="number" id="cents" name="cents" min="0" max="99">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="features">What features would you like to see in the new product?</label>
+                <textarea id="features" name="features" rows="4" cols="50"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label>Please rate your level of agreement with the following statements:</label>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Statement</th>
+                            <th>Strongly Disagree</th>
+                            <th>Disagree</th>
+                            <th>Agree</th>
+                            <th>Strongly Agree</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Our products are priced fairly.</td>
+                            <td><input type="radio" name="priced-fairly" value="strongly-disagree"></td>
+                            <td><input type="radio" name="priced-fairly" value="disagree"></td>
+                            <td><input type="radio" name="priced-fairly" value="agree"></td>
+                            <td><input type="radio" name="priced-fairly" value="strongly-agree"></td>
+                        </tr>
+                        <tr>
+                            <td>Our products are high quality.</td>
+                            <td><input type="radio" name="high-quality" value="strongly-disagree"></td>
+                            <td><input type="radio" name="high-quality" value="disagree"></td>
+                            <td><input type="radio" name="high-quality" value="agree"></td>
+                            <td><input type="radio" name="high-quality" value="strongly-agree"></td>
+                        </tr>
+                        <tr>
+                            <td>You would recommend our product to a friend or coworker.</td>
+                            <td><input type="radio" name="recommend" value="strongly-disagree"></td>
+                            <td><input type="radio" name="recommend" value="disagree"></td>
+                            <td><input type="radio" name="recommend" value="agree"></td>
+                            <td><input type="radio" name="recommend" value="strongly-agree"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="form-group">
+                <button type="submit">Submit</button>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>
