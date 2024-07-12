@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luyện tập cấu trúc điều kiện 01</title>
+</head>
+
+<body>
+    <!-- Bài 1 -->
+
+    <h2>Bài 1</h2>
+    <div>
+        <label for="number_a">Nhập số a </label>
+        <input type="number" id="number_a">
+    </div>
+    <div>
+        <label for="number_b">Nhập số b </label>
+        <input type="number" id="number_b">
+    </div>
+    <button onclick="division()">Check</button>
+    <p id="result_Division"></p>
+
+    <!-- Bài 2 -->
+
+    <h2>Bài 2</h2>
+    <div>
+        <label for="old_Student">Nhập tuổi học sinh </label>
+        <input type="number" id="old_Student">
+        <button onclick="result_Old_Student()">Check</button>
+        <p id="result_Old"></p>
+    </div>
+
+    <!-- Bài 3 -->
+
+    <h2>Bài 3</h2>
+    <div>
+        <label for="integer">Nhập một số nguyên bất kỳ </label>
+        <input type="number" id="integer">
+        <button onclick="result_Integer()">Check</button>
+        <p id="result_Integer"></p>
+    </div>
+
+    <!-- Bài 4 -->
+    <h2>Bài 4</h2>
+    <div>
+        <label for="number_1">Nhập một số nguyên thứ nhất </label>
+        <input type="number" id="number_1">
+    </div>
+    <div>
+        <label for="number_2">Nhập một số nguyên thứ hai </label>
+        <input type="number" id="number_2">
+    </div>
+    <div>
+        <label for="number_3">Nhập một số nguyên thứ ba </label>
+        <input type="number" id="number_3">
+    </div>
+    <button onclick="number_Max()">Check</button>
+    <p id="result_Max"></p>
+
+    <!-- Bài 5 -->
+    <h2>Bài 5</h2>
+    <div>
+        <label for="point_Test">Nhập điểm bài kiểm tra </label>
+        <input type="number" id="point_Test">
+    </div>
+    <div>
+        <label for="point_Mid">Nhập điểm thi giữa kỳ </label>
+        <input type="number" id="point_Mid">
+    </div>
+    <div>
+        <label for="point_Final">Nhập điểm thi cuối kỳ </label>
+        <input type="number" id="point_Final">
+    </div>
+    <button onclick="check_Rank()">Check</button>
+    <p id="result_Rank"></p>
+
+    <!-- Bài 6 -->
+    <h2>Bài 6</h2>
+    <div>
+        <label for="value_Product">Nhập giá trị của sản phẩm </label>
+        <input type="number" id="value_Product" placeholder="VND">
+    </div>
+    <div>
+        <label for="value_Amount">Nhập số lượng bán được</label>
+        <input type="number" id="value_Amount">
+    </div>
+    <button onclick="commission()">Check</button>
+    <p id="result_Commission"></p>
+    <script>
+        // Bài 1
+        function division() {
+            let number_a = parseFloat(document.getElementById('number_a').value);
+            let number_b = parseFloat(document.getElementById('number_b').value);
+            let result_Division = document.getElementById('result_Division')
+            if (number_a == 0 && number_b == 0) {
+                result_Division.innerHTML = "0 không thể chia hết cho 0"
+            } else if (number_b == 0 && number_a !== 0) {
+                result_Division.innerHTML = "Vui lòng nhập số b khác 0"
+            } else if (number_a % number_b == 0) {
+                result_Division.innerHTML = number_a + " có chia hết cho " + number_b;
+            } else result_Division.innerHTML = number_a + " không chia hết cho " + number_b;
+        }
+
+        //Bài 2
+        function result_Old_Student() {
+            let old_Student = parseInt(document.getElementById('old_Student').value);
+            let result_Old = document.getElementById('result_Old');
+            if (old_Student <= 0) {
+                result_Old.innerHTML = "Chưa đẻ mà!!"
+            } else if (old_Student >= 15) {
+                result_Old.innerHTML = "Đã đủ tuổi học lớp 10"
+            } else result_Old.innerHTML = "Chưa đủ tuổi học lớp 10"
+        }
+
+        // Bài 3
+        function result_Integer() {
+            let integer = parseInt(document.getElementById('integer').value);
+            let result_Integer = document.getElementById('result_Integer');
+            if (integer == 0) {
+                result_Integer.innerHTML = "Còn hỏi nữa?"
+            } else if (integer < 0) {
+                result_Integer.innerHTML = integer + " nhỏ hơn 0"
+            } else result_Integer.innerHTML = integer + " lớn hơn 0"
+        }
+
+        //Bài 4
+        function number_Max() {
+            let number_1 = parseInt(document.getElementById('number_1').value);
+            let number_2 = parseInt(document.getElementById('number_2').value);
+            let number_3 = parseInt(document.getElementById('number_3').value);
+            let result_Max = document.getElementById('result_Max');
+            let result_Max1 = (number_1 > number_2) ?
+                ((number_1 > number_3) ? number_1 : number_3) :
+                ((number_2 > number_3) ? number_2 : number_3);
+
+            result_Max.innerHTML = "Số lớn nhất là: " + result_Max1;
+        }
+
+        //Bài 5
+        function check_Rank() {
+            let point_Test = parseFloat(document.getElementById('point_Test').value);
+            let point_Mid = parseFloat(document.getElementById('point_Mid').value);
+            let point_Final = parseFloat(document.getElementById('point_Final').value);
+            let result_Rank = document.getElementById('result_Rank')
+            let result_Rank1 = (point_Test + point_Mid + point_Final) / 3;
+            if (result_Rank1 > 8) {
+                result_Rank.innerHTML = 'Học sinh giỏi'
+            } else if (result_Rank1 > 5) {
+                result_Rank.innerHTML = 'Học sinh khá'
+            } else {
+                result_Rank.innerHTML = 'Học sinh yếu'
+            }
+        }
+
+        //Bài 6
+        function commission() {
+            let value_Product = parseFloat(document.getElementById('value_Product').value);
+            let value_Amount = parseInt(document.getElementById('value_Amount').value);
+            let result_Commission = document.getElementById('result_Commission');
+            let result_Commission1 = value_Product * 0.05 * value_Amount;
+            result_Commission.innerHTML = "Số tiền hoa hồng của bạn là: " + result_Commission1 + " VND";
+        }
+    </script>
+</body>
+
+</html>
