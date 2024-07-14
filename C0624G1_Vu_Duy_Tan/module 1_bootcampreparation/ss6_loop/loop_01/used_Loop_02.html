@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loop</title>
+</head>
+
+<body>
+    <!-- Bài 1 -->
+    <h2>Bài 1: Sử dụng vòng lặp While nhập từ hộp thoại, tính tổng số được nhập</h2>
+    <button onclick="check_Total()">Bắt đầu nhập số</button>
+    <div id="result_Values"></div>
+    <p id="result_Total"></p>
+
+    <!-- Bài 2 -->
+    <h2>Bài 2: Hiển thị thẻ theo độ rộng từ 1 đến 100</h2>
+
+    <script>
+        //Bài 1
+        function check_Total() {
+            let total = 0;
+            let number_N;
+            let result_Values = document.getElementById('result_Values');
+            let result_Total = document.getElementById('result_Total');
+
+            result_Values.innerHTML = "";
+            result_Total.innerHTML = "";
+
+            while (true) {
+                number_N = parseInt(prompt("Nhập một số (nhập -1 để kết thúc):"));
+                if (number_N === -1) {
+                    break;
+                }
+                total += number_N;
+                result_Values.innerHTML += "Số nhập vào: " + number_N + "<br>";
+            }
+
+            result_Total.innerHTML = "Tổng = " + total;
+        }
+
+        //Bài 2
+
+        let i = 1;
+        while (i <= 100) {
+            //phân thân vòng lặp
+            document.write("<hr width='" + i + "%'>");
+            i++;
+        }
+    </script>
+    </script>
+</body>
+
+</html>
