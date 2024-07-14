@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài tập 2</title>
+</head>
+
+<body>
+    <!-- Bài 1 -->
+    <h2>Bài 1: Chuyển từ độ C sang độ F</h2>
+    <label for="degrees_Celsius">Nhập độ C </label>
+    <input type="number" id="degrees_Celsius">
+    <button onclick="check_Degrees()">Check</button>
+    <p id="result_Celsius"></p>
+
+    <!-- Bài 2 -->
+    <h2>Bài 2: Chuyển từ mét sang feet</h2>
+    <label for="meters">Nhập số mét </label>
+    <input type="number" id="meters">
+    <button onclick="check_Meters()">Check</button>
+    <p id="result_Meters"></p>
+
+    <!-- Bài 3 -->
+    <h2>Bài 3: Tính diện tích hình vuông</h2>
+    <label for="a_Square">Nhập một cạnh của hình vuông </label>
+    <input type="number" id="a_Square">
+    <button onclick="check_Square()">Check</button>
+    <p id="result_Square"></p>
+
+    <!-- Bài 4 -->
+    <h2>Bài 4: Tính diện tích hình chữ nhật</h2>
+    <div>
+        <label for="height_Rectangle">Nhập chiều dài của hình chữ nhật </label>
+        <input type="number" id="height_Rectangle" placeholder="cm">
+    </div>
+    <div>
+        <label for="width_Rectangle">Nhập chiều rộng của chữ nhật </label>
+        <input type="number" id="width_Rectangle" placeholder="cm">
+    </div>
+    <button onclick="check_Rectangle()">Check</button>
+    <p id="result_Rectangle"></p>
+
+    <!-- Bài 5 -->
+    <h2>Bài 5: Tính diện tích tam giác vuông</h2>
+    <div>
+        <div>
+            <label for="side_a">Nhập cạnh a:</label>
+            <input type="number" id="side_a" placeholder="Nhập cạnh a">
+        </div>
+        <div>
+            <label for="side_b">Nhập cạnh b:</label>
+            <input type="number" id="side_b" placeholder="Nhập cạnh b">
+        </div>
+        <button onclick="square_Triangle()">Check</button>
+        <p id="result_Triangle"></p>
+        <!-- Bài 6 -->
+        <h2>Bài 6: Phương trình bậc 1</h2>
+        <div>
+            <label for="a_Factor">Nhập a:</label>
+            <input type="number" id="a_Factor" placeholder="Nhập hệ số a">
+        </div>
+        <div>
+            <label for="b_Factor">Nhập b:</label>
+            <input type="number" id="b_Factor" placeholder="Nhập hệ số b">
+        </div>
+        <button onclick="solveEquation()">Check</button>
+        <p id="result_Equation"></p>
+
+        <!-- Bài 7 -->
+        <h2>Bài 7: Phương trình bậc 2</h2>
+        <div>
+            <label for="number_a">Nhập a:</label>
+            <input type="number" id="number_a" placeholder="Nhập hệ số a">
+        </div>
+        <div>
+            <label for="number_b">Nhập b:</label>
+            <input type="number" id="number_b" placeholder="Nhập hệ số b">
+        </div>
+        <div>
+            <label for="number_c">Nhập c:</label>
+            <input type="number" id="number_c" placeholder="Nhập hệ số c">
+        </div>
+        <button onclick="solveQuadratic()">Check</button>
+        <p id="result_Quadratic"></p>
+
+        <!-- Bài 8 -->
+        <h2>Bài 8: Tìm tuổi</h2>
+        <label for="old_People">Nhập tuổi của bạn đi </label>
+        <input type="number" id="old_People">
+        <button onclick="check_Old()">Check</button>
+        <p id="result_Old_People"></p>
+
+        <!-- Bài 9 -->
+        <h2>Bài 9: Tìm tam giác</h2>
+        <div>
+            <label for="a_Triangle">Nhập cạnh a:</label>
+            <input type="number" id="a_Triangle" placeholder="Nhập cạnh a">
+        </div>
+        <div>
+            <label for="b_Triangle">Nhập cạnh b:</label>
+            <input type="number" id="b_Triangle" placeholder="Nhập cạnh b">
+        </div>
+        <div>
+            <label for="c_Triangle">Nhập cạnh c:</label>
+            <input type="number" id="c_Triangle" placeholder="Nhập cạnh c">
+        </div>
+        <button onclick="checkTriangle()">Kiểm tra</button>
+        <p id="result_Triangle_9"></p>
+
+        <!-- Bài 10 -->
+        <h2>Bài 10: Tính giá điện</h2>
+        <div>
+            <label for="kWh">Nhập số kWh tiêu thụ:</label>
+            <input type="number" id="kWh" placeholder="Nhập số kWh">
+        </div>
+        <button onclick="calculateElectricityBill()">Tính tiền điện</button>
+        <p id="result_Bill"></p>
+
+        <!-- Bài 11 -->
+        <h2>Bài 11: Tính thu nhập</h2>
+        <div>
+            <label for="income">Nhập thu nhập hàng tháng của bạn: </label>
+            <input type="number" id="income">
+            <button onclick="result_Check_Income()">Check</button>
+            <p id="result_Income"></p>
+        </div>
+
+        <!-- Bài 12 -->
+        <h2>Bài 12: Tính lãi ngân hàng</h2>
+        <div>
+            <label for="money_Start">Số tiền ban đầu: </label>
+            <input type="number" id="money_Start" placeholder="Nhập số tiền ban đầu">
+        </div>
+        <div>
+            <label for="months">Số tháng cho vay: </label>
+            <input type="number" id="months" placeholder="Nhập số tháng cho vay">
+        </div>
+        <div>
+            <label for="number_Rate">Lãi suất hàng tháng: </label>
+            <input type="number" id="number_Rate" placeholder="Nhập lãi suất hàng tháng">
+        </div>
+        <button onclick="bank_Rate()">Check</button>
+        <p id="result_Rate"></p>
+
+
+
+        <script>
+            // Bài 1
+            function check_Degrees() {
+                let degrees_Celsius = parseFloat(document.getElementById('degrees_Celsius').value);
+                let result_Celsius = document.getElementById('result_Celsius')
+                let result_Celsius1 = degrees_Celsius * 9 / 5 + 32;
+                result_Celsius.innerHTML = "Độ F là: " + result_Celsius1;
+            }
+
+            //Bài 2
+            function check_Meters() {
+                let meters = parseFloat(document.getElementById('meters').value);
+                let result_Meters = document.getElementById('result_Meters');
+                let result_Meters1 = meters * 3.2808;
+                if (meters < 0) {
+                    result_Meters.innerHTML = "Số meter không thể bé hơn 0"
+                } else {
+                    result_Meters.innerHTML = "Số feet là: " + result_Meters1;
+                }
+
+            }
+
+            //Bài 3
+            function check_Square() {
+                let a_Square = parseFloat(document.getElementById('a_Square').value);
+                let result_Square = document.getElementById('result_Square');
+                let s_Square = a_Square * a_Square;
+                if (a_Square <= 0) {
+                    result_Square.innerHTML = "Canh hình vuông không thể nhỏ hơn 1";
+                } else {
+                    result_Square.innerHTML = "Diện tích hình vuông là :" + s_Square;
+                }
+            }
+
+            //Bài 4
+            function check_Rectangle() {
+                let height_Rectangle = parseFloat(document.getElementById('height_Rectangle').value);
+                let width_Rectangle = parseFloat(document.getElementById('width_Rectangle').value);
+                let result_Rectangle = document.getElementById('result_Rectangle');
+                rectangle = height_Rectangle * width_Rectangle;
+                if (height_Rectangle <= 0 || width_Rectangle <= 0) {
+                    result_Rectangle.innerHTML = "Cạnh phải lớn hơn 1";
+                } else if (width_Rectangle > height_Rectangle) {
+                    result_Rectangle.innerHTML = "Chiều rộng không thể lớn hơn chiều dài";
+                } else {
+                    result_Rectangle.innerHTML = "Diện tích hình chữ nhật là: " + rectangle + " cm";
+                }
+            }
+
+            //Bài 5
+            function square_Triangle() {
+                let a = parseFloat(document.getElementById('side_a').value);
+                let b = parseFloat(document.getElementById('side_b').value);
+                let result_Area = document.getElementById('result_Triangle');
+
+                if (isNaN(a) || isNaN(b) || a <= 0 || b <= 0) {
+                    result_Area.innerHTML = "Vui lòng nhập giá trị hợp lệ cho hai cạnh kề.";
+                    return;
+                }
+
+                let area = (a * b) / 2;
+                result_Area.innerHTML = "Diện tích tam giác vuông là: " + area;
+            }
+
+            //Bài 6
+            function solveEquation() {
+                let a = parseFloat(document.getElementById('a_Factor').value);
+                let b = parseFloat(document.getElementById('b_Factor').value);
+                let resultEquation = document.getElementById('result_Equation');
+
+                if (isNaN(a) || isNaN(b)) {
+                    resultEquation.innerHTML = "Vui lòng nhập giá trị hợp lệ cho a và b.";
+                    return;
+                }
+
+                if (a === 0) {
+                    if (b === 0) {
+                        resultEquation.innerHTML = "Phương trình vô số nghiệm.";
+                    } else {
+                        resultEquation.innerHTML = "Phương trình vô nghiệm.";
+                    }
+                } else {
+                    let x = -b / a;
+                    resultEquation.innerHTML = "Nghiệm của phương trình là: x = " + x;
+                }
+            }
+
+            //Bài 7
+            function solveQuadratic() {
+                let a = parseFloat(document.getElementById('number_a').value);
+                let b = parseFloat(document.getElementById('number_b').value);
+                let c = parseFloat(document.getElementById('number_c').value);
+                let result_Quadratic = document.getElementById('result_Quadratic');
+
+                if (isNaN(a) || isNaN(b) || isNaN(c)) {
+                    result_Quadratic.innerHTML = "Vui lòng nhập giá trị hợp lệ cho a, b và c.";
+                    return;
+                }
+
+                if (a === 0) {
+                    if (b === 0) {
+                        if (c === 0) {
+                            result_Quadratic.innerHTML = "Phương trình có vô số nghiệm.";
+                        } else {
+                            result_Quadratic.innerHTML = "Phương trình vô nghiệm.";
+                        }
+                    } else {
+                        let x = -c / b;
+                        result_Quadratic.innerHTML = "Nghiệm của phương trình bậc nhất là: x = " + x;
+                    }
+                    return;
+                }
+
+                let delta = b * b - 4 * a * c;
+                if (delta < 0) {
+                    result_Quadratic.innerHTML = "Phương trình vô nghiệm.";
+                } else if (delta === 0) {
+                    let x = -b / (2 * a);
+                    result_Quadratic.innerHTML = "Phương trình có nghiệm kép: x = " + x;
+                } else {
+                    let x1 = (-b + Math.sqrt(delta)) / (2 * a);
+                    let x2 = (-b - Math.sqrt(delta)) / (2 * a);
+                    result_Quadratic.innerHTML = "Phương trình có hai nghiệm: x1 = " + x1 + ", x2 = " + x2;
+                }
+            }
+
+            //Bài 8
+            function check_Old() {
+                let old_People = parseInt(document.getElementById('old_People').value)
+                let result_People = document.getElementById('result_Old_People')
+                if (old_People <= 0) {
+                    result_Old_People.innerHTML = "What???"
+                } else if (old_People >= 120) {
+                    result_Old_People.innerHTML = "Già thế???"
+                } else {
+                    result_Old_People.innerHTML = "Bạn đã " + old_People + " tuổi rồi!!!"
+                }
+            }
+
+            //Bài 9
+            function checkTriangle() {
+                let a = parseFloat(document.getElementById('a_Triangle').value);
+                let b = parseFloat(document.getElementById('b_Triangle').value);
+                let c = parseFloat(document.getElementById('c_Triangle').value);
+                let result_9 = document.getElementById('result_Triangle_9');
+
+                if (isNaN(a) || isNaN(b) || isNaN(c) || a <= 0 || b <= 0 || c <= 0) {
+                    result_9.innerHTML = "Vui lòng nhập giá trị hợp lệ cho ba cạnh.";
+                    return;
+                }
+
+                if (a + b > c && a + c > b && b + c > a) {
+                    if (a === b && b === c) {
+                        result_9.innerHTML = "Ba cạnh này tạo thành một tam giác đều.";
+                    } else if (a === b || b === c || a === c) {
+                        result_9.innerHTML = "Ba cạnh này tạo thành một tam giác cân.";
+                    } else if (a * a + b * b === c * c || a * a + c * c === b * b || b * b + c * c === a * a) {
+                        result_9.innerHTML = "Ba cạnh này tạo thành một tam giác vuông.";
+                    } else {
+                        result_9.innerHTML = "Ba cạnh này tạo thành một tam giác thường.";
+                    }
+                } else {
+                    result_9.innerHTML = "Ba cạnh này không tạo thành một tam giác.";
+                }
+            }
+
+            // Bài 10
+            function calculateElectricityBill() {
+                let kWh = parseFloat(document.getElementById('kWh').value);
+                let result_Bill = document.getElementById('result_Bill');
+                if (isNaN(kWh) || kWh < 0) {
+                    result_Bill.innerHTML = "Vui lòng nhập giá trị hợp lệ cho số kWh.";
+                    return;
+                }
+
+                let total = 0;
+
+                if (kWh <= 50) {
+                    total = kWh * 1678;
+                } else if (kWh <= 100) {
+                    total = 50 * 1678 + (kWh - 50) * 1734;
+                } else if (kWh <= 200) {
+                    total = 50 * 1678 + 50 * 1734 + (kWh - 100) * 2014;
+                } else if (kWh <= 300) {
+                    total = 50 * 1678 + 50 * 1734 + 100 * 2014 + (kWh - 200) * 2536;
+                } else if (kWh <= 400) {
+                    total = 50 * 1678 + 50 * 1734 + 100 * 2014 + 100 * 2536 + (kWh - 300) * 2834;
+                } else {
+                    total = 50 * 1678 + 50 * 1734 + 100 * 2014 + 100 * 2536 + 100 * 2834 + (kWh - 400) * 2927;
+                }
+
+                result_Bill.innerHTML = "Tổng số tiền điện phải trả là: " + total + " VND";
+            }
+
+            // Bài 11
+            function result_Check_Income() {
+                let income = parseFloat(document.getElementById('income').value);
+                let result_Income = document.getElementById('result_Income');
+
+                if (isNaN(income) || income < 0) {
+                    result_Income.innerHTML = "Vui lòng nhập giá trị hợp lệ";
+                    return;
+                }
+
+                let tax = 0;
+
+                if (income < 5000000) {
+                    tax = income * 0.05;
+                } else if (income <= 10000000) {
+                    tax = 5000000 * 0.05 + (income - 5000000) * 0.1;
+                } else if (income <= 18000000) {
+                    tax = 5000000 * 0.05 + 5000000 * 0.1 + (income - 10000000) * 0.15;
+                } else if (income <= 32000000) {
+                    tax = 5000000 * 0.05 + 5000000 * 0.1 + 8000000 * 0.15 + (income - 18000000) * 0.2;
+                } else if (income <= 52000000) {
+                    tax = 5000000 * 0.05 + 5000000 * 0.1 + 8000000 * 0.15 + 14000000 * 0.2 + (income - 32000000) * 0.25;
+                } else if (income <= 80000000) {
+                    tax = 5000000 * 0.05 + 5000000 * 0.1 + 8000000 * 0.15 + 14000000 * 0.2 + 20000000 * 0.25 + (income - 52000000) * 0.3;
+                } else {
+                    tax = 5000000 * 0.05 + 5000000 * 0.1 + 8000000 * 0.15 + 14000000 * 0.2 + 20000000 * 0.25 + 28000000 * 0.3 + (income - 80000000) * 0.35;
+                }
+
+                result_Income.innerHTML = "Tổng số thuế thu nhập cá nhân phải trả là: " + tax + " VND";
+            }
+
+            //Bài 12
+            function bank_Rate() {
+                let money_Start = parseFloat(document.getElementById('money_Start').value);
+                let months = parseInt(document.getElementById('months').value);
+                let number_Rate = parseFloat(document.getElementById('number_Rate').value) / 100;
+                let result_Rate = document.getElementById('result_Rate');
+
+                if (isNaN(money_Start) || money_Start <= 0) {
+                    result_Rate.innerHTML = "Vui lòng nhập giá trị hợp lệ cho số tiền ban đầu.";
+                    return;
+                }
+
+                if (isNaN(months) || months <= 0) {
+                    result_Rate.innerHTML = "Vui lòng nhập giá trị hợp lệ cho số tháng.";
+                    return;
+                }
+
+                if (isNaN(number_Rate) || number_Rate <= 0) {
+                    result_Rate.innerHTML = "Vui lòng nhập giá trị hợp lệ cho lãi suất.";
+                    return;
+                }
+
+                let money_Final = money_Start;
+
+                for (let i = 0; i < months; i++) {
+                    money_Final += money_Final * number_Rate;
+                }
+
+                result_Rate.innerHTML = "Tổng số tiền sau " + months + " tháng là: " + money_Final.toFixed(2) + " VND";
+            }
+        </script>
+</body>
+
+</html>
