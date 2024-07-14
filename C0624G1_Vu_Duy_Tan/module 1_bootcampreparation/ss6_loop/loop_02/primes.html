@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>First 20 Prime Numbers</title>
+</head>
+
+<body>
+    <h2>20 số nguyên tố đầu tiên</h2>
+    <p id="prime_Number"></p>
+
+    <script>
+        let prime_Number = '';
+        let count = 0; // Bộ đếm
+        let num = 2;
+
+        while (count < 20) {
+            let isPrime = true;
+
+            for (let i = 2; i <= Math.sqrt(num); i++) {
+                if (num % i === 0) {
+                    isPrime = false;
+                    break;
+                }
+            }
+
+            if (isPrime) {
+                if (prime_Number !== '') {
+                    prime_Number += '<br>';
+                }
+                prime_Number += num;
+                count++;
+            }
+
+            num++;
+        }
+        document.getElementById('prime_Number').innerHTML = prime_Number;
+    </script>
+</body>
+
+</html>
