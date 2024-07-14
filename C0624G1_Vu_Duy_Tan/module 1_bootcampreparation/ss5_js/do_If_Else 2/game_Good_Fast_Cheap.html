@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Good-Fast-Cheap Game</title>
+</head>
+
+<body>
+    <h1>Good-Fast-Cheap Game</h1>
+    <div>
+        <label>
+            <input type="checkbox" id="good" onclick="check()"> GOOD
+        </label>
+    </div>
+    <div>
+        <label>
+            <input type="checkbox" id="cheap" onclick="check()"> CHEAP
+        </label>
+    </div>
+    <div>
+        <label>
+            <input type="checkbox" id="fast" onclick="check()"> FAST
+        </label>
+    </div>
+
+    <script>
+        function check() {
+            var good = document.getElementById("good").checked;
+            var cheap = document.getElementById("cheap").checked;
+            var fast = document.getElementById("fast").checked;
+
+            if (good && cheap && fast) {
+                if (document.activeElement.id === "good") {
+                    document.getElementById("cheap").checked = false;
+                } else if (document.activeElement.id === "cheap") {
+                    document.getElementById("fast").checked = false;
+                } else if (document.activeElement.id === "fast") {
+                    document.getElementById("good").checked = false;
+                }
+            }
+        }
+        console.log(good.value);
+        console.log(cheap.value);
+        console.log(fast.value);
+    </script>
+</body>
+
+</html>
