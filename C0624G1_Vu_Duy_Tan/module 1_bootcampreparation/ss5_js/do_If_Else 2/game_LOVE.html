@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Do You Love Me</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background: linear-gradient(to right, #ffecd2 0%, #fcb69f 100%);
+            margin: 0;
+            overflow: hidden;
+        }
+        
+        h1 {
+            font-size: 3em;
+            color: #333;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+            margin-bottom: 30px;
+        }
+        
+        button {
+            font-size: 1.5em;
+            padding: 15px 30px;
+            margin: 20px;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        
+        #yesBtn {
+            background-color: #4CAF50;
+            color: white;
+        }
+        
+        #yesBtn:hover {
+            background-color: #45a049;
+            transform: scale(1.1);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+        }
+        
+        #noBtn {
+            background-color: #f44336;
+            color: white;
+            position: absolute;
+        }
+        
+        #noBtn:hover {
+            background-color: #da190b;
+            transform: scale(1.1);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Do you love me?</h1>
+    <button id="yesBtn" onclick="yes()">YES</button>
+    <button id="noBtn" onmouseover="moveNo()">NO</button>
+
+    <script>
+        function yes() {
+            alert("I LOVE YOU TOO <3");
+        }
+
+        function moveNo() {
+            var windowHeight = window.innerHeight;
+            var windowWidth = window.innerWidth;
+
+            var randomX = Math.random() * windowWidth;
+            var randomY = Math.random() * windowHeight;
+
+            var noBtn = document.getElementById("noBtn");
+
+            var btnWidth = noBtn.offsetWidth;
+            var btnHeight = noBtn.offsetHeight;
+            if (randomX + btnWidth > windowWidth) {
+                randomX = windowWidth - btnWidth;
+            }
+            if (randomY + btnHeight > windowHeight) {
+                randomY = windowHeight - btnHeight;
+            }
+
+            noBtn.style.left = randomX + "px";
+            noBtn.style.top = randomY + "px";
+        }
+    </script>
+</body>
+
+</html>
