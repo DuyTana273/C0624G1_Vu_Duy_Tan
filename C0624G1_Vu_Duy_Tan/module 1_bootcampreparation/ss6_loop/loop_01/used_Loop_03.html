@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vòng lặp lồng nhau</title>
+</head>
+
+<body>
+    <script>
+        let sout;
+        sout = "<table border='2' width='300' cellspacing='0' cellpadding='3' style='text-align:center'>";
+
+        //border='2': Thiết lập độ dày viền của bảng là 2 pixel.
+        //width='300': Thiết lập độ rộng của bảng là 300 pixel.
+        //cellspacing='0': Khoảng cách giữa các ô là 0 pixel.
+        //cellpadding='3': Khoảng cách giữa nội dung và viền của mỗi ô là 3 pixel.
+        //style='text-align:center': nội dung ở giữa.
+
+        for (i = 1; i <= 10; i++) {
+            sout = sout + "<tr>"; //Vòng lặp này chạy từ 1 đến 10, mỗi lần lặp tạo ra một dòng mới trong bảng (<tr>).
+            for (j = 1; j <= 10; j++) {
+                sout = sout + "<td>" + i * j + "</td>"; //Vòng lặp này cũng chạy từ 1 đến 10, mỗi lần lặp tạo ra một ô mới trong dòng (<td>). Nội dung của mỗi ô là kết quả của phép nhân i * j.
+            }
+            sout = sout + "</tr>"; //Đóng dòng
+        }
+        sout = sout + "</table>"; //Đóng bảng
+        document.write(sout); //Show bảng
+
+
+        //         Quá trình lặp
+
+        // Giả sử i = 1 trong vòng lặp ngoài. Vòng lặp ngoài sẽ bắt đầu một dòng mới (<tr>). Sau đó, vòng lặp trong bắt đầu với j từ 1 đến 10.
+
+        // Lần lặp đầu tiên của vòng lặp ngoài (i = 1):
+
+        // sout bắt đầu là: <table border='2' width='300' cellspacing='0' cellpadding='3' style='text-align:center;'>
+        // Lần lặp đầu tiên của vòng lặp trong (j = 1):
+        // sout trở thành: <table border='2' width='300' cellspacing='0' cellpadding='3' style='text-align:center;'><tr><td>1</td>
+        // Lần lặp thứ hai của vòng lặp trong (j = 2):
+        // sout trở thành: <table border='2' width='300' cellspacing='0' cellpadding='3' style='text-align:center;'><tr><td>1</td><td>2</td>
+        // Tiếp tục cho đến khi j = 10:
+        // sout trở thành: <table border='2' width='300' cellspacing='0' cellpadding='3' style='text-align:center;'><tr><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td><td>10</td></tr>
+        // Lần lặp thứ hai của vòng lặp ngoài (i = 2):
+
+        // sout tiếp tục với dòng mới: <table border='2' width='300' cellspacing='0' cellpadding='3' style='text-align:center;'><tr><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td><td>10</td></tr><tr>
+        // Lần lặp đầu tiên của vòng lặp trong (j = 1):
+        // sout trở thành: <table border='2' width='300' cellspacing='0' cellpadding='3' style='text-align:center;'><tr><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td><td>10</td></tr><tr><td>2</td>
+        // Lần lặp thứ hai của vòng lặp trong (j = 2):
+        // sout trở thành: <table border='2' width='300' cellspacing='0' cellpadding='3' style='text-align:center;'><tr><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td><td>10</td></tr><tr><td>2</td><td>4</td>
+        // Tiếp tục cho đến khi j = 10:
+        // sout trở thành: <table border='2' width='300' cellspacing='0' cellpadding='3' style='text-align:center;'><tr><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td><td>10</td></tr><tr><td>2</td><td>4</td><td>6</td><td>8</td><td>10</td><td>12</td><td>14</td><td>16</td><td>18</td><td>20</td></tr>
+    </script>
+</body>
+
+</html>
