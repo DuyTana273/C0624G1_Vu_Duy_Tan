@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fibonaci</title>
+</head>
+
+<body>
+    <h2>Fibonaci</h2>
+    <p id="result"></p>
+
+    <script>
+        function fibonacci() {
+            let number_A = 1;
+            let number_B = 1;
+            let sum = 0;
+
+
+            let number = +prompt('Nhập số lượng Fibonaci: ')
+            let result = number_A + "<br>" + number_B;
+
+            for (let i = 2; i <= number; i++) {
+                let number_C = number_A + number_B;
+                result += "<br>" + number_C;
+                number_A = number_B;
+                number_B = number_C;
+            }
+            document.getElementById('result').innerHTML = result;
+
+        }
+
+        fibonacci();
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tính Lãi Ngân Hàng</title>
+</head>
+
+<body>
+    <h2>Tính Lãi Ngân Hàng</h2>
+    <div>
+        <label for="number_Amount">Số tiền ban đầu: </label>
+        <input type="number" id="number_Amount" placeholder="Nhập số tiền ban đầu">
+    </div>
+    <div>
+        <label for="months">Số tháng cho vay: </label>
+        <input type="number" id="months" placeholder="Nhập số tháng cho vay">
+    </div>
+    <div>
+        <label for="number_Mounth">Lãi suất hàng tháng (%): </label>
+        <input type="number" id="number_Mounth" placeholder="Nhập lãi suất hàng tháng">
+    </div>
+    <button onclick="calculator()">Tính lãi suất</button>
+    <p id="result"></p>
+
+    <script>
+        function calculator() {
+            let number_Amount = parseFloat(document.getElementById('number_Amount').value);
+            let months = parseInt(document.getElementById('months').value);
+            let number_Mounth = parseFloat(document.getElementById('number_Mounth').value) / 100;
+            let result = document.getElementById('result');
+
+            if (isNaN(number_Amount) || isNaN(months) || isNaN(number_Mounth)) {
+                result.innerHTML = "Vui lòng nhập giá trị hợp lệ.";
+                return;
+            }
+
+            for (let i = 0; i < months; i++) {
+                number_Amount += number_Amount * number_Mounth;
+            }
+
+            result.innerHTML = "Số tiền sau " + months + " tháng là: " + number_Amount.toFixed(0) + " đồng.";
+        }
+    </script>
+</body>
+
+</html>

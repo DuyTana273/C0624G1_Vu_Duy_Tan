@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Bài 3: In tam giác vuông</title>
+</head>
+
+<body>
+    <h2>Bài 3: In tam giác vuông. Các góc vuông nằm ở các vị trí khác nhau</h2>
+
+    <script>
+        function square_Triangle() {
+            let star = "<table>";
+            let empty = "&nbsp;&nbsp;";
+
+            for (let i = 1; i <= 4; i++) {
+                star += "<tr>";
+                for (let j = 1; j <= i; j++) {
+                    star += "<td>*</td>";
+                }
+                star += "</tr>";
+            }
+            star += "</table>" + "<br>";
+
+            document.write(star);
+            console.log(star);
+        }
+
+        square_Triangle();
+
+        function square_Triangle2() {
+            let star = "<table>";
+            let empty = "&nbsp;&nbsp;";
+
+            for (let i = 4; i >= 1; i--) {
+                star += "<tr>";
+                for (let j = 1; j <= i; j++) {
+                    star += "<td>*</td>";
+                }
+                star += "</tr>";
+            }
+            star += "</table>" + "<br>";
+
+            document.write(star);
+            console.log(star);
+        }
+
+        square_Triangle2();
+
+        function square_Triangle3() {
+            let star = "<table>";
+
+            for (let i = 1; i <= 4; i++) {
+                star += "<tr>";
+                for (let k = 4; k > i; k--) {
+                    star += "<td>&nbsp;</td>";
+                }
+                for (let j = 1; j <= i; j++) {
+                    star += "<td>*</td>";
+                }
+                star += "</tr>";
+            }
+
+            star += "</table>" + "<br>";
+
+            document.write(star);
+            console.log(star);
+        }
+
+        square_Triangle3();
+
+        function square_Triangle4() {
+            let star = "<table>";
+
+            for (let i = 4; i >= 1; i--) {
+                star += "<tr>";
+                for (let k = 4; k > i; k--) {
+                    star += "<td>&nbsp;</td>";
+                }
+                for (let j = 1; j <= i; j++) {
+                    star += "<td>*</td>";
+                }
+                star += "</tr>";
+            }
+
+            star += "</table>" + "<br>";
+
+            document.write(star);
+            console.log(star);
+        }
+        square_Triangle4();
+    </script>
+</body>
+
+</html>

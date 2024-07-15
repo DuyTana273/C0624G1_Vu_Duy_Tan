@@ -3,12 +3,127 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Puzzle</title>
+    <title>Title</title>
 </head>
 
 <body>
+    <div><img id="img1" src="" style="width: 700px; height: 150px" onclick="changeImage(1)"></div>
+    <div><img id="img2" src="" style="width: 700px; height: 150px" onclick="changeImage(2)"></div>
+    <div><img id="img3" src="" style="width: 700px; height: 150px" onclick="changeImage(3)"></div>
+    <div><img id="img4" src="" style="width: 700px; height: 150px" onclick="changeImage(4)"></div>
+    <div><img id="img5" src="" style="width: 700px ; height: 150px" onclick="changeImage(5)"></div>
 
+    <script>
+        let img1 = document.getElementById("img1");
+        let img2 = document.getElementById("img2");
+        let img3 = document.getElementById("img3");
+        let img4 = document.getElementById("img4");
+        let img5 = document.getElementById("img5");
+        <!--    Math.random từ 0 => 1-->
+        let ran1 = Math.floor(Math.random() * 3) + 1;
+        if (ran1 === 1) {
+            img1.src = "./img/gau1.jpg"; //Đường dẫn tương đối
+        } else if (ran1 === 2) {
+            img1.src = "img/khi1.jpg";
+        } else {
+            img1.src = "img/meo1.jpg";
+        }
+        let ran2 = Math.floor(Math.random() * 3) + 1;
+        if (ran2 === 1) {
+            img2.src = "img/gau2.jpg"; //Đường dẫn tương đối
+        } else if (ran2 === 2) {
+            img2.src = "img/khi2.jpg";
+        } else {
+            img2.src = "img/meo2.jpg";
+        }
+        let ran3 = Math.floor(Math.random() * 3) + 1;
+        if (ran3 === 1) {
+            img3.src = "img/gau3.jpg"; //Đường dẫn tương đối
+        } else if (ran3 === 2) {
+            img3.src = "img/khi3.jpg";
+        } else {
+            img3.src = "img/meo3.jpg";
+        }
+        let ran4 = Math.floor(Math.random() * 3) + 1;
+        if (ran4 === 1) {
+            img4.src = "img/gau4.jpg"; //Đường dẫn tương đối
+        } else if (ran4 === 2) {
+            img4.src = "img/khi4.jpg";
+        } else {
+            img4.src = "img/meo4.jpg";
+        }
+        let ran5 = Math.floor(Math.random() * 3) + 1;
+        if (ran5 === 1) {
+            img5.src = "img/gau5.jpg"; //Đường dẫn tương đối
+        } else if (ran5 === 2) {
+            img5.src = "img/khi5.jpg";
+        } else {
+            img5.src = "img/meo5.jpg";
+        }
+
+        function changeImage(num) {
+            switch (num) {
+                case 1:
+                    if (img1.getAttribute("src") === "img/khi1.jpg") {
+                        img1.src = "img/gau1.jpg"
+                    } else if (img1.getAttribute("src") === "img/gau1.jpg") {
+                        img1.src = "img/meo1.jpg"
+                    } else {
+                        img1.src = "img/khi1.jpg"
+                    }
+                    break;
+                case 2:
+                    if (img2.getAttribute("src") === "img/khi2.jpg") {
+                        img2.src = "img/gau2.jpg"
+                    } else if (img2.getAttribute("src") === "img/gau2.jpg") {
+                        img2.src = "img/meo2.jpg"
+                    } else {
+                        img2.src = "img/khi2.jpg"
+                    }
+                    break;
+                case 3:
+                    if (img3.getAttribute("src") === "img/khi3.jpg") {
+                        img3.src = "img/gau3.jpg"
+                    } else if (img3.getAttribute("src") === "img/gau3.jpg") {
+                        img3.src = "img/meo3.jpg"
+                    } else {
+                        img3.src = "img/khi3.jpg"
+                    }
+                    break;
+                case 4:
+                    if (img4.getAttribute("src") === "img/khi4.jpg") {
+                        img4.src = "img/gau4.jpg"
+                    } else if (img4.getAttribute("src") === "img/gau4.jpg") {
+                        img4.src = "img/meo4.jpg"
+                    } else {
+                        img4.src = "img/khi4.jpg"
+                    }
+                    break;
+                case 5:
+                    if (img5.getAttribute("src") === "img/khi5.jpg") {
+                        img5.src = "img/gau5.jpg"
+                    } else if (img5.getAttribute("src") === "img/gau5.jpg") {
+                        img5.src = "img/meo5.jpg"
+                    } else {
+                        img5.src = "img/khi5.jpg"
+                    }
+                    break;
+
+            }
+            checkPerfect();
+
+        }
+
+        function checkPerfect() {
+            if ((img1.getAttribute("src") === "img/khi1.jpg" && img2.getAttribute("src") === "img/khi2.jpg" && img3.getAttribute("src") === "img/khi3.jpg" && img4.getAttribute("src") === "img/khi4.jpg" && img5.getAttribute("src") === "img/khi5.jpg") || (img1.getAttribute("src") === "img/gau1.jpg" && img2.getAttribute("src") === "img/gau2.jpg" && img3.getAttribute("src") === "img/gau3.jpg" && img4.getAttribute("src") === "img/gau4.jpg" && img5.getAttribute("src") === "img/gau5.jpg") || (img1.getAttribute("src") === "img/meo1.jpg" && img2.getAttribute("src") === "img/meo2.jpg" && img3.getAttribute("src") === "img/meo3.jpg" && img4.getAttribute("src") === "img/meo4.jpg" && img5.getAttribute("src") === "img/meo5.jpg")) {
+                img1.style.border = "3px solid blue";
+                img2.style.border = "3px solid blue";
+                img3.style.border = "3px solid blue";
+                img4.style.border = "3px solid blue";
+                img5.style.border = "3px solid blue";
+            }
+        }
+    </script>
 </body>
 
 </html>
