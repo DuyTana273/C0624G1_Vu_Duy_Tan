@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 6</title>
+</head>
+
+<body>
+    <h2>Bài 6: Tính tổng của 30 số chia hết cho 7 đầu tiên trong các số tự nhiên.</h2>
+    <p id="result"></p>
+    <p id="result2"></p>
+    <script>
+        //Cách 1
+        function checkSum() {
+            let sum = 0;
+            let count = 0;
+            let i = 0;
+
+            while (count < 30) {
+                if (i % 7 == 0) {
+                    sum += i;
+                    count++;
+                }
+                i++;
+            }
+
+            document.getElementById('result').innerHTML = "Result: " + sum;
+        }
+        checkSum();
+
+        //Cách 2
+        function checkSum2() {
+            let sum2 = 0;
+            let count = 0;
+
+            for (let i = 0; count < 30; i += 7) {
+                if (i % 7 == 0) {
+                    sum2 += i;
+                    count++;
+                }
+            }
+
+            document.getElementById('result2').innerHTML = "Result2: " + sum2;
+        }
+        checkSum2();
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 2</title>
+</head>
+
+<body>
+    <h2>Bài 2: Sử dụng hàm prompt() để lấy thông tin nhiệt độ hiện tại được nhập bởi người truy cập. Nếu nhiệt độ nhập vào trên 100, yêu cầu người dùng giảm nhiệt độ. Nếu nhiệt độ dưới 20, yêu cầu người dùng tăng nhiệt độ.</h2>
+    <script>
+        function checkTemperature() {
+            let temperature = parseFloat(prompt("Vui lòng nhập nhiệt độ hiện tại:"));
+
+            if (isNaN(temperature)) {
+                alert("Vui lòng nhập một số hợp lệ.");
+            } else {
+                if (temperature > 100) {
+                    alert("Nhiệt độ quá cao! Vui lòng giảm nhiệt độ.");
+                } else if (temperature < 20) {
+                    alert("Nhiệt độ quá thấp! Vui lòng tăng nhiệt độ.");
+                } else {
+                    alert("Nhiệt độ trong khoảng an toàn.");
+                }
+            }
+        }
+        checkTemperature();
+    </script>
+</body>
+
+</html>
