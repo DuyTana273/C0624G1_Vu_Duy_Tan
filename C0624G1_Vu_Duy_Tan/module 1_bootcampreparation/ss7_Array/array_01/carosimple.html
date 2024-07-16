@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Caro</title>
+</head>
+
+<body>
+    <div>
+        <h3>Caro Game Simple</h3>
+        <p id="position"></p>
+        <div>
+            <input type="button" value="Change Value" onclick="changeValue()">
+        </div>
+    </div>
+
+    <script>
+        var position = document.getElementById('position');
+
+        var arr_Board = [];
+        var arr_Value = "";
+
+        for (let i = 0; i < 5; i++) {
+            arr_Board[i] = [0, 0, 0, 0, 0];
+            arr_Value += "<br/>";
+            for (let j = 0; j < 5; j++) {
+                arr_Value += arr_Board[i][j] + "&nbsp;&nbsp;&nbsp;&nbsp;";
+            }
+        }
+        position.innerHTML = arr_Value;
+
+        function changeValue() {
+            let positionX = prompt("X: ");
+            let positionY = prompt("Y: ");
+
+            positionX = parseInt(positionX, 10);
+            positionY = parseInt(positionY, 10);
+
+            if ((positionX < 0 || positionX >= 5) || (positionY < 0 || positionY >= 5)) {
+                alert("Vui lòng nhập trong khoảng cho phép");
+                return;
+            }
+
+            let arr_Value = "";
+            arr_Board[positionX][positionY] = "x";
+            for (let i = 0; i < 5; i++) {
+                arr_Value += "<br/>";
+                for (let j = 0; j < 5; j++) {
+                    arr_Value += arr_Board[i][j] + "&nbsp;&nbsp;&nbsp;&nbsp;";
+                }
+            }
+            position.innerHTML = arr_Value;
+
+        }
+    </script>
+</body>
+
+</html>
