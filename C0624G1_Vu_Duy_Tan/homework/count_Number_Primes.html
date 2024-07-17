@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Count Number Primes</title>
+</head>
+
+<body>
+    <script>
+        let array = [1, 2, 3, 9, 5, 7, 6, 3, 5, 11, 8];
+        let count = 0;
+        let print_Array = "";
+
+        function isPrime(num) {
+            if (num <= 1) return false;
+            for (let i = 2; i <= Math.sqrt(num); i++) {
+                if (num % i === 0) return false;
+            }
+            return true;
+        }
+        for (let i = 0; i < array.length; i++) {
+            if (isPrime(array[i])) {
+                console.log(array[i]);
+                print_Array = array[i]
+                count += 1;
+            }
+        }
+
+        document.write("Số lượng số nguyên tố trong mảng: " + array + " là: " + count);
+    </script>
+</body>
+
+</html>

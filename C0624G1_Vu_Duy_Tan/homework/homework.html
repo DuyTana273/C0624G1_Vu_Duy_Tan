@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Work</title>
+</head>
+
+<body>
+
+    <script>
+        //Bài 1
+        let numbers = [-15, 2, -12, 9, -9, 7, -1, -8, -5, 5, -3];
+        let min;
+
+        //Số âm bé nhất
+        for (let i = 0; i < numbers.length; i++) {
+            if (numbers[i] % 2 !== 0) {
+                min = numbers[i];
+                break;
+            }
+        }
+
+        for (let i = 0; i < numbers.length; i++) {
+            if (numbers[i] < min && numbers[i] % 2 !== 0) {
+                min = numbers[i];
+            }
+        }
+        document.write("Trong mảng: " + numbers + " : Thì số lẻ bé nhất là " + min);
+
+        //Số âm lớn nhất
+        let maxNegative;
+        for (let i = 0; i < numbers.length; i++) {
+            if (numbers[i] < 0) {
+                maxNegative = numbers[i];
+                break;
+            }
+        }
+        for (let i = 0; i < numbers.length; i++) {
+            if (numbers[i] < 0 && numbers[i] > maxNegative) {
+                maxNegative = numbers[i];
+            }
+        }
+        document.write(" ,Số lẻ lớn nhất là " + maxNegative);
+
+        //Số lần xuất hiện số âm
+        let temp = 0;
+        for (let i = 0; i < numbers.length; i++) {
+            if (numbers[i] < 0) {
+                temp += 1;
+            }
+        }
+        document.write(" ,Tổng số lần xuất hiện số âm: " + temp + " lần");
+    </script>
+</body>
+
+</html>
