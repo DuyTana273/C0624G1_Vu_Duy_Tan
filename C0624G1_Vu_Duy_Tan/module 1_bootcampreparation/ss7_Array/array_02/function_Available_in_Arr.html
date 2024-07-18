@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Used Function Available in Array </title>
+</head>
+
+<body>
+    <script>
+        //Bài 1
+        let myColor = ["Red", "Green", "White", "Black"];
+
+        document.write('Bài 1: Result = ' + myColor.toString() + " :Cách 1 sử dụng toString()" + "<br>");
+        document.write('Bài 1: Result = ' + myColor.join('') + " :Cách 2 sử dụng join()" + "<br>" + "<br>");
+
+        //Bài 2
+        let arr_Numbers = [0, 2, 5, 4, 6, 8];
+        let result = [arr_Numbers[0]];
+
+        for (let i = 1; i < arr_Numbers.length; i++) {
+            if (arr_Numbers[i - 1] % 2 == 0 && arr_Numbers[i] % 2 === 0) {
+                result.push("-", arr_Numbers[i]);
+            } else {
+                result.push(arr_Numbers[i]);
+            }
+        }
+
+        document.write('Bài 2: Result = ' + result.join('') + "<br>" + "<br>");
+
+        //Bài 3
+        let myString = prompt("Vui lòng nhập một câu nói!");
+        let result3 = [];
+
+        for (let i = 0; i < myString.length; i++) {
+            let char = myString[i];
+            if (char >= 'A' && char <= 'Z') {
+                result3.push(char.toLowerCase());
+            } else if (char >= 'a' && char <= 'z') {
+                result3.push(char.toUpperCase());
+            } else {
+                result3.push(char);
+            }
+        }
+
+        document.write('Bài 3: Result = ' + result3.join(''));
+    </script>
+</body>
+
+</html>
