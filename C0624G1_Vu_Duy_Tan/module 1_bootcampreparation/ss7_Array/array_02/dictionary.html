@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dictionary</title>
+</head>
+
+<body>
+    <h1>Tìm kiếm từ</h1>
+    <form id="searchForm">
+        <label for="searchInput">Nhập từ tiếng Anh:</label>
+        <input type="text" id="searchInput" required>
+        <button type="submit">Tìm kiếm</button>
+    </form>
+    <p id="result"></p>
+    <script>
+        document.getElementById('searchForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            check();
+        });
+
+        function check() {
+            let str_VN = ["Quả chuối", "Quả táo"];
+            let str_ENG = ["banana", "apple"];
+            let searchInput = document.getElementById('searchInput').value;
+            const index = str_ENG.indexOf(searchInput);
+            const resultElement = document.getElementById("result");
+
+            if (index !== -1) {
+                resultElement.textContent = `Từ tiếng Việt tương ứng: ${str_VN[index]}`;
+            } else {
+                resultElement.textContent = "Không tìm thấy từ.";
+            }
+        }
+    </script>
+</body>
+
+</html>
+
+</html>
