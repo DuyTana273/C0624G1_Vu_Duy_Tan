@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tính số nguyên lớn hơn hoặc bằng 10</title>
+</head>
+
+<body>
+    <h1>Chương trình kiểm tra số nguyên</h1>
+    <form id="numberForm">
+        <label for="numbers">Nhập 10 số nguyên, cách nhau bằng dấu phẩy:</label>
+        <input type="text" id="numbers" required>
+        <button type="submit">Kiểm tra</button>
+    </form>
+    <p id="result"></p>
+
+    <script>
+        document.getElementById('numberForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            checkNumbers();
+        });
+
+        function checkNumbers() {
+            let input = document.getElementById('numbers').value;
+            let stringArray = input.split(',');
+
+            let numberArray = [];
+            for (let i = 0; i < stringArray.length; i++) {
+                let trimmedString = stringArray[i].trim();
+                let number = Number(trimmedString);
+                numberArray.push(number);
+            }
+
+
+            if (numberArray.length !== 10) {
+                document.getElementById('result').textContent = 'Vui lòng nhập đúng 10 số nguyên.';
+                return;
+            }
+
+            let count = 0;
+            for (let i = 0; i < numberArray.length; i++) {
+                if (numberArray[i] >= 10) {
+                    count++;
+                }
+            }
+
+            document.getElementById('result').textContent = `Số lượng các số nguyên lớn hơn hoặc bằng 10 là: ${count}`;
+        }
+    </script>
+</body>
+
+</html>

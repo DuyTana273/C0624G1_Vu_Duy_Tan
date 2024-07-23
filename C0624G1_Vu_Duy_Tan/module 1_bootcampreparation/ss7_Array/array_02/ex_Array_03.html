@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form id="numberForm">
+        <label for="numbers">Nhập 10 số nguyên, cách nhau bằng dấu phẩy:</label>
+        <input type="text" id="numbers">
+        <button type="submit">Kiểm tra</button>
+    </form>
+    <p id="result"></p>
+
+    <script>
+        document.getElementById('numberForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            maxNumber();
+        })
+
+        function maxNumber() {
+            let input = document.getElementById('numbers').value;
+            let stringArray = input.split(',');
+
+            let numberArray = [];
+            for (let i = 0; i < stringArray.length; i++) {
+                let trimmedString = stringArray[i].trim();
+                let number = Number(trimmedString);
+                numberArray.push(number);
+            }
+
+            if (numberArray.length !== 10) {
+                document.getElementById('result').textContent = 'Vui lòng nhập đúng 10 số nguyên.';
+                return;
+            }
+
+
+            pos = 0;
+            let max = numberArray[0];
+            for (let i = 0; i < numberArray.length; i++) {
+                if (numberArray[i] >= 10) {
+                    max = numberArray[i];
+                    pos = i;
+                }
+            }
+            document.getElementById('result').textContent = `Số nguyên lớn nhất là: ${max}` + ` tại vị trí thứ : ${pos}`;
+        }
+    </script>
+</body>
+
+</html>
