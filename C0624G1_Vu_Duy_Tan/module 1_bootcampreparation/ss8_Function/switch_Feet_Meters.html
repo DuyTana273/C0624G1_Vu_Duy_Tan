@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chuyển đổi giữa feet và meters</title>
+</head>
+
+<body>
+    <h1>Chuyển đổi giữa feet và meters</h1>
+    <div>
+        <label for="numberFeet">Nhập số feet</label>
+        <input type="number" id="numberFeet" oninput="footToMeter()" placeholder="Nhập số feet">
+        <p>Result to Meters: <span id="resultFeet"></span></p>
+    </div>
+    <div>
+        <label for="numberMeters">Nhập số meters</label>
+        <input type="number" id="numberMeters" oninput="meterToFoot()" placeholder="Nhập số meters">
+        <p>Result to Feet: <span id="resultMeters"></span></p>
+    </div>
+    <script>
+        function footToMeter() {
+            let foot = parseFloat(document.getElementById('numberFeet').value);
+            let meter = 0.305 * foot;
+            document.getElementById('resultFeet').innerHTML = meter.toFixed(2);
+        }
+
+        function meterToFoot() {
+            let meter = parseFloat(document.getElementById('numberMeters').value);
+            let foot = meter / 0.305;
+            document.getElementById('resultMeters').innerHTML = foot.toFixed(2);
+        }
+    </script>
+</body>
+
+</html>
