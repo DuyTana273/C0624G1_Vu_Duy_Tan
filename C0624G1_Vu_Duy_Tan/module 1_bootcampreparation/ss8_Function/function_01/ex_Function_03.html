@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 3</title>
+</head>
+
+<body>
+    <label for="inputNumber1">Nhập số thứ nhất:</label>
+    <input type="number" id="inputNumber1" oninput="displayResult()">
+    <br>
+    <label for="inputNumber2">Nhập số thứ hai:</label>
+    <input type="number" id="inputNumber2" oninput="displayResult()">
+    <p id="result"></p>
+    <script>
+        function checkNumbers(a, b) {
+            if (a > b) {
+                alert("Tham số thứ nhất lớn hơn tham số thứ hai");
+            }
+        }
+
+        function displayResult() {
+            let number1 = parseFloat(document.getElementById("inputNumber1").value);
+            let number2 = parseFloat(document.getElementById("inputNumber2").value);
+            let result = checkNumbers(number1, number2);
+        }
+    </script>
+</body>
+
+</html>
