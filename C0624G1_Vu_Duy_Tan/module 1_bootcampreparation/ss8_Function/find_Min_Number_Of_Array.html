@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tìm giá trị nhỏ nhất trong mảng</title>
+</head>
+
+<body>
+    <script>
+        let pos = 0;
+
+        function minArray(arr) {
+            if (arr.length == 0)
+                return -1;
+            let min = arr[0];
+
+            for (let i = 1; i < arr.length; i++) {
+                if (arr[i] < min) {
+                    min = arr[i];
+                    pos = i;
+                }
+            }
+            return min;
+        }
+        let input = prompt('Nhập mảng cách nhau bởi dấu phẩy');
+        if (input) {
+            let stringArray = input.split(',');
+            let numberArray = [];
+            for (let i = 0; i < stringArray.length; i++) {
+                let trimString = stringArray[i].trim();
+                let number = Number(trimString);
+                if (!isNaN(number)) {
+                    numberArray.push(number);
+                }
+            }
+
+            let min = minArray(numberArray);
+            alert(`Giá trị nhỏ nhất trong mảng là: ${min}` + ` tại vị trí thứ ${pos}`);
+        } else {
+            alert('Bạn chưa nhập giá trị hợp lệ');
+        }
+    </script>
+</body>
+
+</html>
