@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kiểm tra ký tự số</title>
+</head>
+
+<body>
+    <div>
+        <label for="characters">Kiểm tra ký tự số: </label>
+        <input type="text" id="characters">
+        <button onclick="check()">Check</button>
+    </div>
+    <p>Result: <span id="result"></span></p>
+
+    <script>
+        function check() {
+            // Lấy giá trị từ input
+            let input = document.getElementById('characters').value;
+
+            // Kiểm tra ký tự có phải là số không
+            if (!isNaN(input)) {
+                document.getElementById('result').innerText = 'True';
+            } else {
+                document.getElementById('result').innerText = 'False';
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tính Giai Thừa</title>
+</head>
+
+<body>
+    <label for="num">Nhập một số tính giai thừa: </label>
+    <input type="number" id="num" oninput="calculator(this.value)">
+    <p>Giai thừa là: <span id="result"></span></p>
+
+    <script>
+        function calculator(number) {
+            let num = parseInt(number);
+            let factorial = 1;
+
+            if (isNaN(num) || num < 0) {
+                document.getElementById('result').innerText = 'Vui lòng nhập số nguyên dương';
+                return;
+            }
+
+            for (let i = 1; i <= num; i++) {
+                factorial *= i;
+            }
+
+            document.getElementById('result').innerText = factorial;
+        }
+    </script>
+</body>
+
+</html>

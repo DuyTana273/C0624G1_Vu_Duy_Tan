@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let person = {
+            name: 'Tân',
+            age: 24,
+            address: {
+                city: 'Thủ Đức',
+                zip: '70000'
+            },
+
+            greet: function() {
+                return `Hello, my name is ${this.name}.`;
+            },
+
+            info: function() {
+                return `Name: ${this.name}, Age: ${this.age}, City: ${this.address.city}, ZIP: ${this.address.zip}`;
+            }
+        };
+
+        // Truy xuất thuộc tính và phương thức bằng cách sử dụng dấu chấm
+        console.log(person.name); // Tân
+        console.log(person.age); // 24
+        console.log(person.address.city); // Thủ Đức
+        console.log(person.address.zip); // 70000
+
+        console.log(person.greet()); // Hello, my name is Tân.
+        console.log(person.info()); // Name: Tân, Age: 24, City: Thủ Đức, ZIP: 70000
+
+        // Truy xuất thuộc tính và phương thức bằng cách sử dụng ngoặc vuông
+        console.log(person['name']); // Tân
+        console.log(person['age']); // 24
+        console.log(person['address']['city']); // Thủ Đức
+        console.log(person['address']['zip']); // 70000
+
+        console.log(person['greet']()); // Hello, my name is Tân.
+        console.log(person['info']()); // Name: Tân, Age: 24, City: Thủ Đức, ZIP: 70000
+    </script>
+</body>
+
+</html>

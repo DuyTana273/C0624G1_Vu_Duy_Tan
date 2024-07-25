@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 2t</title>
+</head>
+
+<body>
+    <label for="numR">Nhập bán kính: </label>
+    <input type="number" id="numR" oninput="calculator(this.value)">
+    <p>Chu vi hình tròn = <span id="result_Perimeter"></span></p>
+    <p>Diện tích hình tròn = <span id="result_Area"></span></p>
+
+    <script>
+        function calculator(number) {
+            let num = parseFloat(number);
+            let perimeter = 2 * 3.14 * number;
+            let area = 3.14 * number * number;
+            document.getElementById('result_Perimeter').innerText = perimeter;
+            document.getElementById('result_Area').innerText = area;
+        }
+    </script>
+</body>
+
+</html>

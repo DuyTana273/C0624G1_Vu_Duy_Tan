@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 7</title>
+</head>
+
+<body>
+    <h2>Đổi chỗ 2 số</h2>
+    <div>
+        <label for="numA">Số thứ nhất</label>
+        <input type="number" id="numA">
+    </div>
+    <div>
+        <label for="numB">Số thứ hai</label>
+        <input type="number" id="numB">
+    </div>
+    <button onclick="swap()">Swap</button>
+    <p>Result swap: <span id="result"></span></p>
+
+    <script>
+        function swap() {
+            // Lấy giá trị từ các trường input
+            let numA = document.getElementById('numA').value;
+            let numB = document.getElementById('numB').value;
+
+            // Đổi chỗ giá trị
+            let temp = numA;
+            numA = numB;
+            numB = temp;
+
+            // Cập nhật giá trị trong các trường input và hiển thị kết quả
+            document.getElementById('numA').value = numA;
+            document.getElementById('numB').value = numB;
+            document.getElementById('result').innerHTML = "Số thứ nhất: " + numA + " và Số thứ hai: " + numB;
+        }
+    </script>
+</body>
+
+</html>
