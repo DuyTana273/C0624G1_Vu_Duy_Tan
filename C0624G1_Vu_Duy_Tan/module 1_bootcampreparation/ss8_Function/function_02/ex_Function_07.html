@@ -22,16 +22,13 @@
 
     <script>
         function swap() {
-            // Lấy giá trị từ các trường input
             let numA = document.getElementById('numA').value;
             let numB = document.getElementById('numB').value;
 
-            // Đổi chỗ giá trị
             let temp = numA;
             numA = numB;
             numB = temp;
 
-            // Cập nhật giá trị trong các trường input và hiển thị kết quả
             document.getElementById('numA').value = numA;
             document.getElementById('numB').value = numB;
             document.getElementById('result').innerHTML = "Số thứ nhất: " + numA + " và Số thứ hai: " + numB;
