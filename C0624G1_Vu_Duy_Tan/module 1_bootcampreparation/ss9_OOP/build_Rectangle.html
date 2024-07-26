@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rectangle Class</title>
+</head>
+
+<body>
+    <h1>Rectangle Example</h1>
+    <canvas id="rectangleCanvas" width="500" height="500" style="border:1px solid #000000;"></canvas>
+    <p id="dimensions"></p>
+    <p id="area"></p>
+    <p id="perimeter"></p>
+
+    <script>
+        class Rectangle {
+            constructor(length, width) {
+                this.length = length;
+                this.width = width;
+            }
+
+            getArea() {
+                return this.length * this.width;
+            }
+
+            getPerimeter() {
+                return 2 * (this.length + this.width);
+            }
+
+            draw() {
+                let canvas = document.getElementById('rectangleCanvas');
+                let context = canvas.getContext('2d');
+                context.clearRect(0, 0, canvas.width, canvas.height);
+                context.strokeRect(50, 50, this.width, this.length);
+            }
+        }
+
+        let rect = new Rectangle(100, 200);
+        rect.draw();
+
+        document.getElementById('dimensions').textContent = `Chiều dài: ${rect.length}, Chiều rộng: ${rect.width}`;
+        document.getElementById('area').textContent = `Diện tích: ${rect.getArea()}`;
+        document.getElementById('perimeter').textContent = `Chu vi: ${rect.getPerimeter()}`;
+        setTimeout(() => {
+            rect.length = 150;
+            rect.width = 250;
+            rect.draw();
+
+            document.getElementById('dimensions').textContent = `Chiều dài: ${rect.length}, Chiều rộng: ${rect.width}`;
+            document.getElementById('area').textContent = `Diện tích: ${rect.getArea()}`;
+            document.getElementById('perimeter').textContent = `Chu vi: ${rect.getPerimeter()}`;
+        }, 2000);
+    </script>
+</body>
+
+</html>

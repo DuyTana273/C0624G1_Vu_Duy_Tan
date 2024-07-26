@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đếm số lớn hơn hoặc bằng 10</title>
+</head>
+
+<body>
+    <h2>Nhập số nguyên, cách nhau bởi dấu phẩy:</h2>
+    <div>
+        <label for="numString">Nhập số:</label>
+        <input type="text" id="numString" placeholder="Ví dụ: 5,12,7,18,3,11,15,4,9,20" oninput="convert()">
+    </div>
+    <p>Số lượng số nguyên lớn hơn hoặc bằng 10 là: <span id="resultCount"></span></p>
+    <p>Vị trí và giá trị các số đó là: <span id="resultDetails"></span></p>
+
+    <script>
+        function convert() {
+            let inputString = document.getElementById('numString').value;
+            let numberArray = inputString.split(',').map(Number);
+
+            for (let i = 0; i < numberArray.length; i++) {
+                if (isNaN(numberArray[i])) {
+                    alert('Vui lòng nhập lại, chỉ chấp nhận các số nguyên');
+                    return;
+                }
+            }
+
+            let count = 0;
+            let details = [];
+
+            for (let i = 0; i < numberArray.length; i++) {
+                if (numberArray[i] >= 10) {
+                    count++;
+                    details.push(`Vị trí ${i}: ${numberArray[i]}`);
+                }
+            }
+
+            document.getElementById('resultCount').innerText = count;
+            document.getElementById('resultDetails').innerText = details.join(', ');
+        }
+    </script>
+</body>
+
+</html>
