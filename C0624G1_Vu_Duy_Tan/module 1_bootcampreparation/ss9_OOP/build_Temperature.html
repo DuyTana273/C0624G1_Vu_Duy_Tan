@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Build Temperature</title>
+</head>
+
+<body>
+    <h1>Chuyển đổi nhiệt độ</h1>
+    <label for="celsiusInput">Nhập nhiệt độ (°C):</label>
+    <input type="number" id="celsiusInput" oninput="updateTemperature()">
+    <p id="fahrenheit"></p>
+    <p id="kelvin"></p>
+
+    <script>
+        class Temperature {
+            constructor(celsius) {
+                if (celsius < -273) {
+                    throw new Error("Nhiệt độ không thể nhỏ hơn -273°C");
+                }
+                this.celsius = celsius;
+            }
+
+            toFahrenheit() {
+                return (this.celsius * 9 / 5) + 32;
+            }
+
+            toKelvin() {
+                return this.celsius + 273.15;
+            }
+        }
+
+        function updateTemperature() {
+            let celsiusValue = parseFloat(document.getElementById('celsiusInput').value);
+
+            if (isNaN(celsiusValue)) {
+                document.getElementById('fahrenheit').innerText = "Nhiệt độ không hợp lệ";
+                document.getElementById('kelvin').innerText = "";
+                return;
+            }
+
+            let temp;
+            try {
+                temp = new Temperature(celsiusValue);
+            } catch (error) {
+                document.getElementById('fahrenheit').innerText = error.message;
+                document.getElementById('kelvin').innerText = "";
+                return;
+            }
+
+            let fahrenheit = temp.toFahrenheit();
+            let kelvin = temp.toKelvin();
+            document.getElementById('fahrenheit').innerText = `Nhiệt độ tương ứng (°F): ${fahrenheit}`;
+            document.getElementById('kelvin').innerText = `Nhiệt độ tương ứng (K): ${kelvin}`;
+        }
+    </script>
+</body>
+
+</html>
