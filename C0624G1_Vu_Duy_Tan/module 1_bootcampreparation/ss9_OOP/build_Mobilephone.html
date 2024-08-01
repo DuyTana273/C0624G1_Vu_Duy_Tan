@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobile Phone</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        
+        .container {
+            margin: 20px;
+        }
+        
+        .log {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+            max-height: 300px;
+            overflow-y: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Quản lý Điện thoại</h1>
+        <button onclick="nokia.turnOn()">Bật Nokia</button>
+        <button onclick="nokia.composeMessage('Chào iPhone!')">Soạn tin nhắn cho iPhone</button>
+        <button onclick="nokia.sendMessage(iphone)">Gửi tin nhắn từ Nokia đến iPhone</button>
+        <button onclick="iphone.turnOn()">Bật iPhone</button>
+        <button onclick="iphone.viewInbox()">Xem hộp thư đến của iPhone</button>
+        <div id="log" class="log"></div>
+    </div>
+    <script>
+        function log(message) {
+            const logElement = document.getElementById('log');
+            logElement.innerHTML += `<p>${message}</p>`;
+        }
+
+        class Mobile {
+            constructor(name) {
+                this.name = name;
+                this.battery = 100;
+                this.isOn = false;
+                this.draftMessage = "";
+                this.inbox = [];
+                this.sentMessages = [];
+            }
+
+            turnOn() {
+                if (!this.isOn) {
+                    this.isOn = true;
+                    log(`${this.name} đã được bật.`);
+                } else {
+                    log(`${this.name} đã bật rồi.`);
+                }
+            }
+
+            turnOff() {
+                if (this.isOn) {
+                    this.isOn = false;
+                    log(`${this.name} đã được tắt.`);
+                } else {
+                    log(`${this.name} đã tắt rồi.`);
+                }
+            }
+
+            chargeBattery(amount) {
+                if (this.isOn) {
+                    this.battery = Math.min(100, this.battery + amount);
+                    log(`${this.name} đã được sạc thêm ${amount} đơn vị pin.`);
+                } else {
+                    log(`${this.name} cần phải bật trước khi sạc.`);
+                }
+            }
+
+            composeMessage(message) {
+                if (this.isOn) {
+                    this.draftMessage = message;
+                    log(`Tin nhắn đang soạn thảo: ${this.draftMessage}`);
+                    this.battery -= 1;
+                } else {
+                    log(`${this.name} cần phải bật trước khi soạn tin nhắn.`);
+                }
+            }
+
+            sendMessage(recipient) {
+                if (this.isOn) {
+                    if (this.draftMessage) {
+                        recipient.receiveMessage(this.draftMessage);
+                        this.sentMessages.push(this.draftMessage);
+                        this.draftMessage = "";
+                        this.battery -= 1;
+                        log(`Tin nhắn đã gửi tới ${recipient.name}.`);
+                    } else {
+                        log("Không có tin nhắn để gửi.");
+                    }
+                } else {
+                    log(`${this.name} cần phải bật trước khi gửi tin nhắn.`);
+                }
+            }
+
+            receiveMessage(message) {
+                if (this.isOn) {
+                    this.inbox.push(message);
+                    this.battery -= 1;
+                } else {
+                    log(`${this.name} cần phải bật trước khi nhận tin nhắn.`);
+                }
+            }
+
+            viewInbox() {
+                if (this.isOn) {
+                    log("Hộp thư đến:");
+                    this.inbox.forEach((message, index) => log(`${index + 1}: ${message}`));
+                    this.battery -= 1;
+                } else {
+                    log(`${this.name} cần phải bật trước khi xem hộp thư đến.`);
+                }
+            }
+
+            viewSentMessages() {
+                if (this.isOn) {
+                    log("Tin nhắn đã gửi:");
+                    this.sentMessages.forEach((message, index) => log(`${index + 1}: ${message}`));
+                    this.battery -= 1;
+                } else {
+                    log(`${this.name} cần phải bật trước khi xem tin nhắn đã gửi.`);
+                }
+            }
+        }
+
+        const nokia = new Mobile("Nokia");
+        const iphone = new Mobile("iPhone");
+
+        nokia.turnOn();
+        nokia.composeMessage("Chào iPhone!");
+        nokia.sendMessage(iphone);
+
+        iphone.turnOn();
+        iphone.viewInbox();
+    </script>
+</body>
+
+</html>
