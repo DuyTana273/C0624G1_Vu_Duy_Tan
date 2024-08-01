@@ -182,6 +182,9 @@ function moveBird(e) {
         if (!gameStarted) {
             backgroundMusic.play();
             gameStarted = true;
+            bird.velocityY = bird.flapStrength;
+            jumpSound.currentTime = 0;
+            jumpSound.play();
         }
 
         // Reset trò chơi
@@ -193,6 +196,10 @@ function moveBird(e) {
             gameOver = false;
             backgroundMusic.play();
             velocityX = -2
+            gravity = 0.3;
+            bird.velocityY = bird.flapStrength;
+            jumpSound.currentTime = 0;
+            jumpSound.play();
         }
     }
 }
@@ -208,22 +215,36 @@ function detectCollision(a, b) {
 // ********** HÀM KIỂM TRA LEVEL **********
 
 function level() {
-    if (score >= 30) {
+    if (score >= 40) {
+        velocityX = -15;
+        gravity = 0.9;
+    } else if (score >= 40) {
+        velocityX = -10;
+        gravity = 0.1;
+    } else if (score >= 30) {
         velocityX = -4;
+        gravity = 0.15
     } else if (score >= 20) {
         velocityX = -3.5;
+        gravity = 0.2;
     } else if (score >= 10) {
         velocityX = -3;
+        gravity = 0.23;
     } else if (score >= 5) {
         velocityX = -2.5;
-    } else if (score >= 1) {
+        gravity = 0.25;
+    } else if (score >= 2) {
         velocityX = -2;
         flapStrength = -11
+        gravity = 0.28;
     } else if (score = 0) {
         velocityX
         flapStrength
+        gravity
     }
 }
+
+
 
 // ********** HÀM VẼ MÀN HÌNH BẮT ĐẦU **********
 function drawStartScreen() {
