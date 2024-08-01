@@ -233,7 +233,7 @@ function level() {
     } else if (score >= 5) {
         velocityX = -2.5;
         gravity = 0.25;
-    } else if (score >= 2) {
+    } else if (score >= 1) {
         velocityX = -2;
         flapStrength = -11
         gravity = 0.28;
