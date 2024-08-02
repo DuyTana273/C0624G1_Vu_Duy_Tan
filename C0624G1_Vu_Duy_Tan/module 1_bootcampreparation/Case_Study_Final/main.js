@@ -215,7 +215,7 @@ function detectCollision(a, b) {
 // ********** HÀM KIỂM TRA LEVEL **********
 
 function level() {
-    if (score >= 40) {
+    if (score >= 60) {
         velocityX = -15;
         gravity = 0.9;
     } else if (score >= 40) {

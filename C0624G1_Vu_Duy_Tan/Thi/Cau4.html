@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 4</title>
+</head>
+
+<body>
+    <script>
+        class Phone {
+            code;
+            name;
+            brand;
+            price;
+
+            constructor(code, name, brand, price) {
+                this.code = code;
+                this.name = name;
+                this.brand = brand;
+                this.price = price;
+            }
+
+            get code() {
+                return this.code;
+            }
+
+            set code(value) {
+                this.code = value;
+            }
+
+            get name() {
+                return this.name;
+            }
+
+            set name(value) {
+                this.name = value;
+            }
+
+            get brand() {
+                return this.brand;
+            }
+
+            set brand(value) {
+                this.brand = value;
+            }
+
+            get price() {
+                return this.price;
+            }
+
+            set price(value) {
+                this.price = value;
+            }
+
+            toString() {
+                return `Code: ${this.code}, Name: ${this.name}, Brand: ${this.brand}, Price: $${this.price}`;
+            }
+        }
+
+        const phone = new Phone('12345', 'iPhone 14', 'Apple', 999);
+
+        console.log(phone.toString());
+    </script>
+</body>
+
+</html>

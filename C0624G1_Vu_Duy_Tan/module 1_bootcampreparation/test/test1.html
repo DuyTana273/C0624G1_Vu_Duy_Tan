@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <h1>JavaScript Arrays</h1>
+    <h2>The sort() Method</h2>
+    <p>The sort() method sorts the elements of an array.</p>
+
+    <p id="demo"></p>
+
+    <script>
+        // Create an Array
+        const points = [40, 100, 1, 5, 25, 10];
+
+        // Sort the Array
+        points.sort(function(a, b) {
+            return b - a
+        });
+
+        // Display the Array
+        document.getElementById("demo").innerHTML = points;
+    </script>
+
+</body>
+
+</html>

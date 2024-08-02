@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 3</title>
+</head>
+
+<body>
+    <h2>Nhập mảng số nguyên, cách nhau bởi dấu phẩy</h2>
+    <input type="text" id="input">
+    <button onclick="findPrime()">Find Primes</button>
+    <p id="resultArray"></p>
+    <p id="result"></p>
+
+    <script>
+        function findPrime() {
+            let result = document.getElementById('result')
+            let resultArr = document.getElementById('resultArray')
+
+            function isPrime(num) {
+                if (num <= 1) return false;
+                for (let i = 2; i <= Math.sqrt(num); i++) {
+                    if (num % i === 0)
+                        return false;
+                }
+                return true;
+            }
+
+            let inputString = document.getElementById('input').value;
+            let stringArray = inputString.split(',');
+            let numbers = stringArray.map(function(num) {
+                return parseInt(num.trim(), 10);
+            });
+            let primes = numbers.filter(num => isPrime(num));
+            primes.sort((a, b) => a - b);
+
+            resultArr.textContent = 'Mảng là: ' + '[' + numbers + ']';
+            result.textContent = 'Số nguyên tố trong mảng là: ' + primes.join(', ');
+        }
+    </script>
+</body>
+
+</html>
