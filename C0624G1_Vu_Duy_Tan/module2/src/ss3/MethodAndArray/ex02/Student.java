@@ -1,4 +1,4 @@
-package ss3.method.ex02;
+package ss3.MethodAndArray.ex02;
 
 public class Student {
     public static void main(String[] args) {

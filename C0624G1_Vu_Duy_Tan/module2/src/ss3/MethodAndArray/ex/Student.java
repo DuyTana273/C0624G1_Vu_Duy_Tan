@@ -1,4 +1,4 @@
-package ss3.method.ex;
+package ss3.MethodAndArray.ex;
 
 public class Student {
     private int id;
