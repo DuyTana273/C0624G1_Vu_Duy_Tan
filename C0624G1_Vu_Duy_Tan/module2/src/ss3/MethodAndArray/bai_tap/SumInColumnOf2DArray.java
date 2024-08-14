@@ -88,6 +88,8 @@ public class SumInColumnOf2DArray {
             }
         } while (!validInput);
 
+
+
         double sum = 0;
         for (int i = 0; i < rows; i++) {
             sum += matrix[i][column];
