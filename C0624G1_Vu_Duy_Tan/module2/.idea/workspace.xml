@@ -5,28 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c2d0f81d-a4bf-418f-9a3f-6af25e3d6e8c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/ss3_MethodAndArray/bai_tap/MainDiagonalOfMatrix.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ss3_MethodAndArray/bai_tap/CountCharacterInString.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ss3/MethodAndArray/bai_tap/AddElementArray.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ss3_MethodAndArray/bai_tap/AddElementArray.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ss3/MethodAndArray/bai_tap/CountNumberOfStudents.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ss3_MethodAndArray/bai_tap/CountNumberOfStudents.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ss3/MethodAndArray/bai_tap/DeleteElementArray.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ss3_MethodAndArray/bai_tap/DeleteElementArray.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ss3/MethodAndArray/bai_tap/MaxInMatrix.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ss3_MethodAndArray/bai_tap/MaxInMatrix.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ss3/MethodAndArray/bai_tap/MergerArrays.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ss3_MethodAndArray/bai_tap/MergerArrays.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ss3/MethodAndArray/bai_tap/MinInArray.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ss3_MethodAndArray/bai_tap/MinInArray.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ss3/MethodAndArray/bai_tap/SumInColumnOf2DArray.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ss3_MethodAndArray/bai_tap/SumInColumnOf2DArray.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ss3/MethodAndArray/ex/PassByReference.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ss3_MethodAndArray/ex/PassByReference.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ss3/MethodAndArray/ex/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ss3_MethodAndArray/ex/Student.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ss3/MethodAndArray/ex02/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ss3_MethodAndArray/ex02/Student.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ss3/MethodAndArray/thuc_hanh/ConvertTemperature.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ss3_MethodAndArray/thuc_hanh/ConvertTemperature.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ss3/MethodAndArray/thuc_hanh/MaxInArray.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ss3_MethodAndArray/thuc_hanh/MaxInArray.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ss3/MethodAndArray/thuc_hanh/MinInArray_UseMethod.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ss3_MethodAndArray/thuc_hanh/MinInArray_UseMethod.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ss3/MethodAndArray/thuc_hanh/ReverseArray.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ss3_MethodAndArray/thuc_hanh/ReverseArray.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ss3/MethodAndArray/thuc_hanh/StudentArray.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ss3_MethodAndArray/thuc_hanh/StudentArray.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ss5/AccessModifier/Ex/Ex01/Employee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ss5_AccessModifier/Ex/Ex01/Employee.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ss5/AccessModifier/Ex/Ex01/EmployeeManagement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ss5_AccessModifier/Ex/Ex01/EmployeeManagement.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ss5/AccessModifier/Ex/Ex02/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ss5_AccessModifier/Ex/Ex02/Student.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ss5/AccessModifier/Ex/Ex02/StudentManagement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ss5_AccessModifier/Ex/Ex02/StudentManagement.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ss5/AccessModifier/Ex/Ex02/StudentManagement2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ss5_AccessModifier/Ex/Ex02/StudentManagement2.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,6 +46,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Application.BodyMassIndex.executor": "Run",
+    "Application.CountCharacterInString.executor": "Run",
     "Application.MainDiagonalOfMatrix.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
@@ -127,7 +108,7 @@
       <option name="presentableId" value="Default" />
       <updated>1723562076304</updated>
       <workItem from="1723562076916" duration="2047000" />
-      <workItem from="1723599500471" duration="5829000" />
+      <workItem from="1723599500471" duration="6446000" />
     </task>
     <servers />
   </component>
