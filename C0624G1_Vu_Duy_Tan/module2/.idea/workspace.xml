@@ -5,62 +5,40 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c2d0f81d-a4bf-418f-9a3f-6af25e3d6e8c" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/kotlinc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/KotlinJavaRuntime.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/material_theme_project_new.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/material_theme_project_new.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module2.iml" beforeDir="false" afterPath="$PROJECT_DIR$/module2.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ss1_introduction_java/bai_tap/AppCurrencyConverter/AppCurrencyConverter.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ss1_introduction_java/bai_tap/ReadingNumberToWord/ReadingNumerToWord.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ss1_introduction_java/bai_tap/ShowGreeting/ShowGreeting.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ss1_introduction_java/bai_tap/test.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ss1_introduction_java/thuc_hanh/BodyMassIndex.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ss1_introduction_java/thuc_hanh/DayOfMonth.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ss1_introduction_java/thuc_hanh/LeapYearCalculator.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ss1_introduction_java/thuc_hanh/LinearEquationResolver.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ss1_introduction_java/thuc_hanh/Rectangle.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ss1_introduction_java/thuc_hanh/SystemTime.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ss1_introduction_java/thuc_hanh/VariableDataType.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ss2_Loop/Ex/Ex01/UserInputIntoArray.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ss2_Loop/Ex/Ex02/RandomInputIntoArray.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ss2_Loop/Ex/Ex03/TotalAllElementInArray.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ss2_Loop/Ex/Ex04/MaxInArray.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ss2_Loop/Ex/Ex05/RandomArray.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ss2_Loop/bai_tap/FindPrime/FindPrime.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ss2_Loop/bai_tap/ShowGeometry/ShowGeometry.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ss2_Loop/bai_tap/ShowPrimeLessThan100/NumbersPrimeLessThan100.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ss2_Loop/thuc_hanh/CalculatorInterest/Intersest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ss2_Loop/thuc_hanh/CheckPrime/Prime.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ss2_Loop/thuc_hanh/DesignMenu/Geometry.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ss2_Loop/thuc_hanh/FindUCLN/GreatestCommonFactor.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ss3/MethodAndArray/bai_tap/AddElementArray.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ss3/MethodAndArray/bai_tap/CountNumberOfStudents.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ss3/MethodAndArray/bai_tap/DeleteElementArray.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ss3/MethodAndArray/bai_tap/MaxInMatrix.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ss3/MethodAndArray/bai_tap/MergerArrays.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ss3/MethodAndArray/bai_tap/MinInArray.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ss3/MethodAndArray/bai_tap/SumInColumnOf2DArray.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ss3/MethodAndArray/ex/PassByReference.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ss3/MethodAndArray/ex/Student.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ss3/MethodAndArray/ex02/Student.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ss3/MethodAndArray/thuc_hanh/ConvertTemperature.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ss3/MethodAndArray/thuc_hanh/MaxInArray.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ss3/MethodAndArray/thuc_hanh/MinInArray_UseMethod.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ss3/MethodAndArray/thuc_hanh/ReverseArray.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ss3/MethodAndArray/thuc_hanh/StudentArray.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ss5/AccessModifier/Ex/Ex01/Employee.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ss5/AccessModifier/Ex/Ex01/EmployeeManagement.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ss5/AccessModifier/Ex/Ex02/Student.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ss5/AccessModifier/Ex/Ex02/StudentManagement.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ss5/AccessModifier/Ex/Ex02/StudentManagement2.java" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ss3_MethodAndArray/bai_tap/MainDiagonalOfMatrix.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ss3/MethodAndArray/bai_tap/AddElementArray.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ss3_MethodAndArray/bai_tap/AddElementArray.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ss3/MethodAndArray/bai_tap/CountNumberOfStudents.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ss3_MethodAndArray/bai_tap/CountNumberOfStudents.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ss3/MethodAndArray/bai_tap/DeleteElementArray.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ss3_MethodAndArray/bai_tap/DeleteElementArray.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ss3/MethodAndArray/bai_tap/MaxInMatrix.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ss3_MethodAndArray/bai_tap/MaxInMatrix.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ss3/MethodAndArray/bai_tap/MergerArrays.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ss3_MethodAndArray/bai_tap/MergerArrays.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ss3/MethodAndArray/bai_tap/MinInArray.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ss3_MethodAndArray/bai_tap/MinInArray.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ss3/MethodAndArray/bai_tap/SumInColumnOf2DArray.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ss3_MethodAndArray/bai_tap/SumInColumnOf2DArray.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ss3/MethodAndArray/ex/PassByReference.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ss3_MethodAndArray/ex/PassByReference.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ss3/MethodAndArray/ex/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ss3_MethodAndArray/ex/Student.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ss3/MethodAndArray/ex02/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ss3_MethodAndArray/ex02/Student.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ss3/MethodAndArray/thuc_hanh/ConvertTemperature.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ss3_MethodAndArray/thuc_hanh/ConvertTemperature.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ss3/MethodAndArray/thuc_hanh/MaxInArray.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ss3_MethodAndArray/thuc_hanh/MaxInArray.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ss3/MethodAndArray/thuc_hanh/MinInArray_UseMethod.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ss3_MethodAndArray/thuc_hanh/MinInArray_UseMethod.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ss3/MethodAndArray/thuc_hanh/ReverseArray.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ss3_MethodAndArray/thuc_hanh/ReverseArray.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ss3/MethodAndArray/thuc_hanh/StudentArray.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ss3_MethodAndArray/thuc_hanh/StudentArray.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ss5/AccessModifier/Ex/Ex01/Employee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ss5_AccessModifier/Ex/Ex01/Employee.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ss5/AccessModifier/Ex/Ex01/EmployeeManagement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ss5_AccessModifier/Ex/Ex01/EmployeeManagement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ss5/AccessModifier/Ex/Ex02/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ss5_AccessModifier/Ex/Ex02/Student.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ss5/AccessModifier/Ex/Ex02/StudentManagement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ss5_AccessModifier/Ex/Ex02/StudentManagement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ss5/AccessModifier/Ex/Ex02/StudentManagement2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ss5_AccessModifier/Ex/Ex02/StudentManagement2.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
@@ -88,8 +66,10 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Application.BodyMassIndex.executor": "Run",
+    "Application.MainDiagonalOfMatrix.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/vuduy/Desktop/CodeGym/C0624G1_Vu_Duy_Tan/module2/src/ss8_CleanCodeAndRefactoring",
     "node.js.detected.package.eslint": "true",
@@ -147,7 +127,7 @@
       <option name="presentableId" value="Default" />
       <updated>1723562076304</updated>
       <workItem from="1723562076916" duration="2047000" />
-      <workItem from="1723599500471" duration="2547000" />
+      <workItem from="1723599500471" duration="5829000" />
     </task>
     <servers />
   </component>

@@ -1,8 +1,8 @@
-package ss3.MethodAndArray.bai_tap;
+package ss3_MethodAndArray.bai_tap;
 
 import java.util.Scanner;
 
-public class SumInColumnOf2DArray {
+public class MainDiagonalOfMatrix {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int rows = 0;
@@ -33,6 +33,10 @@ public class SumInColumnOf2DArray {
                 cols = sc.nextInt();
                 if (cols >= 1 && cols <= 10) {
                     validInput = true;
+                    if (rows != cols) {
+                        System.out.println("Please enter number rows = number cols");
+                        validInput = false;
+                    }
                 } else {
                     System.out.println("Number of columns must be between 1 and 10.");
                 }
@@ -40,6 +44,7 @@ public class SumInColumnOf2DArray {
                 System.out.println("Invalid input. Please enter an integer.");
                 sc.next();
             }
+
         } while (!validInput);
 
         double[][] matrix = new double[rows][cols];
@@ -70,31 +75,10 @@ public class SumInColumnOf2DArray {
             System.out.println();
         }
 
-        //Kiểm tra và nhập cột cần tính tổng
-        System.out.print("Enter column number to sum (0 to " + (cols - 1) + "): ");
-        int column = -1;
-        validInput = false;
-        do {
-            if (sc.hasNextInt()) {
-                column = sc.nextInt();
-                if (column >= 0 && column < cols) {
-                    validInput = true;
-                } else {
-                    System.out.println("Column number must be between 0 and " + (cols - 1) + ".");
-                }
-            } else {
-                System.out.println("Invalid input. Please enter an integer.");
-                sc.next();
-            }
-        } while (!validInput);
-
-
-
         double sum = 0;
-        for (int i = 0; i < rows; i++) {
-            sum += matrix[i][column];
+        for (int i = 0; i < matrix.length; i++) {
+            sum += matrix[i][i];
         }
-
-        System.out.printf("The sum of column %d is %.2f%n", column, sum);
+        System.out.println("Total Main Diagonal of matrix is: " + sum);
     }
 }

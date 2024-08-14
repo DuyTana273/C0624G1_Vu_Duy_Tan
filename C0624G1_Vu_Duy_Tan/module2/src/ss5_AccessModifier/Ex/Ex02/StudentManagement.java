@@ -1,4 +1,4 @@
-package ss5.AccessModifier.Ex.Ex02;
+package ss5_AccessModifier.Ex.Ex02;
 
 public class StudentManagement {
     public static void main(String[] args) {

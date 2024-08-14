@@ -1,4 +1,4 @@
-package ss5.AccessModifier.Ex.Ex01;
+package ss5_AccessModifier.Ex.Ex01;
 
 public class Employee {
         private long id;

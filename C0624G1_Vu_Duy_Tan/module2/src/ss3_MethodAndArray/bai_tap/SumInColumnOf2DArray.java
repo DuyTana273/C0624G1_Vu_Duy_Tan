@@ -1,8 +1,8 @@
-package ss3.MethodAndArray.bai_tap;
+package ss3_MethodAndArray.bai_tap;
 
 import java.util.Scanner;
 
-public class MaxInMatrix {
+public class SumInColumnOf2DArray {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int rows = 0;
@@ -61,28 +61,40 @@ public class MaxInMatrix {
             }
         }
 
-        //Kiểm tra phần tử Max
-        double maxValue = matrix[0][0];
-        int maxRow = 0;
-        int maxCol = 0;
-
-        for (int i = 0; i < rows; i++) {
-            for (int j = 0; j < cols; j++) {
-                if (matrix[i][j] > maxValue) {
-                    maxValue = matrix[i][j];
-                    maxRow = i;
-                    maxCol = j;
-                }
-            }
-        }
-
-        System.out.println("========MATRIX========");
+        //In mảng 2 chiều
+        System.out.println("=======MATRIX=======");
         for (int i = 0; i < rows; i++) {
             for (int j = 0; j < cols; j++) {
                 System.out.printf("%.2f\t", matrix[i][j]);
             }
             System.out.println();
         }
-        System.out.printf("Max value: %.2f at position (%d, %d)\n", maxValue, maxRow, maxCol);
+
+        //Kiểm tra và nhập cột cần tính tổng
+        System.out.print("Enter column number to sum (0 to " + (cols - 1) + "): ");
+        int column = -1;
+        validInput = false;
+        do {
+            if (sc.hasNextInt()) {
+                column = sc.nextInt();
+                if (column >= 0 && column < cols) {
+                    validInput = true;
+                } else {
+                    System.out.println("Column number must be between 0 and " + (cols - 1) + ".");
+                }
+            } else {
+                System.out.println("Invalid input. Please enter an integer.");
+                sc.next();
+            }
+        } while (!validInput);
+
+
+
+        double sum = 0;
+        for (int i = 0; i < rows; i++) {
+            sum += matrix[i][column];
+        }
+
+        System.out.printf("The sum of column %d is %.2f%n", column, sum);
     }
 }
