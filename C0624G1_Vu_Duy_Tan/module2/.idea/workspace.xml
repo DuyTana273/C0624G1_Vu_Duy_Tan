@@ -5,8 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c2d0f81d-a4bf-418f-9a3f-6af25e3d6e8c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/ss4_ClassAndObject/thuc_hanh/Rectangle/Calculator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ss4_ClassAndObject/thuc_hanh/Rectangle/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ss4_ClassAndObject/bai_tap/QuadraticEquation/QuadraticEquation.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -50,6 +49,7 @@
     "Application.CountCharacterInString.executor": "Run",
     "Application.Main.executor": "Run",
     "Application.MainDiagonalOfMatrix.executor": "Run",
+    "Application.QuadraticEquation.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
@@ -110,7 +110,7 @@
       <option name="presentableId" value="Default" />
       <updated>1723562076304</updated>
       <workItem from="1723562076916" duration="2047000" />
-      <workItem from="1723599500471" duration="8390000" />
+      <workItem from="1723599500471" duration="10629000" />
     </task>
     <servers />
   </component>
