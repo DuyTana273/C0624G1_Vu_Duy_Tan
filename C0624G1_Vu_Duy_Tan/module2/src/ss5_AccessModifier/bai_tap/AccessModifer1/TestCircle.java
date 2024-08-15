@@ -1,4 +1,4 @@
-package ss5_AccessModifier.bai_tap.AccessModifer;
+package ss5_AccessModifier.bai_tap.AccessModifer1;
 
 public class TestCircle {
     private double radius = 1.0;
