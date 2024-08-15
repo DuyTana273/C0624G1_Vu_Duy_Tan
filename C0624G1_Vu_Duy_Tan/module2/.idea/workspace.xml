@@ -5,7 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c2d0f81d-a4bf-418f-9a3f-6af25e3d6e8c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/ss4_ClassAndObject/bai_tap/Fan/Fan.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ss4_ClassAndObject/Ex/Test.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ss5_AccessModifier/thuc_hanh/StaticMethod/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ss5_AccessModifier/thuc_hanh/StaticMethod/Student.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -97,7 +99,7 @@
       <updated>1723562076304</updated>
       <workItem from="1723562076916" duration="2047000" />
       <workItem from="1723599500471" duration="11125000" />
-      <workItem from="1723686239513" duration="4375000" />
+      <workItem from="1723686239513" duration="7322000" />
     </task>
     <servers />
   </component>
