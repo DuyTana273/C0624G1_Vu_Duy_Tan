@@ -5,9 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c2d0f81d-a4bf-418f-9a3f-6af25e3d6e8c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/ss6_Inheritance/bai_tap/Point2DAnd3D/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ss6_Inheritance/bai_tap/Point2DAnd3D/Point2D.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ss6_Inheritance/bai_tap/Point2DAnd3D/Point3D.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ss6_Inheritance/bai_tap/PointAndMoveablepoint/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ss6_Inheritance/bai_tap/PointAndMoveablepoint/MoveablePoint.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ss6_Inheritance/bai_tap/PointAndMoveablepoint/Point.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -57,6 +57,7 @@
     "Application.Square$SquareTest.executor": "Run",
     "Application.StopWatch.executor": "Run",
     "Application.Test.executor": "Run",
+    "Application.ss6_Inheritance.bai_tap.PointAndMoveablepoint.Main.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "main",
@@ -85,7 +86,7 @@
       <recent name="C:\Users\vuduy\Desktop\CodeGym\C0624G1_Vu_Duy_Tan\module2\src\ss7_AbstractClassAndInterface" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="Application.ss6_Inheritance.bai_tap.PointAndMoveablepoint.Main">
     <configuration name="Circle$CircleTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ss6_Inheritance.thuc_hanh.Shape.Circle$CircleTest" />
       <module name="module2" />
@@ -125,19 +126,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Shape$ShapeTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ss6_Inheritance.thuc_hanh.Shape.Shape$ShapeTest" />
-      <module name="module2" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="ss6_Inheritance.thuc_hanh.Shape.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="Square$SquareTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ss6_Inheritance.thuc_hanh.Shape.Square$SquareTest" />
       <module name="module2" />
@@ -151,13 +139,26 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="ss6_Inheritance.bai_tap.PointAndMoveablepoint.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ss6_Inheritance.bai_tap.PointAndMoveablepoint.Main" />
+      <module name="module2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ss6_Inheritance.bai_tap.PointAndMoveablepoint.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.ss6_Inheritance.bai_tap.PointAndMoveablepoint.Main" />
         <item itemvalue="Application.Main" />
         <item itemvalue="Application.Square$SquareTest" />
         <item itemvalue="Application.Rectangle$RectangleTest" />
         <item itemvalue="Application.Circle$CircleTest" />
-        <item itemvalue="Application.Shape$ShapeTest" />
       </list>
     </recent_temporary>
   </component>
@@ -181,7 +182,7 @@
       <workItem from="1723599500471" duration="11125000" />
       <workItem from="1723686239513" duration="13498000" />
       <workItem from="1723915834980" duration="5644000" />
-      <workItem from="1724001039676" duration="4218000" />
+      <workItem from="1724001039676" duration="5886000" />
     </task>
     <servers />
   </component>
