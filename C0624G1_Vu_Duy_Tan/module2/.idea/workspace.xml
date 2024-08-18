@@ -5,12 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c2d0f81d-a4bf-418f-9a3f-6af25e3d6e8c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/ss7_AbstractClassAndInterface/thuc_hanh/AbstractAndInterfaceTests/Animal.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ss7_AbstractClassAndInterface/thuc_hanh/AbstractAndInterfaceTests/Chicken.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ss7_AbstractClassAndInterface/thuc_hanh/AbstractAndInterfaceTests/Edible.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ss7_AbstractClassAndInterface/thuc_hanh/AbstractAndInterfaceTests/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ss7_AbstractClassAndInterface/thuc_hanh/AbstractAndInterfaceTests/Tiger.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ss7_AbstractClassAndInterface/thuc_hanh/Shape/Circle.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ss7_AbstractClassAndInterface/thuc_hanh/Shape/Rectangle.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ss7_AbstractClassAndInterface/thuc_hanh/Shape/Shape.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ss7_AbstractClassAndInterface/thuc_hanh/Shape/Square.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,6 +59,7 @@
     "Application.Test.executor": "Run",
     "Application.ss6_Inheritance.bai_tap.PointAndMoveablepoint.Main.executor": "Run",
     "Application.ss6_Inheritance.bai_tap.Triangle.Main.executor": "Run",
+    "Application.ss7_AbstractClassAndInterface.thuc_hanh.AbstractAndInterfaceTests.Fruit.Main.executor": "Run",
     "Application.ss7_AbstractClassAndInterface.thuc_hanh.AbstractAndInterfaceTests.Main.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
@@ -88,6 +87,9 @@
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\vuduy\Desktop\CodeGym\C0624G1_Vu_Duy_Tan\module2\src\ss8_CleanCodeAndRefactoring" />
       <recent name="C:\Users\vuduy\Desktop\CodeGym\C0624G1_Vu_Duy_Tan\module2\src\ss7_AbstractClassAndInterface" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="ss7_AbstractClassAndInterface.thuc_hanh.Shape" />
     </key>
   </component>
   <component name="RunManager" selected="Application.ss7_AbstractClassAndInterface.thuc_hanh.AbstractAndInterfaceTests.Fruit.Main">
@@ -186,7 +188,7 @@
       <workItem from="1723599500471" duration="11125000" />
       <workItem from="1723686239513" duration="13498000" />
       <workItem from="1723915834980" duration="5644000" />
-      <workItem from="1724001039676" duration="9022000" />
+      <workItem from="1724001039676" duration="9430000" />
     </task>
     <servers />
   </component>
