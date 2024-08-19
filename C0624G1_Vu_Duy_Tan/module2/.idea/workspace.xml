@@ -5,13 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c2d0f81d-a4bf-418f-9a3f-6af25e3d6e8c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/au_dius_pact_jvm_consumer_junit5.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ss7_AbstractClassAndInterface/thuc_hanh/Shape/CircleComparator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/test1/CalculatorTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ss7_AbstractClassAndInterface/bai_tap/Shape/Circle.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ss7_AbstractClassAndInterface/bai_tap/Shape/CircleTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ss7_AbstractClassAndInterface/bai_tap/Shape/Rectangle.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ss7_AbstractClassAndInterface/bai_tap/Shape/RectangleTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ss7_AbstractClassAndInterface/bai_tap/Shape/Resizeable.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ss7_AbstractClassAndInterface/bai_tap/Shape/ResizeableTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ss7_AbstractClassAndInterface/bai_tap/Shape/Shape.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ss7_AbstractClassAndInterface/bai_tap/Shape/ShapeTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ss7_AbstractClassAndInterface/bai_tap/Shape/Square.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/module2.iml" beforeDir="false" afterPath="$PROJECT_DIR$/module2.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ss6_Inheritance/bai_tap/Triangle/Shape.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ss6_Inheritance/bai_tap/Triangle/Shape.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ss7_AbstractClassAndInterface/thuc_hanh/Shape/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ss7_AbstractClassAndInterface/thuc_hanh/Shape/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/test1/CalculatorTest.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,14 +53,18 @@
   "keyToString": {
     "Application.BodyMassIndex.executor": "Run",
     "Application.Circle$CircleTest.executor": "Run",
+    "Application.CircleTest.executor": "Run",
     "Application.CountCharacterInString.executor": "Run",
     "Application.Main.executor": "Run",
     "Application.MainDiagonalOfMatrix.executor": "Run",
     "Application.MyClass.executor": "Run",
     "Application.QuadraticEquation.executor": "Run",
     "Application.Rectangle$RectangleTest.executor": "Run",
+    "Application.RectangleTest.executor": "Run",
+    "Application.ResizeableTest.executor": "Run",
     "Application.SelectionSortTimer.executor": "Run",
     "Application.Shape$ShapeTest.executor": "Run",
+    "Application.ShapeTest.executor": "Run",
     "Application.Square$SquareTest.executor": "Run",
     "Application.StopWatch.executor": "Run",
     "Application.Test.executor": "Run",
@@ -66,15 +74,17 @@
     "Application.ss7_AbstractClassAndInterface.thuc_hanh.AbstractAndInterfaceTests.Main.executor": "Run",
     "Application.ss7_AbstractClassAndInterface.thuc_hanh.Shape.Main.executor": "Run",
     "Downloaded.Files.Path.Enabled": "false",
+    "JUnit.ss7_AbstractClassAndInterface.bai_tap.Shape in module2.executor": "Run",
     "Repository.Attach.Annotations": "false",
     "Repository.Attach.JavaDocs": "false",
     "Repository.Attach.Sources": "false",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "deletionFromPopupRequiresConfirmation": "false",
     "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/vuduy/Desktop/CodeGym/C0624G1_Vu_Duy_Tan/module2/src/ss8_CleanCodeAndRefactoring",
+    "last_opened_file_path": "C:/Users/vuduy/Desktop/CodeGym/C0624G1_Vu_Duy_Tan/module2/src/ss7_AbstractClassAndInterface/bai_tap/Shape",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -93,6 +103,8 @@
       <recent name="ss4_ClassAndObject.bai_tap.StopWatch" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\vuduy\Desktop\CodeGym\C0624G1_Vu_Duy_Tan\module2\src\ss7_AbstractClassAndInterface\bai_tap\Shape" />
+      <recent name="C:\Users\vuduy\Desktop\CodeGym\C0624G1_Vu_Duy_Tan\module2\test" />
       <recent name="C:\Users\vuduy\Desktop\CodeGym\C0624G1_Vu_Duy_Tan\module2\src\ss8_CleanCodeAndRefactoring" />
       <recent name="C:\Users\vuduy\Desktop\CodeGym\C0624G1_Vu_Duy_Tan\module2\src\ss7_AbstractClassAndInterface" />
     </key>
@@ -121,7 +133,8 @@
       <workItem from="1723686239513" duration="13498000" />
       <workItem from="1723915834980" duration="5644000" />
       <workItem from="1724001039676" duration="10584000" />
-      <workItem from="1724031192175" duration="6752000" />
+      <workItem from="1724031192175" duration="9874000" />
+      <workItem from="1724056793971" duration="624000" />
     </task>
     <servers />
   </component>
@@ -138,5 +151,10 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/module2$ResizeableTest.ic" NAME="ResizeableTest Coverage Results" MODIFIED="1724056533717" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
+      <FILTER>ss7_AbstractClassAndInterface.bai_tap.Shape.*</FILTER>
+    </SUITE>
   </component>
 </project>
