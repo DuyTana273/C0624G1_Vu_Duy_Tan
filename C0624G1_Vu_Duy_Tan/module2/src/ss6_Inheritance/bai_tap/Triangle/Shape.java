@@ -1,5 +1,6 @@
 package ss6_Inheritance.bai_tap.Triangle;
 
+
 public class Shape {
     private String color = "red";
     private boolean filled = true;
