@@ -5,17 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c2d0f81d-a4bf-418f-9a3f-6af25e3d6e8c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/ss7_AbstractClassAndInterface/bai_tap/Shape/Circle.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ss7_AbstractClassAndInterface/bai_tap/Shape/CircleTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ss7_AbstractClassAndInterface/bai_tap/Shape/Rectangle.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ss7_AbstractClassAndInterface/bai_tap/Shape/RectangleTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ss7_AbstractClassAndInterface/bai_tap/Shape/Resizeable.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ss7_AbstractClassAndInterface/bai_tap/Shape/ResizeableTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ss7_AbstractClassAndInterface/bai_tap/Shape/Shape.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ss7_AbstractClassAndInterface/bai_tap/Shape/ShapeTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ss7_AbstractClassAndInterface/bai_tap/Shape/Square.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/case_study/productManagement/controller/CategoryController.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/case_study/productManagement/controller/ProductController.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/case_study/productManagement/model/Category.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/case_study/productManagement/model/Product.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/case_study/productManagement/model/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/case_study/productManagement/repository/CategoryRepository.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/case_study/productManagement/repository/ProductRepository.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/case_study/productManagement/service/CategoryService.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/case_study/productManagement/service/ProductService.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ss7_AbstractClassAndInterface/bai_tap/Shape2/Circle.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ss7_AbstractClassAndInterface/bai_tap/Shape2/Colorable.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ss7_AbstractClassAndInterface/bai_tap/Shape2/ColorableTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ss7_AbstractClassAndInterface/bai_tap/Shape2/Rectangle.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ss7_AbstractClassAndInterface/bai_tap/Shape2/Shape.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ss7_AbstractClassAndInterface/bai_tap/Shape2/Square.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/test1/CalculatorTest.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,6 +30,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Kotlin Class" />
         <option value="Class" />
       </list>
     </option>
@@ -54,6 +60,7 @@
     "Application.BodyMassIndex.executor": "Run",
     "Application.Circle$CircleTest.executor": "Run",
     "Application.CircleTest.executor": "Run",
+    "Application.ColorableTest.executor": "Run",
     "Application.CountCharacterInString.executor": "Run",
     "Application.Main.executor": "Run",
     "Application.MainDiagonalOfMatrix.executor": "Run",
@@ -94,6 +101,7 @@
     "project.structure.last.edited": "Libraries",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
+    "run.code.analysis.last.selected.profile": "pProject Default",
     "settings.editor.selected.configurable": "preferences.pluginManager",
     "vue.rearranger.settings.migration": "true"
   }
@@ -134,7 +142,10 @@
       <workItem from="1723915834980" duration="5644000" />
       <workItem from="1724001039676" duration="10584000" />
       <workItem from="1724031192175" duration="9874000" />
-      <workItem from="1724056793971" duration="624000" />
+      <workItem from="1724056793971" duration="2753000" />
+      <workItem from="1724062042186" duration="847000" />
+      <workItem from="1724136204289" duration="1371000" />
+      <workItem from="1724137944727" duration="1988000" />
     </task>
     <servers />
   </component>
@@ -151,6 +162,17 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/case_study/productManagement/model/User.java</url>
+          <line>13</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/module2$ResizeableTest.ic" NAME="ResizeableTest Coverage Results" MODIFIED="1724056533717" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
