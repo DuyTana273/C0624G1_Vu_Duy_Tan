@@ -5,11 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c2d0f81d-a4bf-418f-9a3f-6af25e3d6e8c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/ss8_CleanCodeAndRefactoring/thuc_hanh/Calculator/Calculator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ss8_CleanCodeAndRefactoring/thuc_hanh/Calculator/CalculatorTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ss8_CleanCodeAndRefactoring/thuc_hanh/Calculator/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/ss8_CleanCodeAndRefactoring/thuc_hanh/FizzBuzz/FizzBuzz.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,6 +66,7 @@
     "Application.ss7_AbstractClassAndInterface.thuc_hanh.AbstractAndInterfaceTests.Main.executor": "Run",
     "Application.ss7_AbstractClassAndInterface.thuc_hanh.Shape.Main.executor": "Run",
     "Downloaded.Files.Path.Enabled": "false",
+    "JUnit.CalculatorTest.executor": "Run",
     "JUnit.ss7_AbstractClassAndInterface.bai_tap.Shape in module2.executor": "Run",
     "Repository.Attach.Annotations": "false",
     "Repository.Attach.JavaDocs": "false",
@@ -80,7 +77,7 @@
     "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/vuduy/Desktop/CodeGym/C0624G1_Vu_Duy_Tan/module2/src/ss7_AbstractClassAndInterface/bai_tap/Shape",
+    "last_opened_file_path": "C:/Users/vuduy/Desktop/CodeGym/C0624G1_Vu_Duy_Tan/module2/test",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -100,8 +97,9 @@
       <recent name="ss4_ClassAndObject.bai_tap.StopWatch" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\vuduy\Desktop\CodeGym\C0624G1_Vu_Duy_Tan\module2\src\ss7_AbstractClassAndInterface\bai_tap\Shape" />
+      <recent name="C:\Users\vuduy\Desktop\CodeGym\C0624G1_Vu_Duy_Tan\module2\src\ss8_CleanCodeAndRefactoring\thuc_hanh" />
       <recent name="C:\Users\vuduy\Desktop\CodeGym\C0624G1_Vu_Duy_Tan\module2\test" />
+      <recent name="C:\Users\vuduy\Desktop\CodeGym\C0624G1_Vu_Duy_Tan\module2\src\ss7_AbstractClassAndInterface\bai_tap\Shape" />
       <recent name="C:\Users\vuduy\Desktop\CodeGym\C0624G1_Vu_Duy_Tan\module2\src\ss8_CleanCodeAndRefactoring" />
       <recent name="C:\Users\vuduy\Desktop\CodeGym\C0624G1_Vu_Duy_Tan\module2\src\ss7_AbstractClassAndInterface" />
     </key>
@@ -134,7 +132,7 @@
       <workItem from="1724056793971" duration="2753000" />
       <workItem from="1724062042186" duration="847000" />
       <workItem from="1724136204289" duration="1371000" />
-      <workItem from="1724137944727" duration="2891000" />
+      <workItem from="1724137944727" duration="3260000" />
     </task>
     <servers />
   </component>
