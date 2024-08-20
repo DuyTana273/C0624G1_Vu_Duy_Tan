@@ -4,7 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c2d0f81d-a4bf-418f-9a3f-6af25e3d6e8c" name="Changes" comment="" />
+    <list default="true" id="c2d0f81d-a4bf-418f-9a3f-6af25e3d6e8c" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/junit_jupiter_api.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ss8_CleanCodeAndRefactoring/bai_tap/TennisGame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module2.iml" beforeDir="false" afterPath="$PROJECT_DIR$/module2.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ss8_CleanCodeAndRefactoring/bai_tap/TennisGameTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ss8_CleanCodeAndRefactoring/bai_tap/TennisGameTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/ss8_CleanCodeAndRefactoring/thuc_hanh/Calculator/CalculatorTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/ss8_CleanCodeAndRefactoring/thuc_hanh/FizzBuzz/FizzBuzz.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/ss8_CleanCodeAndRefactoring/thuc_hanh/FizzBuzz/FizzBuzzTest.java" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -65,7 +75,9 @@
     "Application.ss7_AbstractClassAndInterface.thuc_hanh.Shape.Main.executor": "Run",
     "Downloaded.Files.Path.Enabled": "false",
     "JUnit.CalculatorTest.executor": "Run",
+    "JUnit.CylinderTest.executor": "Run",
     "JUnit.FizzBuzzTest.executor": "Run",
+    "JUnit.TennisGameTest.executor": "Run",
     "JUnit.ss7_AbstractClassAndInterface.bai_tap.Shape in module2.executor": "Run",
     "Repository.Attach.Annotations": "false",
     "Repository.Attach.JavaDocs": "false",
@@ -76,7 +88,8 @@
     "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/vuduy/Desktop/CodeGym/C0624G1_Vu_Duy_Tan/module2/src/ss8_CleanCodeAndRefactoring/thuc_hanh",
+    "last_directory_selection": "C:/Users/vuduy/Desktop/CodeGym/C0624G1_Vu_Duy_Tan/module2/test",
+    "last_opened_file_path": "C:/Users/vuduy/Desktop/CodeGym/C0624G1_Vu_Duy_Tan/module2/junit-team-junit5-12e9d92",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -84,7 +97,7 @@
     "nodejs_package_manager_path": "npm",
     "onboarding.tips.debug.path": "C:/Users/vuduy/Desktop/CodeGym/C0624G1_Vu_Duy_Tan/module2/src/Main.java",
     "project.structure.last.edited": "Libraries",
-    "project.structure.proportion": "0.15",
+    "project.structure.proportion": "0.15429688",
     "project.structure.side.proportion": "0.2",
     "run.code.analysis.last.selected.profile": "pProject Default",
     "settings.editor.selected.configurable": "preferences.pluginManager",
@@ -105,6 +118,29 @@
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="ss7_AbstractClassAndInterface.thuc_hanh.Shape" />
     </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="TennisGameTest.checkAllScores" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="module2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ss8_CleanCodeAndRefactoring.bai_tap.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="ss8_CleanCodeAndRefactoring.bai_tap" />
+      <option name="MAIN_CLASS_NAME" value="ss8_CleanCodeAndRefactoring.bai_tap.TennisGameTest" />
+      <option name="METHOD_NAME" value="checkAllScores" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.TennisGameTest.checkAllScores" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -131,7 +167,8 @@
       <workItem from="1724056793971" duration="2753000" />
       <workItem from="1724062042186" duration="847000" />
       <workItem from="1724136204289" duration="1371000" />
-      <workItem from="1724137944727" duration="3705000" />
+      <workItem from="1724137944727" duration="5938000" />
+      <workItem from="1724144189424" duration="1318000" />
     </task>
     <servers />
   </component>
