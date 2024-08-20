@@ -5,21 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c2d0f81d-a4bf-418f-9a3f-6af25e3d6e8c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/case_study/productManagement/controller/CategoryController.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/case_study/productManagement/controller/ProductController.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/case_study/productManagement/model/Category.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/case_study/productManagement/model/Product.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/case_study/productManagement/model/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/case_study/productManagement/repository/CategoryRepository.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/case_study/productManagement/repository/ProductRepository.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/case_study/productManagement/service/CategoryService.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/case_study/productManagement/service/ProductService.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ss7_AbstractClassAndInterface/bai_tap/Shape2/Circle.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ss7_AbstractClassAndInterface/bai_tap/Shape2/Colorable.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ss7_AbstractClassAndInterface/bai_tap/Shape2/ColorableTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ss7_AbstractClassAndInterface/bai_tap/Shape2/Rectangle.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ss7_AbstractClassAndInterface/bai_tap/Shape2/Shape.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ss7_AbstractClassAndInterface/bai_tap/Shape2/Square.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ss8_CleanCodeAndRefactoring/thuc_hanh/Calculator/Calculator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ss8_CleanCodeAndRefactoring/thuc_hanh/Calculator/CalculatorTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ss8_CleanCodeAndRefactoring/thuc_hanh/Calculator/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -145,7 +134,7 @@
       <workItem from="1724056793971" duration="2753000" />
       <workItem from="1724062042186" duration="847000" />
       <workItem from="1724136204289" duration="1371000" />
-      <workItem from="1724137944727" duration="1988000" />
+      <workItem from="1724137944727" duration="2891000" />
     </task>
     <servers />
   </component>
