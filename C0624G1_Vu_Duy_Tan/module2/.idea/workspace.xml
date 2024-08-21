@@ -5,8 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c2d0f81d-a4bf-418f-9a3f-6af25e3d6e8c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/ss10_DSA/bai_tap/ArrayList/MyList.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ss10_DSA/bai_tap/ArrayList/MyListTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ss10_DSA/bai_tap/LinkedList/MyLinkedList.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ss10_DSA/bai_tap/LinkedList/MyLinkedListTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ss10_DSA/bai_tap/LinkedList/Node.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -137,26 +138,6 @@
       <recent name="ss7_AbstractClassAndInterface.thuc_hanh.Shape" />
     </key>
   </component>
-  <component name="RunManager">
-    <configuration name="MyListTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ss10_DSA.bai_tap.ArrayList.MyListTest" />
-      <module name="module2" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="ss10_DSA.bai_tap.ArrayList.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Application.MyListTest" />
-      </list>
-    </recent_temporary>
-  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -186,7 +167,7 @@
       <workItem from="1724144189424" duration="2806000" />
       <workItem from="1724169564812" duration="6154000" />
       <workItem from="1724204440608" duration="8679000" />
-      <workItem from="1724253766778" duration="351000" />
+      <workItem from="1724253766778" duration="3006000" />
     </task>
     <servers />
   </component>
