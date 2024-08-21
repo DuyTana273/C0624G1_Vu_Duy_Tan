@@ -1,22 +1,28 @@
 package case_study.productManagement.model;
 
+
+import java.util.HashSet;
+import java.util.Set;
+
 public class User {
     private String userName;
     private String password;
     private String fullName;
     private String email;
     private String phone;
-    private String address;
+    protected Set<Role> roles = new HashSet<Role>();
 
-    public User() {}
+    private Employee employeeDetails;
+    private Customer customerDetails;
+    private User userDetails;
 
-    public User(String userName, String password, String fullName, String email, String phone, String address) {
+    public User(String userName, String password, String fullName, String email, String phone) {
         this.userName = userName;
         this.password = password;
         this.fullName = fullName;
         this.email = email;
         this.phone = phone;
-        this.address = address;
+        this.roles.add(Role.ROLE_USER);
     }
 
     public String getUserName() {
@@ -59,19 +65,18 @@ public class User {
         this.phone = phone;
     }
 
-    public String getAddress() {
-        return address;
-    }
-
-    public void setAddress(String address) {
-        this.address = address;
+    public Set<Role> getRoles() {
+        return roles;
     }
 
     @Override
     public String toString() {
-        return  "username='" + userName + '\'' +
-                ", name='" + fullName + '\'' +
+        return "User{" +
+                "userName='" + userName + '\'' +
+                ", fullName='" + fullName + '\'' +
                 ", email='" + email + '\'' +
-                ", phoneNumber='" + phone + '\'';
+                ", phone='" + phone + '\'' +
+                ", roles=" + roles +
+                '}';
     }
 }
