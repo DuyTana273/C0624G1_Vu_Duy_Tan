@@ -5,10 +5,30 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c2d0f81d-a4bf-418f-9a3f-6af25e3d6e8c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/ss10_DSA/bai_tap/LinkedList/MyLinkedList.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ss10_DSA/bai_tap/LinkedList/MyLinkedListTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ss10_DSA/bai_tap/LinkedList/Node.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/case_study/controller/UserController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/case_study/model/Admin.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/case_study/model/Buyer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/case_study/model/Manager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/case_study/model/Role.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/case_study/model/Seller.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/case_study/model/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/case_study/model/UserService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/case_study/view/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/case_study/view/UserView.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ss11_StackAndQueue/thuc_hanh/MyGenericStack/GenericStackClient.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ss11_StackAndQueue/thuc_hanh/MyGenericStack/MyGenericStack.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ss13_SortAlgorithm/Demo/PerformanceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../module 1_bootcampreparation/Case_Study_Final/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/../module 1_bootcampreparation/Case_Study_Final/main.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/case_study/productManagement/model/Category.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/case_study/productManagement/model/Customer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/case_study/productManagement/model/CustomerManager.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/case_study/productManagement/model/Employee.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/case_study/productManagement/model/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/case_study/productManagement/model/Product.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/case_study/productManagement/model/Role.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/case_study/productManagement/model/RoleManager.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/case_study/productManagement/model/User.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,6 +40,7 @@
       <list>
         <option value="Kotlin Class" />
         <option value="JUnit5 Test Class" />
+        <option value="Enum" />
         <option value="Class" />
       </list>
     </option>
@@ -59,6 +80,7 @@
     &quot;Application.MyClass.executor&quot;: &quot;Run&quot;,
     &quot;Application.MyLinkedListTest.executor&quot;: &quot;Run&quot;,
     &quot;Application.MyListTest.executor&quot;: &quot;Run&quot;,
+    &quot;Application.PerformanceTest.executor&quot;: &quot;Run&quot;,
     &quot;Application.QuadraticEquation.executor&quot;: &quot;Run&quot;,
     &quot;Application.Rectangle$RectangleTest.executor&quot;: &quot;Run&quot;,
     &quot;Application.RectangleTest.executor&quot;: &quot;Run&quot;,
@@ -69,6 +91,7 @@
     &quot;Application.Square$SquareTest.executor&quot;: &quot;Run&quot;,
     &quot;Application.StopWatch.executor&quot;: &quot;Run&quot;,
     &quot;Application.Test.executor&quot;: &quot;Run&quot;,
+    &quot;Application.case_study.view.Main.executor&quot;: &quot;Run&quot;,
     &quot;Application.ss6_Inheritance.bai_tap.PointAndMoveablepoint.Main.executor&quot;: &quot;Run&quot;,
     &quot;Application.ss6_Inheritance.bai_tap.Triangle.Main.executor&quot;: &quot;Run&quot;,
     &quot;Application.ss7_AbstractClassAndInterface.thuc_hanh.AbstractAndInterfaceTests.Fruit.Main.executor&quot;: &quot;Run&quot;,
@@ -98,14 +121,14 @@
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
     &quot;last_directory_selection&quot;: &quot;C:/Users/vuduy/Desktop/CodeGym/C0624G1_Vu_Duy_Tan/module2/test&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/vuduy/Desktop/CodeGym/C0624G1_Vu_Duy_Tan/module2/junit-team-junit5-12e9d92&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/vuduy/Desktop/CodeGym/C0624G1_Vu_Duy_Tan/module2/src/Test&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/vuduy/Desktop/CodeGym/C0624G1_Vu_Duy_Tan/module2/src/Main.java&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15429688&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
     &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
@@ -119,11 +142,11 @@
       <recent name="ss4_ClassAndObject.bai_tap.StopWatch" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\vuduy\Desktop\CodeGym\C0624G1_Vu_Duy_Tan\module2\src\Test" />
+      <recent name="C:\Users\vuduy\Desktop\CodeGym\C0624G1_Vu_Duy_Tan\module2\src" />
       <recent name="C:\Users\vuduy\Desktop\CodeGym\C0624G1_Vu_Duy_Tan\module2\src\ss8_CleanCodeAndRefactoring\thuc_hanh" />
       <recent name="C:\Users\vuduy\Desktop\CodeGym\C0624G1_Vu_Duy_Tan\module2\test" />
       <recent name="C:\Users\vuduy\Desktop\CodeGym\C0624G1_Vu_Duy_Tan\module2\src\ss7_AbstractClassAndInterface\bai_tap\Shape" />
-      <recent name="C:\Users\vuduy\Desktop\CodeGym\C0624G1_Vu_Duy_Tan\module2\src\ss8_CleanCodeAndRefactoring" />
-      <recent name="C:\Users\vuduy\Desktop\CodeGym\C0624G1_Vu_Duy_Tan\module2\src\ss7_AbstractClassAndInterface" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\vuduy\Desktop\CodeGym\C0624G1_Vu_Duy_Tan\module2\src\ss8_CleanCodeAndRefactoring\bai_tap" />
@@ -167,7 +190,12 @@
       <workItem from="1724144189424" duration="2806000" />
       <workItem from="1724169564812" duration="6154000" />
       <workItem from="1724204440608" duration="8679000" />
-      <workItem from="1724253766778" duration="3006000" />
+      <workItem from="1724253766778" duration="5402000" />
+      <workItem from="1724291169956" duration="9066000" />
+      <workItem from="1724300485642" duration="9722000" />
+      <workItem from="1724424570878" duration="30464000" />
+      <workItem from="1724532224427" duration="1318000" />
+      <workItem from="1724780053660" duration="356000" />
     </task>
     <servers />
   </component>

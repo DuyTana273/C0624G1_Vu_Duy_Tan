@@ -17,7 +17,7 @@ let bird = {
     width: birdWidth,
     height: birdHeight,
     velocityY: 0, // Tốc độ rơi của BIRD
-    flapStrength: -7, // Độ mạnh của Jump
+    flapStrength: -5, // Độ mạnh của Jump
     maxFallSpeed: 10, // Tốc độ rơi tối đa để tránh rơi quá nhanh
     angle: 0, // Góc xoay của BIRD
     angleChange: 0.4 // Tốc độ thay đổi góc xoay của BIRD
@@ -43,7 +43,7 @@ backgroundMusic.volume = 0.5;
 
 // ********** LOGIC CỦA TRÒ CHƠI **********
 let velocityX = -2; // Tốc độ di chuyển ngang của PIPES
-let gravity = 0.3; // Trọng lực tác động lên BIRD
+let gravity = 0.5; // Trọng lực tác động lên BIRD
 
 let gameOver = false;
 let score = 0;
