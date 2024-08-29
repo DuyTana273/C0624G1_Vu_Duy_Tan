@@ -15,18 +15,10 @@ public class ExpenseView {
         return scanner.next();
     }
 
-    //===== GET INPUT USER =====
-    public double getInput(String message) {
-        System.out.print(message);
-        return scanner.nextDouble();
-    }
-
-    //=====  DISPLAY RESULT =====
     public void displayResult(String result) {
         System.out.println(result);
     }
 
-    //=====  DISPLAY LOGOUT =====
     public void displayThankYouMessage() {
         System.out.println("Cảm ơn bạn đã dùng chương trình.");
     }

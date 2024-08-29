@@ -48,7 +48,6 @@ public class ExpenseController {
                     break;
 
                 case "2":
-                    // Nhập khoảng cách đã đi (Km)
                     double distanceInKm = 0.0;
                     validInput = false;
                     do {
@@ -73,7 +72,6 @@ public class ExpenseController {
                     break;
 
                 case "3":
-                    // Nhập tiền lương hàng tháng
                     double grossSalary = 0.0;
                     validInput = false;
                     do {
@@ -97,7 +95,6 @@ public class ExpenseController {
                     break;
 
                 case "4":
-                    // Tính tổng thu nhập sau khi chi tiêu
                     double totalIncome = service.calculateRemainingIncome(netSalary, electricityFee, taxiFee);
                     view.displayResult("=====> Tổng thu nhập sau khi chi tiêu: " + formatCurrency(totalIncome));
                     break;

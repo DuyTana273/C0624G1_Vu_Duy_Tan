@@ -5,13 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c2d0f81d-a4bf-418f-9a3f-6af25e3d6e8c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/homework/accessment01/controller/ExpenseController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/homework/accessment01/model/ElectricityExpense.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/homework/accessment01/model/Salary.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/homework/accessment01/model/TaxiExpense.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/homework/accessment01/service/ExpenseService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/homework/accessment01/view/ExpenseView.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/homework/accessment01/view/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/homework/accessment02/controller/ContactController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/homework/accessment02/model/Contact.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/homework/accessment02/service/ContactService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/homework/accessment02/view/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -83,6 +80,7 @@
     "Application.Test.executor": "Run",
     "Application.case_study.view.Main.executor": "Run",
     "Application.homework.accessment01.view.Main.executor": "Run",
+    "Application.homework.accessment02.view.Main.executor": "Run",
     "Application.ss6_Inheritance.bai_tap.PointAndMoveablepoint.Main.executor": "Run",
     "Application.ss6_Inheritance.bai_tap.Triangle.Main.executor": "Run",
     "Application.ss7_AbstractClassAndInterface.thuc_hanh.AbstractAndInterfaceTests.Fruit.Main.executor": "Run",
@@ -152,7 +150,7 @@
       <recent name="ss7_AbstractClassAndInterface.thuc_hanh.Shape" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.homework.accessment02.view.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="homework.accessment01.view.Main" />
       <module name="module2" />
@@ -166,8 +164,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="homework.accessment02.view.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="homework.accessment02.view.Main" />
+      <module name="module2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="homework.accessment02.view.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.homework.accessment02.view.Main" />
         <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
@@ -209,7 +221,7 @@
       <workItem from="1724780053660" duration="1284000" />
       <workItem from="1724827764961" duration="50000" />
       <workItem from="1724827864210" duration="518000" />
-      <workItem from="1724914634576" duration="16247000" />
+      <workItem from="1724914634576" duration="21457000" />
     </task>
     <servers />
   </component>
