@@ -1,7 +1,6 @@
-package case_study.model;
+package case_study.model.user_manage;
 
 import java.util.HashSet;
-import java.util.Iterator;
 import java.util.Set;
 
 public class User {
@@ -12,18 +11,16 @@ public class User {
     protected String phoneNumber;
     protected String fullName;
     protected String email;
-    protected Set<Role> roles;
+    protected Set<Role> roles = new HashSet<>();
     protected boolean isApproved;
 
     //===== CONSTRUCTOR =====
-    public User(String username, String password, String phoneNumber, String fullName, String email, Role initialRole) {
+    public User(String username, String password, String phoneNumber, String fullName, String email) {
         this.username = username;
         this.password = password;
         this.phoneNumber = phoneNumber;
         this.fullName = fullName;
         this.email = email;
-        this.roles = new HashSet<>();
-        this.roles.add(initialRole);
         this.isApproved = false;
     }
 
@@ -38,10 +35,6 @@ public class User {
 
     public String getPassword() {
         return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
     }
 
     public String getPhoneNumber() {
@@ -76,37 +69,28 @@ public class User {
         this.roles = roles;
     }
 
-    //===== KIỂM TRA NGƯỜI DÙNG CÓ VAI TRÒ NÀO ĐÓ KHÔNG =====
+    //===== CHECK ROLE USERS =====
     public boolean hasRole(Role role) {
         return roles.contains(role);
     }
 
-    //===== THÊM VAI TRÒ CHO NGƯỜI DÙNG =====
+    //===== ADD ROLE USERS =====
     public void addRole(Role role) {
-        if (!roles.contains(role)) {
-            roles.add(role);
-        }
-    }
-    public Role getRole() {
-        if (!roles.isEmpty()) {
-            Iterator<Role> iterator = roles.iterator();
-            return iterator.next(); // Lấy phần tử đầu tiên
-        }
-        return null; // Trả về null nếu không có vai trò nào
+        roles.add(role);
     }
 
-    //===== XÓA VAI TRÒ CỦA NGƯỜI DÙNG =====
-    public void removeRole(Role role) {
-        roles.remove(role);
+    //===== CHANGE PASSWORD =====
+    public void changePassword(String newPassword) {
+        this.password = newPassword;
     }
 
     @Override
     public String toString() {
-        return "User{" +
-                "username='" + username + '\'' +
-                ", fullName='" + fullName + '\'' +
-                ", email='" + email + '\'' +
-                ", roles=" + roles +
-                '}';
+        return "username='" + getUsername() + '\'' +
+                ", fullName='" + getFullName() + '\'' +
+                ", phone='" + getPhoneNumber() + '\'' +
+                ", email='" + getEmail() + '\'' +
+                ", role='" + getRoles() + '\'';
+
     }
 }
