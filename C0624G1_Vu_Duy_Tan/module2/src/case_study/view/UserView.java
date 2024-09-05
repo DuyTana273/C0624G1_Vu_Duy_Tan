@@ -1,6 +1,5 @@
 package case_study.view;
 
-import case_study.model.product_manage.Laptop;
 import case_study.model.user_manage.User;
 
 import java.util.ArrayList;
@@ -10,6 +9,9 @@ import java.util.Scanner;
 
 public class UserView {
     private final Scanner scanner = new Scanner(System.in);
+
+    public UserView() {
+    }
 
     //===== NHẬN ĐẦU VÀO =====
     public String getInput(String prompt) {
@@ -40,6 +42,7 @@ public class UserView {
     public void showAdminMenu() {
         List<String> options = new ArrayList<>();
         options.add("Quản lý người dùng");
+        options.add("Quản lý sản phẩm");
         options.add("Xem báo cáo");
         options.add("Đăng xuất");
         showMenu("ADMIN MENU", options);
@@ -62,6 +65,7 @@ public class UserView {
     public void showManagerMenu() {
         List<String> options = new ArrayList<>();
         options.add("Quản lý người dùng");
+        options.add("Quản lý sản phẩm");
         options.add("Đổi mật khẩu");
         options.add("Đăng xuất");
         showMenu("MENU MANAGER", options);
@@ -94,6 +98,7 @@ public class UserView {
         List<String> options = new ArrayList<>();
         options.add("Xem sản phẩm");
         options.add("Đặt hàng");
+        options.add("Giỏ hàng");
         options.add("Đổi mật khẩu");
         options.add("Xóa tài khoản");
         options.add("Log Out");

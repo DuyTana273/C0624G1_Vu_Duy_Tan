@@ -12,9 +12,9 @@ public class UserController {
     //===== ĐỊNH NGHĨA THUỘC TÍNH =====
     private final UserView userView;
     private final UserService userService;
+    private final ProductController productController;
     private final ProductView productView;
     private final ProductService productService;
-    private final ProductController productController;
     private User loggedInUser;
 
     //===== CONSTRUCTOR =====
@@ -161,9 +161,12 @@ public class UserController {
                     manageUsersAdmin();
                     break;
                 case "2":
-                    viewReports();
+                    productController.showProductManagementMenu();
                     break;
                 case "3":
+                    viewReports();
+                    break;
+                case "4":
                     logout();
                     return;
                 default:
@@ -215,9 +218,12 @@ public class UserController {
                     manageUsers();
                     break;
                 case "2":
-                    changePassword();
+                    productController.showProductManagementMenu();
                     break;
                 case "3":
+                    changePassword();
+                    break;
+                case "4":
                     logout();
                     return;
                 default:
@@ -263,7 +269,7 @@ public class UserController {
 
             switch (choice) {
                 case "1":
-                    manageProducts();
+                    productController.showProductManagementMenu();
                     break;
                 case "2":
                     viewOrders();
@@ -294,12 +300,15 @@ public class UserController {
                     placeOrder();
                     break;
                 case "3":
-                    changePassword();
+                    productView.showCart(productService);
                     break;
                 case "4":
+                    changePassword();
+                    break;
+                case "5":
                     removeAccount();
                     return;
-                case "5":
+                case "6":
                     logout();
                     return;
                 default:
@@ -317,78 +326,6 @@ public class UserController {
     //======= HIỂN THỊ THÔNG TIN USERS =======
     private void showUsers() {
         userView.displayUsers(userService.getAllUsers());
-    }
-
-    //===== THÊM NGƯỜI DÙNG =====
-    private void addBuyer() {
-        User newBuyer = getInputForRegister();
-        userService.registerBuyer(newBuyer.getUsername(), newBuyer.getPassword(), newBuyer.getPhoneNumber(), newBuyer.getFullName(), newBuyer.getEmail());
-        userView.showMessage("Đăng ký khách hàng mới thành công.");
-    }
-
-    private void addSeller() {
-        User newSeller = getInputForRegister();
-        userService.registerSeller(newSeller.getUsername(), newSeller.getPassword(), newSeller.getPhoneNumber(), newSeller.getFullName(), newSeller.getEmail());
-        userView.showMessage("Đăng ký nhân viên mới thành công.");
-    }
-
-    private void addManager() {
-        User newManager = getInputForRegister();
-        userService.registerManager(newManager.getUsername(), newManager.getPassword(), newManager.getPhoneNumber(), newManager.getFullName(), newManager.getEmail());
-        userView.showMessage("Đăng ký quản lý mới thành công.");
-    }
-
-    //===== XÓA NGƯỜI DÙNG =====
-    private void removeUser() {
-        String username = userView.getInput("Nhập tài khoản cần xóa: ");
-        User userToRemove = userService.getUser(username);
-
-        if (userToRemove == null) {
-            userView.showMessage("Không tìm thấy người dùng với tài khoản: " + username);
-            return;
-        }
-
-        if (userToRemove.hasRole(Role.ROLE_MANAGER) && !loggedInUser.hasRole(Role.ROLE_ADMIN)) {
-            userView.showMessage("Chỉ admin mới có thể xóa quản lý. Bạn không có quyền xóa người dùng này.");
-            return;
-        }
-
-        if (userService.removeUser(username)) {
-            userView.showMessage("Đã xóa người dùng thành công.");
-        } else {
-            userView.showMessage("Không thể xóa người dùng với tài khoản: " + username);
-        }
-    }
-
-    //===== XÓA TÀI KHOẢN BUYER =====
-    private void removeAccount() {
-        String username = loggedInUser.getUsername();
-        if (userService.removeBuyer(username)) {
-            loggedInUser = null;
-            userView.showMessage("Tài khoản của bạn đã được xóa thành công.");
-        } else {
-            userView.showMessage("Không thể xóa tài khoản của bạn.");
-        }
-    }
-
-    //===== CHỈNH SỬA NGƯỜI DÙNG =====
-    private void editUser() {
-        String username = userView.getInput("Nhập tài khoản cần chỉnh sửa: ");
-        User user = userService.getUser(username);
-
-        if (user == null) {
-            userView.showMessage("Không tìm thấy người dùng với tài khoản: " + username);
-            return;
-        }
-
-        String newName = userView.getInput("Nhập họ tên mới (hiện tại: " + user.getFullName() + "): ");
-        String newEmail = userView.getInput("Nhập email mới (hiện tại: " + user.getEmail() + "): ");
-        String newPhoneNumber = userView.getInput("Nhập SĐT mới (hiện tại: " + user.getPhoneNumber() + "): ");
-        user.setFullName(newName);
-        user.setEmail(newEmail);
-        user.setPhoneNumber(newPhoneNumber);
-        userView.showMessage("Đã cập nhật thông tin người dùng thành công!");
-
     }
 
     //===== THÔNG TIN ĐĂNG KÝ =====
@@ -447,12 +384,75 @@ public class UserController {
                 userView.showMessage(e.getMessage());
             }
         }
-
         return new User(username, password, phoneNumber, name, email);
     }
 
+    //===== MANAGE USES =====
+    private void addBuyer() {
+        User newBuyer = getInputForRegister();
+        userService.registerBuyer(newBuyer.getUsername(), newBuyer.getPassword(), newBuyer.getPhoneNumber(), newBuyer.getFullName(), newBuyer.getEmail());
+        userView.showMessage("Đăng ký khách hàng mới thành công.");
+    }
 
-    //===== CHANGE PASSWORD =====
+    private void addSeller() {
+        User newSeller = getInputForRegister();
+        userService.registerSeller(newSeller.getUsername(), newSeller.getPassword(), newSeller.getPhoneNumber(), newSeller.getFullName(), newSeller.getEmail());
+        userView.showMessage("Đăng ký nhân viên mới thành công.");
+    }
+
+    private void addManager() {
+        User newManager = getInputForRegister();
+        userService.registerManager(newManager.getUsername(), newManager.getPassword(), newManager.getPhoneNumber(), newManager.getFullName(), newManager.getEmail());
+        userView.showMessage("Đăng ký quản lý mới thành công.");
+    }
+
+    private void removeUser() {
+        String username = userView.getInput("Nhập tài khoản cần xóa: ");
+        User userToRemove = userService.getUser(username);
+
+        if (userToRemove == null) {
+            userView.showMessage("Không tìm thấy người dùng với tài khoản: " + username);
+            return;
+        }
+
+        if (userToRemove.hasRole(Role.ROLE_MANAGER) && !loggedInUser.hasRole(Role.ROLE_ADMIN)) {
+            userView.showMessage("Chỉ admin mới có thể xóa quản lý. Bạn không có quyền xóa người dùng này.");
+            return;
+        }
+
+        if (userService.removeUser(username)) {
+            userView.showMessage("Đã xóa người dùng thành công.");
+        } else {
+            userView.showMessage("Không thể xóa người dùng với tài khoản: " + username);
+        }
+    }
+
+    private void removeAccount() {
+        String username = loggedInUser.getUsername();
+        if (userService.removeBuyer(username)) {
+            loggedInUser = null;
+            userView.showMessage("Tài khoản của bạn đã được xóa thành công.");
+        } else {
+            userView.showMessage("Không thể xóa tài khoản của bạn.");
+        }
+    }
+
+    private void editUser() {
+        String username = userView.getInput("Nhập tài khoản cần chỉnh sửa: ");
+        User user = userService.getUser(username);
+
+        if (user == null) {
+            userView.showMessage("Không tìm thấy người dùng với tài khoản: " + username);
+            return;
+        }
+
+        String newName = userView.getInput("Nhập họ tên mới (hiện tại: " + user.getFullName() + "): ");
+        String newEmail = userView.getInput("Nhập email mới (hiện tại: " + user.getEmail() + "): ");
+        String newPhoneNumber = userView.getInput("Nhập SĐT mới (hiện tại: " + user.getPhoneNumber() + "): ");
+        userService.updateUserDetail( username,  newPhoneNumber,  newName,  newEmail);
+        userView.showMessage("Đã cập nhật thông tin người dùng thành công!");
+    }
+
     private void changePassword() {
         String oldPassword;
         String newPassword;
@@ -469,10 +469,6 @@ public class UserController {
                 userView.showMessage("Mật khẩu cũ không đúng. Vui lòng thử lại.");
             }
         }
-    }
-
-    //===== QUẢN LÝ SẢN PHẨM (CHO SELLER) =====
-    private void manageProducts() {
     }
 
     //===== XEM ĐƠN HÀNG (CHO SELLER) =====

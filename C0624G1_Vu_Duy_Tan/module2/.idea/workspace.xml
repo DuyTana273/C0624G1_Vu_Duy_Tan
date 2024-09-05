@@ -5,53 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c2d0f81d-a4bf-418f-9a3f-6af25e3d6e8c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/case_study/controller/CartController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/case_study/controller/OrderController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/case_study/controller/PaymentController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/case_study/controller/ProductController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/case_study/controller/ShippingController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/case_study/model/cart_manage/cart/Cart.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/case_study/model/cart_manage/cart/CartItem.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/case_study/model/cart_manage/order/Order.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/case_study/model/cart_manage/order/OrderStatus.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/case_study/model/product_manage/Category.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/case_study/model/product_manage/Laptop.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/case_study/model/product_manage/SubCategory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/case_study/model/transaction/payment/Payment.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/case_study/model/transaction/payment/PaymentMethod.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/case_study/model/transaction/shipping/Shipping.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/case_study/model/transaction/shipping/ShippingStatus.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/case_study/model/user_manage/Admin.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/case_study/model/user_manage/Buyer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/case_study/model/user_manage/Manager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/case_study/model/user_manage/Seller.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/case_study/service/ProductService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/case_study/service/UserService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/case_study/view/CartView.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/case_study/view/OrderView.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/case_study/view/PaymentView.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/case_study/view/ProductView.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/case_study/view/ShippingView.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/homework/thuc_hanh/ex_01/Customer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/homework/thuc_hanh/ex_01/CustomerManagement.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/homework/thuc_hanh/ex_01/CustomerManagementMenu.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/homework/thuc_hanh/ex_01/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/homework/thuc_hanh/ex_02/EmailNotification.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/homework/thuc_hanh/ex_02/FbNotification.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/homework/thuc_hanh/ex_02/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/homework/thuc_hanh/ex_02/Notification.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/homework/thuc_hanh/ex_02/NotificationFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/homework/thuc_hanh/ex_02/SMSNotification.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/case_study/store/products.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/case_study/store/users.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/case_study/controller/CartController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/case_study/controller/CartController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/case_study/controller/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/case_study/controller/ProductController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/case_study/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/case_study/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/case_study/model/Admin.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/case_study/model/Buyer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/case_study/model/Manager.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/case_study/model/Role.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/case_study/model/user_manage/Role.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/case_study/model/Seller.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/case_study/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/case_study/model/user_manage/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/case_study/model/UserService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/case_study/model/product_manage/Laptop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/case_study/model/product_manage/Laptop.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/case_study/service/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/case_study/service/ProductService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/case_study/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/case_study/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/case_study/view/CartView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/case_study/view/CartView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/case_study/view/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/case_study/view/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/case_study/view/ProductView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/case_study/view/ProductView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/case_study/view/UserView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/case_study/view/UserView.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -257,7 +222,10 @@
       <workItem from="1724984321028" duration="366000" />
       <workItem from="1724989007023" duration="1969000" />
       <workItem from="1725006606490" duration="2972000" />
-      <workItem from="1725208320097" duration="22831000" />
+      <workItem from="1725208320097" duration="24708000" />
+      <workItem from="1725303104740" duration="2303000" />
+      <workItem from="1725349509520" duration="22577000" />
+      <workItem from="1725414881356" duration="19917000" />
     </task>
     <servers />
   </component>
@@ -277,6 +245,16 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.NullPointerException" package="java.lang" />
+          <option name="timeStamp" value="2" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/module2$ResizeableTest.ic" NAME="ResizeableTest Coverage Results" MODIFIED="1724056533717" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">

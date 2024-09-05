@@ -1,99 +1,186 @@
 package case_study.service;
 
-import case_study.controller.ProductController;
+import case_study.model.cart_manage.cart.Cart;
 import case_study.model.cart_manage.order.Order;
 import case_study.model.product_manage.Laptop;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Optional;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.*;
+import java.util.concurrent.atomic.AtomicInteger;
 import java.util.stream.Collectors;
 
 public class ProductService {
 
     //===== ĐỊNH NGHĨA THUỘC TÍNH =====
-    private static List<Laptop> laptops;
-    private final List<Order> orders;
-    private final List<Laptop> cart;
+    private Map<String, Laptop> laptops = new HashMap<>();
+    private List<Order> orders = new ArrayList<>();
+    //    private final List<Laptop> cart;
+    private final Cart cart;
+    // Link File csv
+    private static final String PRODUCT_FILE_PATH = "src/case_study/store/products.csv";
+
 
     //===== CONSTRUCTOR =====
     public ProductService() {
-        laptops = new ArrayList<>();
-        this.orders = new ArrayList<>();
-        this.cart = new ArrayList<>();
-        initializeDefaultProducts();
+        this.cart = new Cart();
+        Map<String, Laptop> loadedLaptops = readProductsFromFile();
+        if (!loadedLaptops.isEmpty()) {
+            this.laptops = loadedLaptops;
+        }
+
+        // Tìm productId lớn nhất từ các sản phẩm hiện có và thiết lập lại idCounter
+        int maxProductId = laptops.values().stream()
+                .mapToInt(Laptop::getProductId)
+                .max()
+                .orElse(0);
+
+        // Thiết lập lại giá trị cho idCounter
+        Laptop.setIdCounter(new AtomicInteger(maxProductId));
     }
 
-    private void initializeDefaultProducts() {
-        // LAPTOP DEFAULT
-        laptops.add(new Laptop(1, "MacBook Air M1", "Apple", 25000000, "Mẫu laptop mỏng nhẹ, hiệu suất cao."));
-        laptops.add(new Laptop(2, "MacBook Pro 14", "Apple", 45000000, "Mẫu laptop chuyên nghiệp cho công việc sáng tạo."));
-        laptops.add(new Laptop(3, "Dell XPS 13", "Dell", 30000000, "Mẫu laptop nhỏ gọn với thiết kế sang trọng."));
-        laptops.add(new Laptop(4, "HP Spectre x360", "HP", 40000000, "Mẫu laptop 2 trong 1 với khả năng gập linh hoạt."));
-        laptops.add(new Laptop(5, "Asus ROG Zephyrus G14", "Asus", 35000000, "Mẫu laptop gaming mạnh mẽ với thiết kế nhỏ gọn."));
-        laptops.add(new Laptop(6, "Lenovo ThinkPad X1 Carbon", "Lenovo", 42000000, "Mẫu laptop cho doanh nhân với hiệu suất ổn định."));
-        laptops.add(new Laptop(7, "Acer Swift 3", "Acer", 20000000, "Mẫu laptop giá rẻ nhưng hiệu năng tốt cho sinh viên."));
-        laptops.add(new Laptop(8, "Microsoft Surface Laptop 4", "Microsoft", 36000000, "Mẫu laptop thanh lịch với màn hình cảm ứng."));
-        laptops.add(new Laptop(9, "Razer Blade Stealth", "Razer", 38000000, "Mẫu laptop gaming mỏng nhẹ với hiệu suất cao."));
+    //===== LẤY LAPTOP THEO ID =====
+    public Optional<Laptop> getLaptopById(int productId) {
+        return Optional.ofNullable(laptops.get(String.valueOf(productId)));
     }
 
-    //===== DISPLAY ALL LAPTOP =====
+    //===== LẤY LAPTOP THEO THƯƠNG HIỆU =====
+    public List<Laptop> getLaptopsByBrand(String brand) {
+        return laptops.values().stream()
+                .filter(laptop -> laptop.getBrand().equalsIgnoreCase(brand))
+                .collect(Collectors.toList());
+    }
+
+    //===== HIỂN THỊ TẤT CẢ LAPTOP =====
     public void displayAllProducts() {
         if (laptops.isEmpty()) {
             System.out.println("Danh sách sản phẩm trống.");
         } else {
             System.out.println("Danh sách tất cả các laptop:");
-            for (Laptop laptop : laptops) {
-                System.out.println(laptop);
-            }
+            laptops.values().forEach(System.out::println);
         }
     }
 
-    //===== LẤY LAPTOP THEO ID =====
-    public Optional<Laptop> getLaptopById(int id) {
-        return laptops.stream()
-                .filter(laptop -> laptop.getProductId() == id)
-                .findFirst();
+    //================= GIỎ HÀNG =================
+    public void addToCart(Laptop laptop, int quantity) {
+        cart.addItem(laptop, quantity);
+        System.out.println("Đã thêm " + quantity + " sản phẩm " + laptop.getName() + " vào giỏ hàng.");
     }
 
-    //===== LẤY LAPTOP THEO BRAND =====
-    public static List<Laptop> getLaptopsByBrand(String brand) {
-        return laptops.stream()
-                .filter(laptop -> laptop.getBrand().equalsIgnoreCase(brand))
-                .collect(Collectors.toList());
+    public void removeFromCart(int productId) {
+        cart.removeItem(productId);
+        System.out.println("Đã xóa sản phẩm có ID " + productId + " khỏi giỏ hàng.");
     }
 
-    //===== THÊM LAPTOP VÀO GIỎ HÀNG =====
-    public void addToCart(Laptop laptop) {
-        if (laptop == null) {
-            System.out.println("Sản phẩm không hợp lệ. Không thể thêm vào giỏ hàng.");
-            return;
-        }
-        if (cart.contains(laptop)) {
-            System.out.println("Sản phẩm " + laptop.getName() + " đã có trong giỏ hàng.");
-        } else {
-            cart.add(laptop);
-            System.out.println("Đã thêm " + laptop.getName() + " vào giỏ hàng thành công!");
-        }
+    public void updateCartItemQuantity(int productId, int quantity) {
+        cart.updateQuantity(productId, quantity);
+        System.out.println("Đã cập nhật số lượng sản phẩm có ID " + productId + " trong giỏ hàng.");
     }
 
+    public double getCartTotalValue() {
+        return cart.getTotalValue();
+    }
+
+    public void clearCart() {
+        cart.clearCart();
+        System.out.println("Đã xóa tất cả sản phẩm trong giỏ hàng.");
+    }
+
+    public Cart getCart() {
+        return cart;
+    }
+
+    //================= QUẢN LÝ SẢN PHẨM =================
     public void addLaptop(Laptop laptop) {
         if (laptop != null) {
-            laptops.add(laptop);
+            // Kiểm tra xem productId đã tồn tại chưa
+            if (laptops.containsKey(String.valueOf(laptop.getProductId()))) {
+                System.out.println("Sản phẩm với ID " + laptop.getProductId() + " đã tồn tại. Không thể thêm.");
+            } else {
+                laptops.put(String.valueOf(laptop.getProductId()), laptop);
+                writeProductToFile(laptops); // Ghi sản phẩm vào file
+                System.out.println("Đã thêm sản phẩm với ID " + laptop.getProductId() + " vào danh sách.");
+            }
+        } else {
+            System.out.println("Laptop không hợp lệ. Không thể thêm vào danh sách.");
         }
     }
 
-    public List<Laptop> getLaptops() {
-        return new ArrayList<>(laptops);
-    }
-
-    public void addOrder(Order order) {
-        if (order != null) {
-            orders.add(order);
+    public void removeLaptop(Laptop laptop) {
+        if (laptop != null) {
+            laptops.remove(String.valueOf(laptop.getProductId()));
+            writeProductToFile(laptops);
+            System.out.println("Sản phẩm với ID " + laptop.getProductId() + " đã được xóa.");
+        } else {
+            System.out.println("Laptop không tồn tại.");
         }
     }
 
-    public List<Order> getOrders() {
-        return new ArrayList<>(orders);
+    public void updateLaptop(int productId, String name, String brand, double price, String description) {
+        Laptop laptop = laptops.get(String.valueOf(productId));
+
+        if (laptop != null) {
+            if (name != null && !name.isEmpty()) {
+                laptop.setName(name);
+            }
+            if (brand != null && !brand.isEmpty()) {
+                laptop.setBrand(brand);
+            }
+            if (price > 0) {
+                laptop.setPrice(price);
+            }
+            if (description != null && !description.isEmpty()) {
+                laptop.setSpecifications(description);
+            }
+
+            // Cập nhật lại laptop trong Map
+            laptops.put(String.valueOf(productId), laptop);
+            writeProductToFile(laptops);
+            System.out.println("Đã cập nhật thông tin sản phẩm với ID " + productId + " thành công.");
+        } else {
+            System.out.println("Sản phẩm với ID " + productId + " không tồn tại.");
+        }
+    }
+
+    /**********   Handle File   ***********/
+    public void writeProductToFile(Map<String, Laptop> laptops) {
+        try (FileWriter writer = new FileWriter(PRODUCT_FILE_PATH)) {
+            writer.write("ProductId|Name|Brand|Price|Description\n"); // Thay dấu "," bằng "|"
+            for (Laptop laptop : laptops.values()) {
+                writer.write(String.format("%d|%s|%s|%.2f|%s%n",
+                        laptop.getProductId(),
+                        laptop.getName(),
+                        laptop.getBrand(),
+                        laptop.getPrice(),
+                        laptop.getSpecifications()));
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private Map<String, Laptop> readProductsFromFile() {
+        Map<String, Laptop> laptops = new HashMap<>();
+        try (BufferedReader reader = new BufferedReader(new FileReader(PRODUCT_FILE_PATH))) {
+            String line;
+            reader.readLine(); // Đọc và bỏ qua dòng tiêu đề
+            while ((line = reader.readLine()) != null) {
+                String[] split = line.split("\\|");
+
+                int productId = Integer.parseInt(split[0]);
+                String name = split[1];
+                String brand = split[2];
+                double price = Double.parseDouble(split[3]);
+                String description = split[4];
+
+                Laptop laptop = new Laptop(productId, name, brand, price, description);
+                laptops.put(String.valueOf(productId), laptop);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return laptops;
     }
 }
