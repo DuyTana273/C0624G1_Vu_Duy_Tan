@@ -1,30 +1,35 @@
 package case_study.controller;
 
 import case_study.model.product_manage.Laptop;
+import case_study.service.CartService;
 import case_study.service.ProductService;
 import case_study.view.ProductView;
 import case_study.view.UserView;
 
-import java.util.List;
+import java.util.HashMap;
+import java.util.Map;
 
 public class ProductController {
 
     //===== ĐỊNH NGHĨA THUỘC TÍNH =====
+    private Map<String, Laptop> laptops = new HashMap<>();
     private UserView userView;
     private ProductView productView;
     private ProductService productService;
+    private CartService cartService;
 
     //===== CONSTRUCTOR =====
-    public ProductController(UserView userView, ProductView productView, ProductService productService) {
+    public ProductController(UserView userView, ProductView productView, ProductService productService, CartService cartService) {
         this.userView = userView;
         this.productView = productView;
         this.productService = productService;
+        this.cartService = cartService;
     }
 
     public void showProductManagementMenu() {
         while (true) {
             productView.manageProduct();
-            String choice = productView.getInput("Lựa chọn của bạn: ");
+            String choice = userView.getInput("Lựa chọn của bạn: ");
             switch (choice) {
                 case "1":
                     addNewLaptop();
@@ -46,7 +51,7 @@ public class ProductController {
         }
     }
 
-    //==== Thêm sản phẩm =====
+    //========= MANAGE LAPTOP ===========
     private void addNewLaptop() {
         String addName = userView.getInput("Nhập tên sản phẩm: ");
         String brand = userView.getInput("Nhập thương hiệu: ");
@@ -56,7 +61,6 @@ public class ProductController {
         productService.addLaptop(newLaptop);
     }
 
-    //==== Xóa sản phẩm =====
     private void removeLaptop() {
         int productId = Integer.parseInt(userView.getInput("Nhập ID sản phẩm: "));
 
@@ -69,7 +73,6 @@ public class ProductController {
         }
     }
 
-    //==== Sửa sản phẩm =====
     private void updateLaptop() {
         int productId = Integer.parseInt(userView.getInput("Nhập ID sản phẩm: "));
 
@@ -96,10 +99,12 @@ public class ProductController {
                     handleLaptopWindows();
                     break;
                 case "2":
-                    productView.displayLaptopsByBrand("Apple");
+                    productService.displayLaptopsByBrand("Apple");
+                    cartService.addProductToCart();
                     break;
                 case "3":
                     productService.displayAllProducts();
+                    cartService.addProductToCart();
                     break;
                 case "4":
                     return;
@@ -122,7 +127,7 @@ public class ProductController {
                     handleLaptopBrands("DANH MỤC LAPTOP VĂN PHÒNG");
                     break;
                 case "3":
-                    return; // Quay lại Menu trước đó
+                    return;
                 default:
                     userView.showMessage("Lựa chọn không hợp lệ. Vui lòng thử lại!");
             }
@@ -136,25 +141,25 @@ public class ProductController {
             String choice = userView.getInput("Lựa chọn của bạn: ");
             switch (choice) {
                 case "1":
-                    productView.displayLaptopsByBrand("ASUS");
+                    productService.displayLaptopsByBrand("ASUS");
                     break;
                 case "2":
-                    productView.displayLaptopsByBrand("ACER");
+                    productService.displayLaptopsByBrand("ACER");
                     break;
                 case "3":
-                    productView.displayLaptopsByBrand("DELL");
+                    productService.displayLaptopsByBrand("DELL");
                     break;
                 case "4":
-                    productView.displayLaptopsByBrand("HP");
+                    productService.displayLaptopsByBrand("HP");
                     break;
                 case "5":
-                    productView.displayLaptopsByBrand("MICROSOFT");
+                    productService.displayLaptopsByBrand("MICROSOFT");
                     break;
                 case "6":
-                    productView.displayLaptopsByBrand("LENOVO");
+                    productService.displayLaptopsByBrand("LENOVO");
                     break;
                 case "7":
-                    productView.displayLaptopsByBrand("RAZER");
+                    productService.displayLaptopsByBrand("RAZER");
                     break;
                 case "8":
                     return;

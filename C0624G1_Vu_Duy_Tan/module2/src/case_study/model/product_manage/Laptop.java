@@ -54,10 +54,6 @@ public class Laptop {
         Laptop.idCounter = idCounter;
     }
 
-    public void setProductId(int productId) {
-        this.productId = productId;
-    }
-
     public void setName(String name) {
         this.name = name;
     }
@@ -77,11 +73,11 @@ public class Laptop {
     @Override
     public String toString() {
         return "Laptop{" +
-                "Id=" + productId +
-                "| Tên sản phẩm:'" + name + '\'' +
-                "| Thương hiệu:'" + brand + '\'' +
-                "| Giá:" + price +
-                "| Ghi chú:'" + specifications + '\'' +
+                "Mã số: " + productId +
+                " | Tên sản phẩm:'" + name + '\'' +
+                " | Thương hiệu:'" + brand + '\'' +
+                " | Giá:" + price +
+                " | Ghi chú:'" + specifications + '\'' +
                 '}';
     }
 }

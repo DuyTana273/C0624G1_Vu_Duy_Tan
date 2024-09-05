@@ -2,28 +2,43 @@ package case_study.controller;
 
 import case_study.model.user_manage.Role;
 import case_study.model.user_manage.User;
+import case_study.service.CartService;
 import case_study.service.ProductService;
 import case_study.service.UserService;
+import case_study.view.CartView;
 import case_study.view.ProductView;
 import case_study.view.UserView;
 
 public class UserController {
 
     //===== ĐỊNH NGHĨA THUỘC TÍNH =====
-    private final UserView userView;
-    private final UserService userService;
-    private final ProductController productController;
-    private final ProductView productView;
-    private final ProductService productService;
+    private UserView userView;
+    private UserService userService;
+    private ProductController productController;
+    private ProductView productView;
+    private ProductService productService;
+    private CartView cartView;
+    private CartService cartService;
+    private CartController cartController;
     private User loggedInUser;
 
     //===== CONSTRUCTOR =====
-    public UserController(UserView userView, UserService userService, ProductController productController, ProductView productView, ProductService productService) {
+    public UserController(UserView userView,
+                          UserService userService,
+                          ProductView productView,
+                          ProductService productService,
+                          ProductController productController,
+                          CartView cartView,
+                          CartService cartService,
+                          CartController cartController) {
         this.userView = userView;
         this.userService = userService;
         this.productView = productView;
         this.productService = productService;
         this.productController = productController;
+        this.cartView = cartView;
+        this.cartService = cartService;
+        this.cartController = cartController;
     }
 
     //********************* BẮT ĐẦU CHƯƠNG TRÌNH *********************
@@ -164,7 +179,6 @@ public class UserController {
                     productController.showProductManagementMenu();
                     break;
                 case "3":
-                    viewReports();
                     break;
                 case "4":
                     logout();
@@ -272,7 +286,6 @@ public class UserController {
                     productController.showProductManagementMenu();
                     break;
                 case "2":
-                    viewOrders();
                     break;
                 case "3":
                     changePassword();
@@ -297,10 +310,9 @@ public class UserController {
                     productController.showCategoryLaptops();
                     break;
                 case "2":
-                    placeOrder();
                     break;
                 case "3":
-                    productView.showCart(productService);
+                    cartController.menuCart();
                     break;
                 case "4":
                     changePassword();
@@ -319,16 +331,12 @@ public class UserController {
 
     //============================ QUẢN LÝ NGƯỜI DÙNG ============================
 
-    //===== XEM BÁO CÁO (CHO ADMIN) =====
-    private void viewReports() {
-    }
-
     //======= HIỂN THỊ THÔNG TIN USERS =======
     private void showUsers() {
         userView.displayUsers(userService.getAllUsers());
     }
 
-    //===== THÔNG TIN ĐĂNG KÝ =====
+    //===== REGISTER USERNAME =====
     private User getInputForRegister() {
         String username;
         while (true) {
@@ -387,7 +395,7 @@ public class UserController {
         return new User(username, password, phoneNumber, name, email);
     }
 
-    //===== MANAGE USES =====
+    //============================ MANAGE USER ============================
     private void addBuyer() {
         User newBuyer = getInputForRegister();
         userService.registerBuyer(newBuyer.getUsername(), newBuyer.getPassword(), newBuyer.getPhoneNumber(), newBuyer.getFullName(), newBuyer.getEmail());
@@ -449,7 +457,7 @@ public class UserController {
         String newName = userView.getInput("Nhập họ tên mới (hiện tại: " + user.getFullName() + "): ");
         String newEmail = userView.getInput("Nhập email mới (hiện tại: " + user.getEmail() + "): ");
         String newPhoneNumber = userView.getInput("Nhập SĐT mới (hiện tại: " + user.getPhoneNumber() + "): ");
-        userService.updateUserDetail( username,  newPhoneNumber,  newName,  newEmail);
+        userService.updateUserDetail(username, newPhoneNumber, newName, newEmail);
         userView.showMessage("Đã cập nhật thông tin người dùng thành công!");
     }
 
@@ -469,13 +477,5 @@ public class UserController {
                 userView.showMessage("Mật khẩu cũ không đúng. Vui lòng thử lại.");
             }
         }
-    }
-
-    //===== XEM ĐƠN HÀNG (CHO SELLER) =====
-    private void viewOrders() {
-    }
-
-    //===== ĐẶT HÀNG (CHO BUYER) =====
-    private void placeOrder() {
     }
 }

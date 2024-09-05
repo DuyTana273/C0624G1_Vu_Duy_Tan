@@ -11,12 +11,12 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 public class UserService {
-    private UserView userView;
 
     // Link File csv
     private static final String USERS_FILE_PATH = "src/case_study/store/users.csv";
 
     //===== ĐỊNH NGHĨA THUỘC TÍNH =====
+    private UserView userView;
     private Map<String, User> users = new HashMap<>();
     private final Map<String, Seller> sellers = new HashMap<>();
     private final Map<String, Buyer> buyers = new HashMap<>();

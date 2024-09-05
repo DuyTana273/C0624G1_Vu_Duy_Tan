@@ -5,18 +5,35 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c2d0f81d-a4bf-418f-9a3f-6af25e3d6e8c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/case_study/store/products.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/case_study/store/users.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/case_study/service/CartService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/case_study/controller/CartController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/case_study/controller/CartController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/case_study/controller/OrderController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/case_study/controller/PaymentController.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/case_study/controller/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/case_study/controller/ProductController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/case_study/controller/ShippingController.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/case_study/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/case_study/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/case_study/model/cart_manage/cart/Cart.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/case_study/model/cart_manage/Cart.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/case_study/model/cart_manage/cart/CartItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/case_study/model/cart_manage/CartItem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/case_study/model/cart_manage/order/Order.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/case_study/model/cart_manage/order/OrderStatus.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/case_study/model/product_manage/Category.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/case_study/model/product_manage/Laptop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/case_study/model/product_manage/Laptop.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/case_study/model/product_manage/SubCategory.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/case_study/model/transaction/payment/Payment.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/case_study/model/transaction/payment/PaymentMethod.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/case_study/model/transaction/shipping/Shipping.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/case_study/model/transaction/shipping/ShippingStatus.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/case_study/service/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/case_study/service/ProductService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/case_study/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/case_study/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/case_study/store/products.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/case_study/store/products.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/case_study/store/users.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/case_study/store/users.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/case_study/view/CartView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/case_study/view/CartView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/case_study/view/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/case_study/view/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/case_study/view/OrderView.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/case_study/view/PaymentView.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/case_study/view/ProductView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/case_study/view/ProductView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/case_study/view/ShippingView.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/case_study/view/UserView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/case_study/view/UserView.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -61,81 +78,81 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "Application.BodyMassIndex.executor": "Run",
-    "Application.Circle$CircleTest.executor": "Run",
-    "Application.CircleTest.executor": "Run",
-    "Application.ColorableTest.executor": "Run",
-    "Application.CountCharacterInString.executor": "Run",
-    "Application.GenericStackClient.executor": "Run",
-    "Application.LinkedListQueueClient.executor": "Run",
-    "Application.Main.executor": "Run",
-    "Application.MainDiagonalOfMatrix.executor": "Run",
-    "Application.MyClass.executor": "Run",
-    "Application.MyLinkedListTest.executor": "Run",
-    "Application.MyListTest.executor": "Run",
-    "Application.PerformanceTest.executor": "Run",
-    "Application.QuadraticEquation.executor": "Run",
-    "Application.Rectangle$RectangleTest.executor": "Run",
-    "Application.RectangleTest.executor": "Run",
-    "Application.ResizeableTest.executor": "Run",
-    "Application.SelectionSortTimer.executor": "Run",
-    "Application.Shape$ShapeTest.executor": "Run",
-    "Application.ShapeTest.executor": "Run",
-    "Application.Square$SquareTest.executor": "Run",
-    "Application.StopWatch.executor": "Run",
-    "Application.Test.executor": "Run",
-    "Application.case_study.view.Main.executor": "Run",
-    "Application.homework.accessment01.view.Main.executor": "Run",
-    "Application.homework.accessment02.view.Main.executor": "Run",
-    "Application.homework.thuc_hanh.ex_01.Main.executor": "Run",
-    "Application.homework.thuc_hanh.ex_02.Main.executor": "Run",
-    "Application.ss6_Inheritance.bai_tap.PointAndMoveablepoint.Main.executor": "Run",
-    "Application.ss6_Inheritance.bai_tap.Triangle.Main.executor": "Run",
-    "Application.ss7_AbstractClassAndInterface.thuc_hanh.AbstractAndInterfaceTests.Fruit.Main.executor": "Run",
-    "Application.ss7_AbstractClassAndInterface.thuc_hanh.AbstractAndInterfaceTests.Main.executor": "Run",
-    "Application.ss7_AbstractClassAndInterface.thuc_hanh.Shape.Main.executor": "Run",
-    "Downloaded.Files.Path.Enabled": "false",
-    "JUnit.AbsoluteNumberCalculatorTest.executor": "Run",
-    "JUnit.CalculatorTest.executor": "Run",
-    "JUnit.CylinderTest.executor": "Run",
-    "JUnit.FizzBuzzTest.executor": "Run",
-    "JUnit.NextDayCalculatorTest.executor": "Run",
-    "JUnit.SimpleCalculatorTest.executor": "Run",
-    "JUnit.TennisGameTest.checkAllScores.executor": "Run",
-    "JUnit.TennisGameTest.executor": "Run",
-    "JUnit.TriangleClassifierTest.executor": "Run",
-    "JUnit.ss7_AbstractClassAndInterface.bai_tap.Shape in module2.executor": "Run",
-    "Repository.Attach.Annotations": "false",
-    "Repository.Attach.JavaDocs": "false",
-    "Repository.Attach.Sources": "false",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "create.test.in.the.same.root": "true",
-    "deletionFromPopupRequiresConfirmation": "false",
-    "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true",
-    "last_directory_selection": "C:/Users/vuduy/Desktop/CodeGym/C0624G1_Vu_Duy_Tan/module2/test",
-    "last_opened_file_path": "C:/Users/vuduy/Desktop/CodeGym/C0624G1_Vu_Duy_Tan/module2/src/case_study",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "onboarding.tips.debug.path": "C:/Users/vuduy/Desktop/CodeGym/C0624G1_Vu_Duy_Tan/module2/src/Main.java",
-    "project.structure.last.edited": "Libraries",
-    "project.structure.proportion": "0.15429688",
-    "project.structure.side.proportion": "0.2",
-    "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;Application.BodyMassIndex.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Circle$CircleTest.executor&quot;: &quot;Run&quot;,
+    &quot;Application.CircleTest.executor&quot;: &quot;Run&quot;,
+    &quot;Application.ColorableTest.executor&quot;: &quot;Run&quot;,
+    &quot;Application.CountCharacterInString.executor&quot;: &quot;Run&quot;,
+    &quot;Application.GenericStackClient.executor&quot;: &quot;Run&quot;,
+    &quot;Application.LinkedListQueueClient.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Application.MainDiagonalOfMatrix.executor&quot;: &quot;Run&quot;,
+    &quot;Application.MyClass.executor&quot;: &quot;Run&quot;,
+    &quot;Application.MyLinkedListTest.executor&quot;: &quot;Run&quot;,
+    &quot;Application.MyListTest.executor&quot;: &quot;Run&quot;,
+    &quot;Application.PerformanceTest.executor&quot;: &quot;Run&quot;,
+    &quot;Application.QuadraticEquation.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Rectangle$RectangleTest.executor&quot;: &quot;Run&quot;,
+    &quot;Application.RectangleTest.executor&quot;: &quot;Run&quot;,
+    &quot;Application.ResizeableTest.executor&quot;: &quot;Run&quot;,
+    &quot;Application.SelectionSortTimer.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Shape$ShapeTest.executor&quot;: &quot;Run&quot;,
+    &quot;Application.ShapeTest.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Square$SquareTest.executor&quot;: &quot;Run&quot;,
+    &quot;Application.StopWatch.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Test.executor&quot;: &quot;Run&quot;,
+    &quot;Application.case_study.view.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Application.homework.accessment01.view.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Application.homework.accessment02.view.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Application.homework.thuc_hanh.ex_01.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Application.homework.thuc_hanh.ex_02.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Application.ss6_Inheritance.bai_tap.PointAndMoveablepoint.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Application.ss6_Inheritance.bai_tap.Triangle.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Application.ss7_AbstractClassAndInterface.thuc_hanh.AbstractAndInterfaceTests.Fruit.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Application.ss7_AbstractClassAndInterface.thuc_hanh.AbstractAndInterfaceTests.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Application.ss7_AbstractClassAndInterface.thuc_hanh.Shape.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
+    &quot;JUnit.AbsoluteNumberCalculatorTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CalculatorTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CylinderTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.FizzBuzzTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.NextDayCalculatorTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.SimpleCalculatorTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.TennisGameTest.checkAllScores.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.TennisGameTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.TriangleClassifierTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ss7_AbstractClassAndInterface.bai_tap.Shape in module2.executor&quot;: &quot;Run&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;create.test.in.the.same.root&quot;: &quot;true&quot;,
+    &quot;deletionFromPopupRequiresConfirmation&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_directory_selection&quot;: &quot;C:/Users/vuduy/Desktop/CodeGym/C0624G1_Vu_Duy_Tan/module2/test&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/vuduy/Desktop/CodeGym/C0624G1_Vu_Duy_Tan/module2/src/case_study&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/vuduy/Desktop/CodeGym/C0624G1_Vu_Duy_Tan/module2/src/Main.java&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15429688&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="ss10_DSA.thuc_hanh.LinkedListTest" />
@@ -226,6 +243,7 @@
       <workItem from="1725303104740" duration="2303000" />
       <workItem from="1725349509520" duration="22577000" />
       <workItem from="1725414881356" duration="19917000" />
+      <workItem from="1725501194542" duration="21907000" />
     </task>
     <servers />
   </component>

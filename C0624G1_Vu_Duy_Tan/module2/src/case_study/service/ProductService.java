@@ -1,8 +1,10 @@
 package case_study.service;
 
-import case_study.model.cart_manage.cart.Cart;
-import case_study.model.cart_manage.order.Order;
+import case_study.controller.ProductController;
+import case_study.model.cart_manage.Cart;
 import case_study.model.product_manage.Laptop;
+import case_study.view.ProductView;
+import case_study.view.UserView;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -15,16 +17,16 @@ import java.util.stream.Collectors;
 public class ProductService {
 
     //===== ĐỊNH NGHĨA THUỘC TÍNH =====
+    private UserView userView;
     private Map<String, Laptop> laptops = new HashMap<>();
-    private List<Order> orders = new ArrayList<>();
-    //    private final List<Laptop> cart;
     private final Cart cart;
+
     // Link File csv
     private static final String PRODUCT_FILE_PATH = "src/case_study/store/products.csv";
 
-
     //===== CONSTRUCTOR =====
-    public ProductService() {
+    public ProductService(UserView userView) {
+        this.userView = userView;
         this.cart = new Cart();
         Map<String, Laptop> loadedLaptops = readProductsFromFile();
         if (!loadedLaptops.isEmpty()) {
@@ -53,43 +55,37 @@ public class ProductService {
                 .collect(Collectors.toList());
     }
 
+    //===== HIỂN THỊ THÔNG TIN LAPTOP THEO THƯƠNG HIỆU =====
+    public void displayLaptopsByBrand(String brand) {
+        List<Laptop> filteredLaptops = getLaptopsByBrand(brand);
+
+        if (filteredLaptops.isEmpty()) {
+            userView.showMessage("Không có sản phẩm nào thuộc thương hiệu: " + brand);
+            return;
+        }
+
+        System.out.println("==== LAPTOP THƯƠNG HIỆU: " + brand.toUpperCase() + " ====");
+        for (int i = 0; i < filteredLaptops.size(); i++) {
+            System.out.println((i + 1) + ". " + filteredLaptops.get(i));
+        }
+    }
+
     //===== HIỂN THỊ TẤT CẢ LAPTOP =====
     public void displayAllProducts() {
         if (laptops.isEmpty()) {
             System.out.println("Danh sách sản phẩm trống.");
         } else {
+            List<String> ids = new ArrayList<>(laptops.keySet());
+            Collections.sort(ids, (s1, s2) -> Integer.compare(Integer.parseInt(s1), Integer.parseInt(s2)));
             System.out.println("Danh sách tất cả các laptop:");
-            laptops.values().forEach(System.out::println);
+            for (String id : ids) {
+                System.out.println(laptops.get(id));
+            }
         }
     }
 
-    //================= GIỎ HÀNG =================
-    public void addToCart(Laptop laptop, int quantity) {
-        cart.addItem(laptop, quantity);
-        System.out.println("Đã thêm " + quantity + " sản phẩm " + laptop.getName() + " vào giỏ hàng.");
-    }
-
-    public void removeFromCart(int productId) {
-        cart.removeItem(productId);
-        System.out.println("Đã xóa sản phẩm có ID " + productId + " khỏi giỏ hàng.");
-    }
-
-    public void updateCartItemQuantity(int productId, int quantity) {
-        cart.updateQuantity(productId, quantity);
-        System.out.println("Đã cập nhật số lượng sản phẩm có ID " + productId + " trong giỏ hàng.");
-    }
-
-    public double getCartTotalValue() {
-        return cart.getTotalValue();
-    }
-
-    public void clearCart() {
-        cart.clearCart();
-        System.out.println("Đã xóa tất cả sản phẩm trong giỏ hàng.");
-    }
-
-    public Cart getCart() {
-        return cart;
+    public Map<String, Laptop> getAllLaptops() {
+        return laptops;
     }
 
     //================= QUẢN LÝ SẢN PHẨM =================
@@ -147,7 +143,7 @@ public class ProductService {
     /**********   Handle File   ***********/
     public void writeProductToFile(Map<String, Laptop> laptops) {
         try (FileWriter writer = new FileWriter(PRODUCT_FILE_PATH)) {
-            writer.write("ProductId|Name|Brand|Price|Description\n"); // Thay dấu "," bằng "|"
+            writer.write("ProductId|Name|Brand|Price|Description\n");
             for (Laptop laptop : laptops.values()) {
                 writer.write(String.format("%d|%s|%s|%.2f|%s%n",
                         laptop.getProductId(),
@@ -165,7 +161,7 @@ public class ProductService {
         Map<String, Laptop> laptops = new HashMap<>();
         try (BufferedReader reader = new BufferedReader(new FileReader(PRODUCT_FILE_PATH))) {
             String line;
-            reader.readLine(); // Đọc và bỏ qua dòng tiêu đề
+            reader.readLine();
             while ((line = reader.readLine()) != null) {
                 String[] split = line.split("\\|");
 
@@ -183,4 +179,5 @@ public class ProductService {
         }
         return laptops;
     }
+
 }

@@ -1,48 +1,56 @@
 package case_study.controller;
 
-import case_study.model.product_manage.Laptop;
+import case_study.service.CartService;
 import case_study.service.ProductService;
+import case_study.view.CartView;
+import case_study.view.UserView;
 
 public class CartController {
-    private final ProductService productService;
+
+    //===== ĐỊNH NGHĨA THUỘC TÍNH =====
+    private UserView userView;
+    private ProductService productService;
+    private CartService cartService;
+    private CartView cartView;
 
     // Constructor: Nhận ProductService để quản lý giỏ hàng
-    public CartController(ProductService productService) {
+    public CartController(ProductService productService, CartService cartService, CartView cartView, UserView userView) {
         this.productService = productService;
+        this.cartService = cartService;
+        this.cartView = cartView;
+        this.userView = userView;
     }
 
-    // Thêm sản phẩm vào giỏ hàng
-    public void addItemToCart(Laptop laptop, int quantity) {
-        productService.addToCart(laptop, quantity);
-    }
-
-    // Cập nhật số lượng sản phẩm trong giỏ hàng
-    public void updateCartItemQuantity(int productId, int quantity) {
-        productService.updateCartItemQuantity(productId, quantity);
-    }
-
-    // Xóa sản phẩm khỏi giỏ hàng
-    public void removeItemFromCart(int productId) {
-        productService.removeFromCart(productId);
-    }
-
-    // Hiển thị giỏ hàng
-    public void showCartItems() {
-        productService.getCart().getItems().forEach((productId, cartItem) -> {
-            System.out.println("Product ID: " + productId);
-            System.out.println(cartItem);
-            System.out.println("---------------------------");
-        });
-    }
-
-    // Hiển thị tổng giá trị giỏ hàng
-    public void showTotalValue() {
-        System.out.println("Tổng giá trị giỏ hàng: " + productService.getCartTotalValue());
-    }
-
-    // Xóa toàn bộ giỏ hàng
-    public void clearCart() {
-        productService.clearCart();
-        System.out.println("Đã xóa toàn bộ sản phẩm trong giỏ hàng.");
+    //===== MENU GIỎ HÀNG =====
+    public void menuCart() {
+        while (true) {
+            cartView.showCartMenu();
+            String choice = userView.getInput("Lựa chọn của bạn: ");
+            switch (choice) {
+                case "1":
+                    cartService.displayCart();
+                    break;
+                case "2":
+                    cartService.addProductToCart();
+                    break;
+                case "3":
+                    cartService.updateProductQuantityInCart();
+                    break;
+                case "4":
+                    cartService.removeProductFromCart();
+                    break;
+                case "5":
+                    double total = cartService.getTotalCartValue();
+                    System.out.println("Tổng giá trị giỏ hàng: " + total);
+                    break;
+                case "6":
+                    cartService.clearCart();
+                    break;
+                case "7":
+                    return;
+                default:
+                    userView.showMessage("Lựa chọn không hợp lệ. Vui lòng thử lại!");
+            }
+        }
     }
 }
