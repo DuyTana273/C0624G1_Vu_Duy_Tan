@@ -2,7 +2,7 @@ package case_study.model.product_manage;
 
 import java.util.concurrent.atomic.AtomicInteger;
 
-public class Laptop {
+public class Laptop implements Product {
 
     //===== ĐỊNH NGHĨA THUỘC TÍNH =====
     private static AtomicInteger idCounter = new AtomicInteger();
@@ -11,59 +11,97 @@ public class Laptop {
     private String brand;
     private double price;
     private String specifications;
+    private int quantity;
 
     //===== CONSTRUCTOR thêm sản phẩm mới =====
-    public Laptop(String name, String brand, double price, String specifications) {
+    public Laptop(String name, String brand, double price, int quantity, String specifications) {
         this.productId = idCounter.incrementAndGet();
-        this.name = name;
-        this.brand = brand;
-        this.price = price;
+        setName(name);
+        setBrand(brand);
+        setPrice(price);
+        setQuantity(quantity);
         this.specifications = specifications;
     }
 
     //===== CONSTRUCTOR đọc từ file =====
-    public Laptop(int productId, String name, String brand, double price, String specifications) {
+    public Laptop(int productId, String name, String brand, double price, int quantity, String specifications) {
         this.productId = productId;
-        this.name = name;
-        this.brand = brand;
-        this.price = price;
+        setName(name);
+        setBrand(brand);
+        setPrice(price);
         this.specifications = specifications;
+        setQuantity(quantity);
+
+        if (productId > idCounter.get()) {
+            idCounter.set(productId);
+        }
     }
 
+    // Trong lớp Laptop
+    public static void setIdCounter(int maxProductId) {
+        idCounter.set(maxProductId);
+    }
+
+
+    @Override
     public int getProductId() {
         return productId;
     }
 
+    @Override
     public String getName() {
         return name;
     }
 
+    @Override
+    public void setName(String name) {
+        if (name == null || name.trim().isEmpty()) {
+            throw new IllegalArgumentException("Tên sản phẩm không thể để trống.");
+        }
+        this.name = name;
+    }
+
+    @Override
     public String getBrand() {
         return brand;
     }
 
+    @Override
+    public void setBrand(String brand) {
+        if (brand == null || brand.trim().isEmpty()) {
+            throw new IllegalArgumentException("Thương hiệu không thể để trống.");
+        }
+        this.brand = brand;
+    }
+
+    @Override
     public double getPrice() {
         return price;
     }
 
+    @Override
+    public void setPrice(double price) {
+        if (price < 0) {
+            throw new IllegalArgumentException("Giá không thể nhỏ hơn 0.");
+        }
+        this.price = price;
+    }
+
+    @Override
+    public int getQuantity() {
+        return quantity;
+    }
+
+    @Override
+    public void setQuantity(int quantity) {
+        if (quantity < 0) {
+            throw new IllegalArgumentException("Số lượng không thể nhỏ hơn 0.");
+        }
+        this.quantity = quantity;
+    }
+
     public String getSpecifications() {
         return specifications;
-    }
-
-    public static void setIdCounter(AtomicInteger idCounter) {
-        Laptop.idCounter = idCounter;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public void setBrand(String brand) {
-        this.brand = brand;
-    }
-
-    public void setPrice(double price) {
-        this.price = price;
     }
 
     public void setSpecifications(String specifications) {
@@ -72,12 +110,12 @@ public class Laptop {
 
     @Override
     public String toString() {
-        return "Laptop{" +
-                "Mã số: " + productId +
-                " | Tên sản phẩm:'" + name + '\'' +
-                " | Thương hiệu:'" + brand + '\'' +
-                " | Giá:" + price +
-                " | Ghi chú:'" + specifications + '\'' +
-                '}';
+        return String.format("Laptop{Mã số: %d |" +
+                        " Tên sản phẩm: '%s' |" +
+                        " Thương hiệu: '%s' |" +
+                        " Giá: %.2f |" +
+                        " Số lượng: %d |" +
+                        " Ghi chú: '%s'}",
+                productId, name, brand, price, quantity, specifications);
     }
 }

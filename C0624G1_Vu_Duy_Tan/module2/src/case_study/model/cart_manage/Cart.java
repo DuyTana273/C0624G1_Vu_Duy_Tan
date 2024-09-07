@@ -1,51 +1,67 @@
 package case_study.model.cart_manage;
 
-import case_study.model.product_manage.Laptop;
-
-import java.util.HashMap;
-import java.util.Map;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Optional;
 
 public class Cart {
+    private String username;
+    private List<CartItem> items;
 
-    //===== ĐỊNH NGHĨA THUỘC TÍNH =====
-    private Map<Laptop, Integer> items;  // Laptop và số lượng
-
-    //===== CONSTRUCTOR =====
-    public Cart() {
-        this.items = new HashMap<>();
+    public Cart(String username) {
+        this.username = username;
+        this.items = new ArrayList<>();
     }
 
-    //===== GETTER/SETTER =====
-    public Map<Laptop, Integer> getItems() {
+    public String getUsername() {
+        return username;
+    }
+
+    public List<CartItem> getItems() {
         return items;
     }
 
-    public void setItems(Map<Laptop, Integer> items) {
-        this.items = items;
+    // Thêm sản phẩm vào giỏ hàng
+    public void addItem(CartItem item) {
+        Optional<CartItem> existingItem = getItemByProductId(item.getProductId());
+        if (existingItem.isPresent()) {
+            // Nếu sản phẩm đã có trong giỏ, tăng số lượng
+            existingItem.get().setQuantity(existingItem.get().getQuantity() + item.getQuantity());
+        } else {
+            // Nếu sản phẩm chưa có, thêm vào giỏ
+            items.add(item);
+        }
     }
 
-    //===== TÍNH TỔNG GIÁ TRỊ GIỎ HÀNG =====
+    // Xóa sản phẩm khỏi giỏ hàng theo productId
+    public void removeItemByProductId(int productId) {
+        items.removeIf(item -> item.getProductId() == productId);
+    }
+
+    // Tính tổng giá trị của giỏ hàng
     public double getTotalCartValue() {
-        return items.entrySet().stream()
-                .mapToDouble(entry -> entry.getKey().getPrice() * entry.getValue())
+        return items.stream()
+                .mapToDouble(CartItem::getTotalPrice)
                 .sum();
     }
 
-    //===== THÊM MỤC VÀO GIỎ HÀNG =====
-    public void addItem(Laptop laptop, int quantity) {
-        items.put(laptop, items.getOrDefault(laptop, 0) + quantity);
+    // Tìm sản phẩm trong giỏ theo productId
+    public Optional<CartItem> getItemByProductId(int productId) {
+        return items.stream()
+                .filter(item -> item.getProductId() == productId)
+                .findFirst();
     }
 
-    //===== XOÁ MỤC KHỎI GIỎ HÀNG =====
-    public void removeItem(Laptop laptop) {
-        items.remove(laptop);
+    // Hiển thị các sản phẩm trong giỏ hàng
+    public void displayCartItems() {
+        for (CartItem item : items) {
+            System.out.println("ID: " + item.getProductId() + " | Tên: " + item.getProductName() +
+                    " | Số lượng: " + item.getQuantity() + " | Giá: " + item.getPrice());
+        }
     }
 
-    @Override
-    public String toString() {
-        return "Cart{" +
-                "Items=" + items +
-                ", TotalCartValue=" + getTotalCartValue() +
-                '}';
+    public void clearCart() {
+        items.clear();
+        System.out.println("Tất cả sản phẩm đã được xóa khỏi giỏ hàng.");
     }
 }

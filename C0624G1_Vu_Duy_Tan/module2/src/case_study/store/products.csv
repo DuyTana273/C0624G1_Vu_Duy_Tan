@@ -1,11 +1,23 @@
-ProductId|Name|Brand|Price|Description
-1|MacBook Pro 14|Apple|45000000.00|Mẫu laptop chuyên nghiệp cho công việc sáng tạo.
-12|Test|Laptop|3.00|2
-2|MacBook Pro 13|Apple|42000000.00|Mẫu laptop chuyên nghiệp cho công việc sáng tạo nội dung.
-3|Dell XPS 14|Dell|33000000.00|Mẫu laptop nhỏ gọn với thiết kế sang trọng, lịch lãm.
-4|Dell XPS 13|Dell|30000000.00|Mẫu laptop nhỏ gọn với thiết kế sang trọng.
-5|HP Spectre x360|HP|40000000.00|Mẫu laptop 2 trong 1 với khả năng gập linh hoạt.
-6|Asus ROG Zephyrus G14|Asus|35000000.00|Mẫu laptop gaming mạnh mẽ với thiết kế nhỏ gọn.
-7|Acer Swift 3|Acer|20000000.00|Mẫu laptop giá rẻ nhưng hiệu năng tốt cho sinh viên.
-8|Microsoft Surface Laptop 4|Microsoft|36000000.00|Mẫu laptop thanh lịch với màn hình cảm ứng.
-9|Razer Blade Stealth|Razer|38000000.00|Mẫu laptop gaming mỏng nhẹ với hiệu suất cao.
+ProductId|Name|Brand|Price|Quantity|Description
+1|MacBook Pro 14|Apple|45000000.00|5|Mẫu laptop chuyên nghiệp cho công việc sáng tạo.
+2|MacBook Pro 13|Apple|42000000.00|5|Mẫu laptop chuyên nghiệp cho công việc sáng tạo nội dung.
+3|Dell XPS 14|Dell|33000000.00|0|Mẫu laptop nhỏ gọn với thiết kế sang trọng, lịch lãm.
+4|Dell XPS 13|Dell|30000000.00|3|Mẫu laptop nhỏ gọn với thiết kế sang trọng.
+5|HP Spectre x360|HP|40000000.00|5|Mẫu laptop 2 trong 1 với khả năng gập linh hoạt.
+6|Asus ROG Zephyrus G14|Asus|35000000.00|5|Mẫu laptop gaming mạnh mẽ với thiết kế nhỏ gọn.
+7|Acer Swift 3|Acer|20000000.00|5|Mẫu laptop giá rẻ nhưng hiệu năng tốt cho sinh viên.
+8|Microsoft Surface Laptop 4|Microsoft|36000000.00|5|Mẫu laptop thanh lịch với màn hình cảm ứng.
+10|MacBook Air M2|Apple|30000000.00|5|Laptop siêu mỏng với hiệu năng mạnh mẽ từ chip M2.
+13|Dell Inspiron 15|Dell|20000000.00|5|Laptop phổ thông với giá hợp lý và hiệu năng ổn định.
+16|HP Envy 13|HP|25000000.00|5|Laptop mỏng nhẹ với thiết kế sang trọng, hiệu suất mạnh mẽ.
+17|HP Pavilion 15|HP|20000000.00|5|Laptop phổ thông phù hợp cho học sinh, sinh viên.
+20|Asus TUF Gaming A15|Asus|25000000.00|5|Laptop gaming với độ bền cao và hiệu năng ổn định.
+21|Asus VivoBook 14|Asus|18000000.00|5|Laptop phổ thông với giá rẻ và cấu hình ổn định.
+24|Acer Aspire 5|Acer|15000000.00|5|Laptop phổ thông với giá cả phải chăng và cấu hình ổn định.
+25|Acer Nitro 5|Acer|22000000.00|5|Laptop gaming giá rẻ với hiệu suất đồ họa tốt.
+28|Microsoft Surface Pro 7|Microsoft|28000000.00|5|Laptop 2 trong 1 với hiệu suất mạnh mẽ và thiết kế linh hoạt.
+29|Microsoft Surface Go 2|Microsoft|18000000.00|5|Laptop nhỏ gọn phù hợp cho sinh viên và di chuyển nhiều.
+33|Razer Book 13|Razer|30000000.00|5|Laptop mỏng nhẹ, hiệu suất mạnh, thích hợp cho công việc và giải trí.
+34|Razer Blade Pro 17|Razer|60000000.00|5|Laptop gaming cỡ lớn với hiệu năng mạnh mẽ dành cho game thủ chuyên nghiệp.
+35|Razer Blade 14|Razer|50000000.00|4|Laptop gaming nhỏ gọn với cấu hình mạnh và thiết kế sang trọng.
+37|12|ApplE|43.00|19|32

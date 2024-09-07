@@ -13,7 +13,7 @@ import java.util.stream.Collectors;
 public class UserService {
 
     // Link File csv
-    private static final String USERS_FILE_PATH = "src/case_study/store/users.csv";
+    private static final String USERS_FILE_PATH = "C0624G1_Vu_Duy_Tan/C0624G1_Vu_Duy_Tan/module2/src/case_study/store/users.csv";
 
     //===== ĐỊNH NGHĨA THUỘC TÍNH =====
     private UserView userView;
@@ -175,8 +175,8 @@ public class UserService {
     public void validateFullName(String fullName) {
         if (fullName == null || fullName.trim().isEmpty()) {
             throw new IllegalArgumentException("Họ tên không được để trống!");
-        } else if (!fullName.matches("^[a-zA-Z\\s]*$")) {
-            throw new IllegalArgumentException("Họ tên chỉ được chứa chữ cái và khoảng trắng!");
+        } else if (!fullName.matches("^[\\p{L} .'-]+$")) {
+            throw new IllegalArgumentException("Họ tên chỉ được chứa chữ cái, khoảng trắng, dấu chấm, dấu gạch ngang, và dấu nháy đơn!");
         }
     }
 
@@ -185,7 +185,6 @@ public class UserService {
             throw new IllegalArgumentException("Địa chỉ email không hợp lệ! Ví dụ: a@a.com");
         }
     }
-
 
     /**********   Handle File   ***********/
     // Ghi dữ liệu vào file

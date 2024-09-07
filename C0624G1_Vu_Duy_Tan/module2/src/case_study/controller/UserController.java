@@ -3,20 +3,25 @@ package case_study.controller;
 import case_study.model.user_manage.Role;
 import case_study.model.user_manage.User;
 import case_study.service.CartService;
-import case_study.service.ProductService;
+import case_study.service.LaptopService;
 import case_study.service.UserService;
+import case_study.util.SessionManager;
 import case_study.view.CartView;
-import case_study.view.ProductView;
+import case_study.view.LaptopView;
 import case_study.view.UserView;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class UserController {
 
     //===== ĐỊNH NGHĨA THUỘC TÍNH =====
+    private Map<String, User> users = new HashMap<>();
     private UserView userView;
     private UserService userService;
-    private ProductController productController;
-    private ProductView productView;
-    private ProductService productService;
+    private LaptopController laptopController;
+    private LaptopView laptopView;
+    private LaptopService laptopService;
     private CartView cartView;
     private CartService cartService;
     private CartController cartController;
@@ -25,17 +30,17 @@ public class UserController {
     //===== CONSTRUCTOR =====
     public UserController(UserView userView,
                           UserService userService,
-                          ProductView productView,
-                          ProductService productService,
-                          ProductController productController,
+                          LaptopView laptopView,
+                          LaptopService laptopService,
+                          LaptopController laptopController,
                           CartView cartView,
                           CartService cartService,
                           CartController cartController) {
         this.userView = userView;
         this.userService = userService;
-        this.productView = productView;
-        this.productService = productService;
-        this.productController = productController;
+        this.laptopView = laptopView;
+        this.laptopService = laptopService;
+        this.laptopController = laptopController;
         this.cartView = cartView;
         this.cartService = cartService;
         this.cartController = cartController;
@@ -74,8 +79,6 @@ public class UserController {
         String name = "";
         String email = "";
         String phoneNumber = "";
-
-        // Nhập username
         while (true) {
             username = userView.getInput("Nhập tài khoản: ");
             try {
@@ -85,8 +88,6 @@ public class UserController {
                 userView.showMessage(e.getMessage());
             }
         }
-
-        // Nhập password
         while (true) {
             password = userView.getInput("Nhập mật khẩu: ");
             try {
@@ -96,8 +97,6 @@ public class UserController {
                 userView.showMessage(e.getMessage());
             }
         }
-
-        // Nhập họ tên
         while (true) {
             name = userView.getInput("Nhập họ tên: ");
             try {
@@ -107,8 +106,6 @@ public class UserController {
                 userView.showMessage(e.getMessage());
             }
         }
-
-        // Nhập email
         while (true) {
             email = userView.getInput("Nhập email: ");
             try {
@@ -118,8 +115,6 @@ public class UserController {
                 userView.showMessage(e.getMessage());
             }
         }
-
-        // Nhập số điện thoại
         while (true) {
             phoneNumber = userView.getInput("Nhập SĐT: ");
             try {
@@ -129,8 +124,6 @@ public class UserController {
                 userView.showMessage(e.getMessage());
             }
         }
-
-        // Đăng ký tài khoản sau khi tất cả thông tin đã hợp lệ
         try {
             userService.registerBuyer(username, password, phoneNumber, name, email);
             userView.showMessage("Đăng ký tài khoản thành công!");
@@ -139,14 +132,20 @@ public class UserController {
         }
     }
 
-    //===== LOGIN USER =====
     private void login() {
         String username = userView.getInput("Nhập tài khoản: ");
         String password = userView.getInput("Nhập mật khẩu: ");
 
         loggedInUser = userService.loginUser(username, password);
         if (loggedInUser != null) {
+            SessionManager.login(loggedInUser);
             userView.showMessage("Đăng nhập thành công. Vai trò: " + loggedInUser.getRoles());
+
+            // Nếu người dùng là "buyer", đảm bảo giỏ hàng của họ được tạo
+            if (loggedInUser.getRoles().contains(Role.ROLE_BUYER)) {
+                cartService.getOrCreateCart(loggedInUser);
+            }
+
         } else {
             userView.showMessage("Sai tài khoản hoặc mật khẩu. Vui lòng thử lại!");
         }
@@ -176,9 +175,10 @@ public class UserController {
                     manageUsersAdmin();
                     break;
                 case "2":
-                    productController.showProductManagementMenu();
+                    laptopController.showProductManagementMenu();
                     break;
                 case "3":
+                    cartController.viewCartByRole(String.valueOf(users));
                     break;
                 case "4":
                     logout();
@@ -232,7 +232,7 @@ public class UserController {
                     manageUsers();
                     break;
                 case "2":
-                    productController.showProductManagementMenu();
+                    laptopController.showProductManagementMenu();
                     break;
                 case "3":
                     changePassword();
@@ -283,14 +283,18 @@ public class UserController {
 
             switch (choice) {
                 case "1":
-                    productController.showProductManagementMenu();
+                    laptopController.showProductManagementMenu();
                     break;
                 case "2":
+                    cartController.cartMenu();
                     break;
                 case "3":
-                    changePassword();
+                    editUser();
                     break;
                 case "4":
+                    changePassword();
+                    break;
+                case "5":
                     logout();
                     return;
                 default:
@@ -307,20 +311,24 @@ public class UserController {
 
             switch (choice) {
                 case "1":
-                    productController.showCategoryLaptops();
+                    laptopController.showCategoryLaptops();
                     break;
                 case "2":
+                    cartController.placeOrder();
                     break;
                 case "3":
-                    cartController.menuCart();
+                    cartController.cartMenu();
                     break;
                 case "4":
-                    changePassword();
+                    editUser();
                     break;
                 case "5":
+                    changePassword();
+                    break;
+                case "6":
                     removeAccount();
                     return;
-                case "6":
+                case "7":
                     logout();
                     return;
                 default:
@@ -395,7 +403,6 @@ public class UserController {
         return new User(username, password, phoneNumber, name, email);
     }
 
-    //============================ MANAGE USER ============================
     private void addBuyer() {
         User newBuyer = getInputForRegister();
         userService.registerBuyer(newBuyer.getUsername(), newBuyer.getPassword(), newBuyer.getPhoneNumber(), newBuyer.getFullName(), newBuyer.getEmail());
@@ -415,6 +422,7 @@ public class UserController {
     }
 
     private void removeUser() {
+        showUsers();
         String username = userView.getInput("Nhập tài khoản cần xóa: ");
         User userToRemove = userService.getUser(username);
 
@@ -428,6 +436,8 @@ public class UserController {
             return;
         }
 
+        userView.confirmAction("Bạn có chắc chắn muốn xóa người dùng này không?");
+
         if (userService.removeUser(username)) {
             userView.showMessage("Đã xóa người dùng thành công.");
         } else {
@@ -436,32 +446,85 @@ public class UserController {
     }
 
     private void removeAccount() {
-        String username = loggedInUser.getUsername();
-        if (userService.removeBuyer(username)) {
-            loggedInUser = null;
-            userView.showMessage("Tài khoản của bạn đã được xóa thành công.");
+        boolean confirmed = userView.confirmAction("Bạn có chắc chắn muốn xóa tài khoản không?");
+
+        if (confirmed) {
+            String username = loggedInUser.getUsername();
+
+            if (userService.removeBuyer(username)) {
+                loggedInUser = null;
+                userView.showMessage("Tài khoản của bạn đã được xóa thành công.");
+            } else {
+                userView.showMessage("Không thể xóa tài khoản của bạn.");
+            }
         } else {
-            userView.showMessage("Không thể xóa tài khoản của bạn.");
+            userView.showMessage("Hành động xóa tài khoản đã bị hủy.");
         }
     }
 
     private void editUser() {
-        String username = userView.getInput("Nhập tài khoản cần chỉnh sửa: ");
-        User user = userService.getUser(username);
+        if (loggedInUser.hasRole(Role.ROLE_ADMIN) || loggedInUser.hasRole(Role.ROLE_MANAGER) || loggedInUser.hasRole(Role.ROLE_SELLER)) {
+            showUsers();
 
-        if (user == null) {
-            userView.showMessage("Không tìm thấy người dùng với tài khoản: " + username);
-            return;
+            String username = userView.getInput("Nhập tài khoản cần chỉnh sửa: ");
+            User userToEdit = userService.getUser(username);
+
+            if (userToEdit == null) {
+                userView.showMessage("Không tìm thấy người dùng với tài khoản: " + username);
+                return;
+            }
+
+            if (loggedInUser.hasRole(Role.ROLE_ADMIN)) {
+                String newName = userView.getInput("Nhập họ tên mới (hiện tại: " + userToEdit.getFullName() + "): ");
+                String newEmail = userView.getInput("Nhập email mới (hiện tại: " + userToEdit.getEmail() + "): ");
+                String newPhoneNumber = userView.getInput("Nhập SĐT mới (hiện tại: " + userToEdit.getPhoneNumber() + "): ");
+                userService.updateUserDetail(username, newPhoneNumber, newName, newEmail);
+                userView.showMessage("Đã cập nhật thông tin người dùng thành công!");
+            } else if (loggedInUser.hasRole(Role.ROLE_MANAGER)) {
+                if (userToEdit.hasRole(Role.ROLE_SELLER) || userToEdit.hasRole(Role.ROLE_BUYER) || userToEdit.getUsername().equals(loggedInUser.getUsername())) {
+                    String newName = userView.getInput("Nhập họ tên mới (hiện tại: " + userToEdit.getFullName() + "): ");
+                    String newEmail = userView.getInput("Nhập email mới (hiện tại: " + userToEdit.getEmail() + "): ");
+                    String newPhoneNumber = userView.getInput("Nhập SĐT mới (hiện tại: " + userToEdit.getPhoneNumber() + "): ");
+                    userService.updateUserDetail(username, newPhoneNumber, newName, newEmail);
+                    userView.showMessage("Đã cập nhật thông tin người dùng thành công!");
+                } else {
+                    userView.showMessage("Bạn không có quyền chỉnh sửa thông tin người dùng này.");
+                }
+            } else if (loggedInUser.hasRole(Role.ROLE_SELLER)) {
+                if (userToEdit.hasRole(Role.ROLE_BUYER) || userToEdit.getUsername().equals(loggedInUser.getUsername())) {
+                    String newName = userView.getInput("Nhập họ tên mới (hiện tại: " + userToEdit.getFullName() + "): ");
+                    String newEmail = userView.getInput("Nhập email mới (hiện tại: " + userToEdit.getEmail() + "): ");
+                    String newPhoneNumber = userView.getInput("Nhập SĐT mới (hiện tại: " + userToEdit.getPhoneNumber() + "): ");
+                    userService.updateUserDetail(username, newPhoneNumber, newName, newEmail);
+                    userView.showMessage("Đã cập nhật thông tin người dùng thành công!");
+                } else {
+                    userView.showMessage("Bạn không có quyền chỉnh sửa thông tin người dùng này.");
+                }
+            } else {
+                userView.showMessage("Bạn không có quyền thực hiện chức năng này.");
+            }
+        } else if (loggedInUser.hasRole(Role.ROLE_BUYER)) {
+            String username = loggedInUser.getUsername();
+            User userToEdit = userService.getUser(username);
+
+            if (userToEdit == null) {
+                userView.showMessage("Không tìm thấy người dùng với tài khoản: " + username);
+                return;
+            }
+
+            String newName = userView.getInput("Nhập họ tên mới (hiện tại: " + userToEdit.getFullName() + "): ");
+            String newEmail = userView.getInput("Nhập email mới (hiện tại: " + userToEdit.getEmail() + "): ");
+            String newPhoneNumber = userView.getInput("Nhập SĐT mới (hiện tại: " + userToEdit.getPhoneNumber() + "): ");
+
+            userService.updateUserDetail(username, newPhoneNumber, newName, newEmail);
+            userView.showMessage("Đã cập nhật thông tin của bạn thành công!");
+        } else {
+            userView.showMessage("Bạn không có quyền thực hiện chức năng này.");
         }
-
-        String newName = userView.getInput("Nhập họ tên mới (hiện tại: " + user.getFullName() + "): ");
-        String newEmail = userView.getInput("Nhập email mới (hiện tại: " + user.getEmail() + "): ");
-        String newPhoneNumber = userView.getInput("Nhập SĐT mới (hiện tại: " + user.getPhoneNumber() + "): ");
-        userService.updateUserDetail(username, newPhoneNumber, newName, newEmail);
-        userView.showMessage("Đã cập nhật thông tin người dùng thành công!");
     }
 
     private void changePassword() {
+        userView.confirmAction("Bạn có chắc chắn muốn thay đổi mật khẩu không?");
         String oldPassword;
         String newPassword;
         boolean valid = false;

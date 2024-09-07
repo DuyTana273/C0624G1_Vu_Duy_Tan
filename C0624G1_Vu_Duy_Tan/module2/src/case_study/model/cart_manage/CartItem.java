@@ -1,30 +1,42 @@
 package case_study.model.cart_manage;
 
-import case_study.model.product_manage.Laptop;
 
 public class CartItem {
-
-    //===== ĐỊNH NGHĨA THUỘC TÍNH =====
-    private Laptop laptop;
+    private int productId;
+    private String productName;
     private int quantity;
+    private double price;
 
-    //===== CONSTRUCTOR =====
-    public CartItem(Laptop laptop, int quantity) {
-        this.laptop = laptop;
+    // Constructor mới có thêm productId
+    public CartItem(int productId, String productName, int quantity, double price) {
+        this.productId = productId;
+        this.productName = productName;
         this.quantity = quantity;
+        this.price = price;
     }
 
-    //===== TÍNH TỔNG GIÁ CỦA CART ITEM =====
+    // Getter cho productId
+    public int getProductId() {
+        return productId;
+    }
+
+    public String getProductName() {
+        return productName;
+    }
+
+    public int getQuantity() {
+        return quantity;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
     public double getTotalPrice() {
-        return laptop.getPrice() * quantity;
+        return quantity * price;
     }
 
-    @Override
-    public String toString() {
-        return "CartItem{" +
-                "Laptop=" + laptop.getName() +
-                ", Số lượng=" + quantity +
-                ", Tổng giá=" + getTotalPrice() +
-                '}';
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
     }
 }

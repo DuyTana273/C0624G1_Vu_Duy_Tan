@@ -19,6 +19,13 @@ public class UserView {
         return scanner.nextLine().trim();
     }
 
+    //===== XÁC NHẬN HÀNH ĐỘNG =====
+    public boolean confirmAction(String message) {
+        System.out.print(message + " (yes/no): ");
+        String response = scanner.nextLine().trim().toLowerCase();
+        return response.equals("yes");
+    }
+
     //===== HIỂN THỊ MENU =====
     public void showMenu(String title, List<String> options) {
         System.out.println("=================== " + title + " ===================");
@@ -87,9 +94,10 @@ public class UserView {
     public void showSellerMenu() {
         List<String> options = new ArrayList<>();
         options.add("Quản lý sản phẩm");
-        options.add("Xem đơn hàng");
+        options.add("Quản lý giỏ hàng của Buyer");
+        options.add("Thay đổi thông tin tài khoản");
         options.add("Đổi mật khẩu");
-        options.add("Log Out");
+        options.add("Đăng xuất");
         showMenu("SELLER MENU", options);
     }
 
@@ -99,9 +107,10 @@ public class UserView {
         options.add("Xem sản phẩm");
         options.add("Đặt hàng");
         options.add("Giỏ hàng");
+        options.add("Thay đổi thông tin tài khoản");
         options.add("Đổi mật khẩu");
         options.add("Xóa tài khoản");
-        options.add("Log Out");
+        options.add("Đăng xuất");
         showMenu("BUYER MENU", options);
     }
 
@@ -122,5 +131,4 @@ public class UserView {
 
         }
     }
-
 }

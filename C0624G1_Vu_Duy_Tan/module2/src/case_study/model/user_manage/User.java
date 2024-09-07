@@ -87,10 +87,9 @@ public class User {
     @Override
     public String toString() {
         return "username='" + getUsername() + '\'' +
-                ", fullName='" + getFullName() + '\'' +
-                ", phone='" + getPhoneNumber() + '\'' +
-                ", email='" + getEmail() + '\'' +
+                ", Họ và tên:'" + getFullName() + '\'' +
+                ", Số điện thoại:'" + getPhoneNumber() + '\'' +
+                ", email:'" + getEmail() + '\'' +
                 ", role='" + getRoles() + '\'';
-
     }
 }
