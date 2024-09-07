@@ -50,7 +50,7 @@ public class UserView {
         List<String> options = new ArrayList<>();
         options.add("Quản lý người dùng");
         options.add("Quản lý sản phẩm");
-        options.add("Xem báo cáo");
+        options.add("Quản lý giỏ hàng người dùng");
         options.add("Đăng xuất");
         showMenu("ADMIN MENU", options);
     }
@@ -73,6 +73,7 @@ public class UserView {
         List<String> options = new ArrayList<>();
         options.add("Quản lý người dùng");
         options.add("Quản lý sản phẩm");
+        options.add("Quản lý giỏ hàng người dùng");
         options.add("Đổi mật khẩu");
         options.add("Đăng xuất");
         showMenu("MENU MANAGER", options);
@@ -94,7 +95,7 @@ public class UserView {
     public void showSellerMenu() {
         List<String> options = new ArrayList<>();
         options.add("Quản lý sản phẩm");
-        options.add("Quản lý giỏ hàng của Buyer");
+        options.add("Quản lý giỏ hàng người dùng");
         options.add("Thay đổi thông tin tài khoản");
         options.add("Đổi mật khẩu");
         options.add("Đăng xuất");

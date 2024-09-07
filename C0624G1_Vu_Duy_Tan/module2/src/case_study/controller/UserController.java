@@ -141,7 +141,6 @@ public class UserController {
             SessionManager.login(loggedInUser);
             userView.showMessage("Đăng nhập thành công. Vai trò: " + loggedInUser.getRoles());
 
-            // Nếu người dùng là "buyer", đảm bảo giỏ hàng của họ được tạo
             if (loggedInUser.getRoles().contains(Role.ROLE_BUYER)) {
                 cartService.getOrCreateCart(loggedInUser);
             }
@@ -235,9 +234,12 @@ public class UserController {
                     laptopController.showProductManagementMenu();
                     break;
                 case "3":
-                    changePassword();
+                    cartController.viewCartByRole(String.valueOf(users));
                     break;
                 case "4":
+                    changePassword();
+                    break;
+                case "5":
                     logout();
                     return;
                 default:
@@ -286,7 +288,7 @@ public class UserController {
                     laptopController.showProductManagementMenu();
                     break;
                 case "2":
-                    cartController.cartMenu();
+                    cartController.viewCartByRole(String.valueOf(users));
                     break;
                 case "3":
                     editUser();

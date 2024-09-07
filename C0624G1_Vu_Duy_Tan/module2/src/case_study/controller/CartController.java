@@ -232,25 +232,38 @@ public class CartController {
         }
     }
 
-
     // Xem giỏ hàng theo quyền của người dùng
     public void viewCartByRole(String username) {
-        if (user.hasRole(Role.ROLE_ADMIN) || user.hasRole(Role.ROLE_SELLER) || user.hasRole(Role.ROLE_MANAGER)) {
-            viewAllCarts();
-        } else if (user.hasRole(Role.ROLE_BUYER)) {
-            cartService.printCart(username);
+        // Lấy thông tin người dùng từ SessionManager
+        User currentUser = SessionManager.getCurrentUser();
+
+        if (currentUser != null) {
+            // Kiểm tra vai trò của người dùng
+            if (currentUser.hasRole(Role.ROLE_ADMIN) || currentUser.hasRole(Role.ROLE_SELLER) || currentUser.hasRole(Role.ROLE_MANAGER)) {
+                viewAllCarts();
+            } else if (currentUser.hasRole(Role.ROLE_BUYER)) {
+                cartService.printCart(username);
+            } else {
+                userView.showMessage("Bạn không có quyền truy cập giỏ hàng.");
+            }
+        } else {
+            userView.showMessage("Người dùng không được xác thực.");
         }
     }
 
     // Admin/Seller xem tất cả giỏ hàng
     public void viewAllCarts() {
         Map<String, Cart> allCarts = cartService.getAllCartsForAdminOrSeller();
+
         if (allCarts.isEmpty()) {
             userView.showMessage("Không có giỏ hàng nào trong hệ thống.");
         } else {
             for (Map.Entry<String, Cart> entry : allCarts.entrySet()) {
-                userView.showMessage("Giỏ hàng của: " + entry.getKey());
-                displayCart();
+                String username = entry.getKey();
+                Cart cart = entry.getValue();
+
+                userView.showMessage("Giỏ hàng của: " + username);
+                cartService.printCart(username);
             }
         }
     }

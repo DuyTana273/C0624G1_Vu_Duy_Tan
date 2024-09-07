@@ -76,7 +76,6 @@ public class LaptopService {
                 return;
             }
 
-            // Hỏi người dùng có muốn mua sản phẩm không
             String response = userView.getInput("Bạn có muốn mua sản phẩm nào từ danh mục này không? (yes/no): ");
 
             if (response.equalsIgnoreCase("yes")) {
@@ -87,13 +86,11 @@ public class LaptopService {
                 if (selectedProductOpt.isPresent()) {
                     Laptop laptop = selectedProductOpt.get();
 
-                    // Kiểm tra số lượng hàng tồn kho
                     if (laptop.getQuantity() <= 0) {
                         System.out.println("Sản phẩm này đã hết hàng.");
                         return;
                     }
 
-                    // Nhập số lượng sản phẩm
                     int quantity;
                     while (true) {
                         try {
@@ -144,6 +141,7 @@ public class LaptopService {
             }
         }
     }
+
     //================= QUẢN LÝ SẢN PHẨM =================
     public void addLaptop(Laptop laptop, String categoryName) {
         if (laptops.containsKey(String.valueOf(laptop.getProductId()))) {

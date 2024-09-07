@@ -5,10 +5,7 @@ import case_study.model.cart_manage.CartItem;
 import case_study.model.user_manage.User;
 
 import java.io.*;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 
 public class CartService {
@@ -83,11 +80,6 @@ public class CartService {
         writeCartsToFile(new ArrayList<>(carts.values()));
     }
 
-    // Lấy giỏ hàng của một buyer theo username
-    public Cart getCartByUsername(String username) {
-        return carts.get(username);
-    }
-
     // Phương thức cho Admin/Seller xem giỏ hàng của tất cả người dùng
     public Map<String, Cart> getAllCartsForAdminOrSeller() {
         return new HashMap<>(carts);
@@ -95,14 +87,16 @@ public class CartService {
 
 
     /**********   Handle File   ***********/
-    // Ghi dữ liệu giỏ hàng vào file CSV
     public void writeCartsToFile(List<Cart> carts) {
-        try (FileWriter writer = new FileWriter(FILE_NAME)) {
-            writer.write("Username|Mã sản phẩm|Tên sản phẩm|Số lượng|Giá\n");
+        carts.sort(Comparator.comparing(Cart::getUsername));
+
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(FILE_NAME))) {
+            writer.write(String.format("%-15s | %-10s | %-20s | %-10s | %-10s%n",
+                    "Username", "ProductId", "ProductName", "Quantity", "Price"));
 
             for (Cart cart : carts) {
                 for (CartItem item : cart.getItems()) {
-                    writer.write(String.format("%s|%d|%s|%d|%.2f%n",
+                    writer.write(String.format("%-15s | %-10d | %-20s | %-10d | %-10.2f%n",
                             cart.getUsername(),
                             item.getProductId(),
                             item.getProductName(),
@@ -111,6 +105,7 @@ public class CartService {
                 }
             }
         } catch (IOException e) {
+            System.err.println("Lỗi ghi dữ liệu vào file: " + FILE_NAME);
             e.printStackTrace();
         }
     }
@@ -118,24 +113,35 @@ public class CartService {
     // Đọc dữ liệu giỏ hàng từ file CSV
     public Map<String, Cart> readCartsFromFile() {
         Map<String, Cart> carts = new HashMap<>();
+
         try (BufferedReader reader = new BufferedReader(new FileReader(FILE_NAME))) {
             String line = reader.readLine(); // Bỏ qua tiêu đề
+
             while ((line = reader.readLine()) != null) {
                 String[] data = line.split("\\|");
-                String username = data[0];
-                int productId = Integer.parseInt(data[1]);
-                String productName = data[2];
-                int quantity = Integer.parseInt(data[3]);
-                double price = Double.parseDouble(data[4]);
+
+                if (data.length != 5) {
+                    System.err.println("Dữ liệu không hợp lệ: " + line);
+                    continue;
+                }
+
+                String username = data[0].trim();
+                int productId = Integer.parseInt(data[1].trim());
+                String productName = data[2].trim();
+                int quantity = Integer.parseInt(data[3].trim());
+                double price = Double.parseDouble(data[4].trim());
 
                 CartItem item = new CartItem(productId, productName, quantity, price);
                 carts.computeIfAbsent(username, k -> new Cart(username)).addItem(item);
             }
         } catch (FileNotFoundException e) {
-            e.fillInStackTrace();
+            System.err.println("Không tìm thấy file: " + FILE_NAME);
         } catch (IOException e) {
+            System.err.println("Lỗi khi đọc dữ liệu từ file: " + FILE_NAME);
             e.printStackTrace();
         }
+
         return carts;
     }
 }
+

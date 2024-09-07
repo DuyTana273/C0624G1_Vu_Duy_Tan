@@ -1,4 +1,3 @@
-Username|Mã sản phẩm|Tên sản phẩm|Số lượng|Giá
-tan|37|12|2|43.00
-tan|35|Razer Blade 14|1|50000000.00
-a|4|Dell XPS 13|2|30000000.00
+Username        | ProductId  | ProductName          | Quantity   | Price     
+a               | 4          | Dell XPS 13          | 2          | 30000000.00
+a               | 37         | 12                   | 13         | 43.00     

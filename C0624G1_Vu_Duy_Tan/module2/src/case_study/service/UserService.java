@@ -1,12 +1,10 @@
 package case_study.service;
 
+import case_study.model.cart_manage.Cart;
 import case_study.model.user_manage.*;
 import case_study.view.UserView;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -187,50 +185,76 @@ public class UserService {
     }
 
     /**********   Handle File   ***********/
-    // Ghi dữ liệu vào file
     public void writeUsersToFile(Map<String, User> users) {
-        try (FileWriter writer = new FileWriter(USERS_FILE_PATH)) {
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(USERS_FILE_PATH))) {
             writer.write("UserName,Password,PhoneNumber,Email,FullName,Role\n");
+
             for (User user : users.values()) {
+                String rolesString = user.getRoles().stream()
+                        .map(Role::name)
+                        .collect(Collectors.joining("-"));
+
                 writer.write(String.format("%s,%s,%s,%s,%s,%s%n",
                         user.getUsername(),
                         user.getPassword(),
                         user.getPhoneNumber(),
                         user.getEmail(),
                         user.getFullName(),
-                        String.join("-", user.getRoles().stream()
-                                .map(Role::name)
-                                .collect(Collectors.toSet()))));
+                        rolesString));
             }
         } catch (IOException e) {
+            System.err.println("Lỗi khi ghi dữ liệu vào file: " + USERS_FILE_PATH);
             e.printStackTrace();
         }
     }
 
-    // Đọc dữ liệu từ file
     private Map<String, User> readUsersFromFile() {
         Map<String, User> users = new HashMap<>();
+
         try (BufferedReader reader = new BufferedReader(new FileReader(USERS_FILE_PATH))) {
-            String line;
-            reader.readLine();
+            String line = reader.readLine();
+
             while ((line = reader.readLine()) != null) {
                 String[] split = line.split(",");
-                String username = split[0];
-                String password = split[1];
-                String phoneNumber = split[2];
-                String email = split[3];
-                String fullName = split[4];
-                String role = split[5];
+
+                // Kiểm tra dữ liệu có đủ các trường không
+                if (split.length != 6) {
+                    System.err.println("Dữ liệu không hợp lệ: " + line);
+                    continue;
+                }
+
+                String username = split[0].trim();
+                String password = split[1].trim();
+                String phoneNumber = split[2].trim();
+                String email = split[3].trim();
+                String fullName = split[4].trim();
+                String rolesString = split[5].trim();
+
                 User user = new User(username, password, phoneNumber, fullName, email);
-                Set<Role> roles = Arrays.stream(role.split("-"))
-                        .map(Role::valueOf)
+
+                // Chuyển chuỗi roles thành Set<Role>
+                Set<Role> roles = Arrays.stream(rolesString.split("-"))
+                        .map(roleStr -> {
+                            try {
+                                return Role.valueOf(roleStr);
+                            } catch (IllegalArgumentException e) {
+                                System.err.println("Vai trò không hợp lệ: " + roleStr);
+                                return null;
+                            }
+                        })
+                        .filter(Objects::nonNull)
                         .collect(Collectors.toSet());
+
                 user.setRoles(roles);
                 users.put(username, user);
             }
+        } catch (FileNotFoundException e) {
+            System.err.println("Không tìm thấy file: " + USERS_FILE_PATH);
         } catch (IOException e) {
+            System.err.println("Lỗi khi đọc dữ liệu từ file: " + USERS_FILE_PATH);
             e.printStackTrace();
         }
+
         return users;
     }
 }
