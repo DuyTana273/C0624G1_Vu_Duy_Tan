@@ -1,5 +1,6 @@
 package case_study.service;
 
+import case_study.model.cart_manage.Cart;
 import case_study.model.cart_manage.CartItem;
 import case_study.model.product_manage.Laptop;
 import case_study.model.product_manage.CategoryLaptop;
@@ -14,7 +15,7 @@ import java.util.*;
 
 public class LaptopService {
     // Link File csv
-    private static final String PRODUCT_FILE_PATH = "C0624G1_Vu_Duy_Tan/C0624G1_Vu_Duy_Tan/module2/src/case_study/store/products.csv";
+    private static final String PRODUCT_FILE_PATH = "src/case_study/store/products.csv";
 
     //===== ĐỊNH NGHĨA THUỘC TÍNH =====
     private UserView userView;
@@ -172,7 +173,16 @@ public class LaptopService {
                 appleCategory.getLaptops().remove(laptop);
             }
 
+            CartItem cartItem = new CartItem(laptop.getProductId(), laptop.getName(), laptop.getQuantity(), laptop.getPrice());
             laptops.remove(String.valueOf(laptop.getProductId()));
+
+            Map<String, Cart> carts = cartService.getAllCartsForAdminOrSeller();
+            for (String username : carts.keySet()) {
+                Cart cart = carts.get(username);
+                if (cart != null && cart.containsProduct(laptop.getProductId())) {
+                    cartService.updateCart(username, cartItem, false);
+                }
+            }
             writeProductToFile(laptops);
             System.out.println("Sản phẩm với ID " + laptop.getProductId() + " đã được xóa.");
         } else {

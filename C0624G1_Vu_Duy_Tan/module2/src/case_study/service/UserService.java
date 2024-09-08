@@ -11,7 +11,7 @@ import java.util.stream.Collectors;
 public class UserService {
 
     // Link File csv
-    private static final String USERS_FILE_PATH = "C0624G1_Vu_Duy_Tan/C0624G1_Vu_Duy_Tan/module2/src/case_study/store/users.csv";
+    private static final String USERS_FILE_PATH = "src/case_study/store/users.csv";
 
     //===== ĐỊNH NGHĨA THUỘC TÍNH =====
     private UserView userView;

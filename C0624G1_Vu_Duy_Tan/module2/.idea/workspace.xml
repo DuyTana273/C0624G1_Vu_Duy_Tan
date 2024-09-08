@@ -5,36 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c2d0f81d-a4bf-418f-9a3f-6af25e3d6e8c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/case_study/service/CartService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/case_study/controller/CartController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/case_study/controller/CartController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/case_study/controller/OrderController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/case_study/controller/PaymentController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/case_study/controller/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/case_study/controller/ProductController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/case_study/controller/ShippingController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/case_study/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/case_study/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/case_study/model/cart_manage/cart/Cart.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/case_study/model/cart_manage/Cart.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/case_study/model/cart_manage/cart/CartItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/case_study/model/cart_manage/CartItem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/case_study/model/cart_manage/order/Order.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/case_study/model/cart_manage/order/OrderStatus.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/case_study/model/product_manage/Category.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/case_study/model/cart_manage/Cart.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/case_study/model/cart_manage/Cart.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/case_study/model/product_manage/Laptop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/case_study/model/product_manage/Laptop.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/case_study/model/product_manage/SubCategory.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/case_study/model/transaction/payment/Payment.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/case_study/model/transaction/payment/PaymentMethod.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/case_study/model/transaction/shipping/Shipping.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/case_study/model/transaction/shipping/ShippingStatus.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/case_study/service/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/case_study/service/ProductService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/case_study/service/CartService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/case_study/service/CartService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/case_study/service/LaptopService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/case_study/service/LaptopService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/case_study/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/case_study/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/case_study/store/carts.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/case_study/store/carts.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/case_study/store/products.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/case_study/store/products.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/case_study/store/users.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/case_study/store/users.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/case_study/view/CartView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/case_study/view/CartView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/case_study/view/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/case_study/view/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/case_study/view/OrderView.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/case_study/view/PaymentView.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/case_study/view/ProductView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/case_study/view/ProductView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/case_study/view/ShippingView.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/case_study/view/UserView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/case_study/view/UserView.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -244,6 +222,8 @@
       <workItem from="1725349509520" duration="22577000" />
       <workItem from="1725414881356" duration="19917000" />
       <workItem from="1725501194542" duration="21907000" />
+      <workItem from="1725536331667" duration="53000" />
+      <workItem from="1725542864635" duration="4376000" />
     </task>
     <servers />
   </component>

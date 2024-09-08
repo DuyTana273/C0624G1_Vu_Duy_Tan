@@ -64,4 +64,13 @@ public class Cart {
         items.clear();
         System.out.println("Tất cả sản phẩm đã được xóa khỏi giỏ hàng.");
     }
+
+    public boolean containsProduct(int productId) {
+        for (CartItem item : items) {
+            if (item.getProductId() == productId) {
+                return true;
+            }
+        }
+        return false;
+    }
 }

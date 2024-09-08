@@ -108,6 +108,8 @@ public class Laptop implements Product {
         this.specifications = specifications;
     }
 
+
+
     @Override
     public String toString() {
         return String.format("Laptop{Mã số: %d |" +
