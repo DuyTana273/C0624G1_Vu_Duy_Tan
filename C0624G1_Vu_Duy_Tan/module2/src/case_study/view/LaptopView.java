@@ -31,12 +31,6 @@ public class LaptopView {
         userView.showMenu("DANH MỤC SẢN PHẨM", options);
     }
 
-    //===== HIỂN THỊ SẢN PHẨM THEO DANH MỤC =====
-    public void displayLaptopsByCategory(String category) {
-        System.out.println("=== HIỂN THỊ SẢN PHẨM THEO DANH MỤC: " + category + " ===");
-        laptopService.displayLaptopsByCategory(category);
-    }
-
     //===== MANAGER LAPTOP =====
     public void manageProduct() {
         List<String> options = new ArrayList<>();
@@ -124,12 +118,5 @@ public class LaptopView {
                 laptop -> System.out.println(laptop),
                 () -> System.out.println("Sản phẩm không tồn tại.")
         );
-    }
-
-    //===== XÁC NHẬN HÀNH ĐỘNG =====
-    public boolean confirmAction(String message) {
-        System.out.print(message + " (yes/no): ");
-        String response = scanner.nextLine().trim().toLowerCase();
-        return response.equals("yes");
     }
 }
