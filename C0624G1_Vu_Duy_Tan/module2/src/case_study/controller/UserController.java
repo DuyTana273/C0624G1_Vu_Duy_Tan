@@ -20,9 +20,6 @@ public class UserController {
     private UserView userView;
     private UserService userService;
     private LaptopController laptopController;
-    private LaptopView laptopView;
-    private LaptopService laptopService;
-    private CartView cartView;
     private CartService cartService;
     private CartController cartController;
     private User loggedInUser;
@@ -30,18 +27,12 @@ public class UserController {
     //===== CONSTRUCTOR =====
     public UserController(UserView userView,
                           UserService userService,
-                          LaptopView laptopView,
-                          LaptopService laptopService,
                           LaptopController laptopController,
-                          CartView cartView,
                           CartService cartService,
                           CartController cartController) {
         this.userView = userView;
         this.userService = userService;
-        this.laptopView = laptopView;
-        this.laptopService = laptopService;
         this.laptopController = laptopController;
-        this.cartView = cartView;
         this.cartService = cartService;
         this.cartController = cartController;
     }
@@ -79,6 +70,7 @@ public class UserController {
         String name = "";
         String email = "";
         String phoneNumber = "";
+
         while (true) {
             username = userView.getInput("Nhập tài khoản: ");
             try {
@@ -149,6 +141,8 @@ public class UserController {
             userView.showMessage("Sai tài khoản hoặc mật khẩu. Vui lòng thử lại!");
         }
     }
+
+    //*************************** MENU ***************************
 
     //===== XỬ LÝ MENU DỰA THEO VAI TRÒ =====
     private void handleRoleBasedMenu() {
@@ -405,6 +399,7 @@ public class UserController {
         return new User(username, password, phoneNumber, name, email);
     }
 
+    //======= MANAGE USERS =======
     private void addBuyer() {
         User newBuyer = getInputForRegister();
         userService.registerBuyer(newBuyer.getUsername(), newBuyer.getPassword(), newBuyer.getPhoneNumber(), newBuyer.getFullName(), newBuyer.getEmail());

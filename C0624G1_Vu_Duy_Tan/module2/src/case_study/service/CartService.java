@@ -11,7 +11,7 @@ import java.util.*;
 public class CartService {
     private Map<String, Cart> carts;
 
-    private static final String FILE_NAME = "C0624G1_Vu_Duy_Tan/C0624G1_Vu_Duy_Tan/module2/src/case_study/store/carts.csv";
+    private static final String FILE_NAME = "src/case_study/store/carts.csv";
 
     public CartService() {
         carts = new HashMap<>();

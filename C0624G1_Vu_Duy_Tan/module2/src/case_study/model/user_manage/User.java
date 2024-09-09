@@ -90,6 +90,6 @@ public class User {
                 ", Họ và tên:'" + getFullName() + '\'' +
                 ", Số điện thoại:'" + getPhoneNumber() + '\'' +
                 ", email:'" + getEmail() + '\'' +
-                ", role='" + getRoles() + '\'';
+                ", Role:'" + getRoles() + '\'';
     }
 }

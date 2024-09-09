@@ -46,7 +46,7 @@ public class LaptopController {
         }
     }
 
-    //===== THÊM MỚI LAPTOP =====
+    //===== MANAGE LAPTOP =====
     private void addNewLaptop() {
         // Lấy thông tin sản phẩm từ người dùng
         String name = laptopView.inputLaptopName();
@@ -63,7 +63,6 @@ public class LaptopController {
         laptopService.addLaptop(newLaptop, category);
     }
 
-    //===== XÓA LAPTOP =====
     private void removeLaptop() {
         int productId = Integer.parseInt(userView.getInput("Nhập ID sản phẩm: "));
         laptopService.getLaptopById(productId).ifPresentOrElse(
@@ -77,7 +76,6 @@ public class LaptopController {
         );
     }
 
-    //===== SỬA LAPTOP =====
     private void updateLaptop() {
         int productId = Integer.parseInt(userView.getInput("Nhập ID sản phẩm: "));
 

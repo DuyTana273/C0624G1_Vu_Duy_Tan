@@ -52,14 +52,6 @@ public class Cart {
                 .findFirst();
     }
 
-    // Hiển thị các sản phẩm trong giỏ hàng
-    public void displayCartItems() {
-        for (CartItem item : items) {
-            System.out.println("ID: " + item.getProductId() + " | Tên: " + item.getProductName() +
-                    " | Số lượng: " + item.getQuantity() + " | Giá: " + item.getPrice());
-        }
-    }
-
     public void clearCart() {
         items.clear();
         System.out.println("Tất cả sản phẩm đã được xóa khỏi giỏ hàng.");

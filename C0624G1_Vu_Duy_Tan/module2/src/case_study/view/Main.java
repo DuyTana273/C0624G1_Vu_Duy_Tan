@@ -29,11 +29,9 @@ public class Main {
         cartView = new CartView(userView);
 
         // Khởi tạo các controller
-        laptopController = new LaptopController(laptopView,laptopService, userView);
-        cartController = new CartController( cartService,  cartView,  userView, laptopService);
-        userController = new UserController(userView, userService,
-                laptopView, laptopService, laptopController,
-                cartView, cartService, cartController);
+        laptopController = new LaptopController(laptopView, laptopService, userView);
+        cartController = new CartController(cartService, cartView, userView, laptopService);
+        userController = new UserController(userView, userService, laptopController, cartService, cartController);
 
         userController.start();
     }

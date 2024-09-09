@@ -1,5 +1,7 @@
 package case_study.model.product_manage;
 
+import java.text.NumberFormat;
+import java.util.Locale;
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class Laptop implements Product {
@@ -112,12 +114,16 @@ public class Laptop implements Product {
 
     @Override
     public String toString() {
+        // Định dạng giá tiền theo chuẩn địa phương (viết theo dạng tiền tệ của Việt Nam)
+        NumberFormat currencyFormat = NumberFormat.getCurrencyInstance(new Locale("vi", "VN"));
+        String formattedPrice = currencyFormat.format(price);
+
         return String.format("Laptop{Mã số: %d |" +
                         " Tên sản phẩm: '%s' |" +
                         " Thương hiệu: '%s' |" +
-                        " Giá: %.2f |" +
+                        " Giá: %s |" +  // Thay vì %.2f, sử dụng định dạng tiền tệ
                         " Số lượng: %d |" +
                         " Ghi chú: '%s'}",
-                productId, name, brand, price, quantity, specifications);
+                productId, name, brand, formattedPrice, quantity, specifications);
     }
 }

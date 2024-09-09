@@ -7,7 +7,7 @@ public class CartItem {
     private int quantity;
     private double price;
 
-    // Constructor mới có thêm productId
+    // Constructor
     public CartItem(int productId, String productName, int quantity, double price) {
         this.productId = productId;
         this.productName = productName;

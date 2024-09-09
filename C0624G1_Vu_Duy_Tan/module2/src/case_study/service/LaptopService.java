@@ -15,7 +15,7 @@ import java.util.*;
 
 public class LaptopService {
     // Link File csv
-    private static final String PRODUCT_FILE_PATH = "C0624G1_Vu_Duy_Tan/C0624G1_Vu_Duy_Tan/module2/src/case_study/store/products.csv";
+    private static final String PRODUCT_FILE_PATH = "src/case_study/store/products.csv";
 
     //===== ĐỊNH NGHĨA THUỘC TÍNH =====
     private UserView userView;
@@ -66,22 +66,25 @@ public class LaptopService {
 
     //===== LẤY LAPTOP THEO DANH MỤC (Category) =====
     public void displayLaptopsByCategory(String category) {
-        try {
-            // Hiển thị danh sách laptop theo danh mục
-            if (category.equalsIgnoreCase(CategoryLaptop.WINDOWS_CATEGORY)) {
-                windowsCategory.displayLaptopsInCategory();
-            } else if (category.equalsIgnoreCase(CategoryLaptop.APPLE_CATEGORY)) {
-                appleCategory.displayLaptopsInCategory();
-            } else {
-                userView.showMessage("Danh mục không tồn tại.");
-                return;
-            }
+        if (category.equalsIgnoreCase(CategoryLaptop.WINDOWS_CATEGORY)) {
+            windowsCategory.displayLaptopsInCategory();
+            handlePurchase(category);
+        } else if (category.equalsIgnoreCase(CategoryLaptop.APPLE_CATEGORY)) {
+            appleCategory.displayLaptopsInCategory();
+            handlePurchase(category);
+        } else {
+            userView.showMessage("Danh mục không tồn tại.");
+            return;
+        }
+    }
 
-            // Hỏi người dùng có muốn mua sản phẩm không
+    // Lựa chọn sản phẩm theo danh mục
+    private void handlePurchase(String category) {
+        try {
             String response = userView.getInput("Bạn có muốn mua sản phẩm nào từ danh mục này không? (yes/no): ");
 
             if (response.equalsIgnoreCase("yes")) {
-                // Nhập Mã sản phẩm và kiểm tra xem sản phẩm có hợp lệ hay không
+
                 String productId = userView.getInput("Nhập Mã sản phẩm bạn muốn mua: ");
                 Optional<Laptop> selectedProductOpt = getLaptopById(Integer.parseInt(productId));
 
@@ -145,6 +148,7 @@ public class LaptopService {
             }
         }
     }
+
     //================= QUẢN LÝ SẢN PHẨM =================
     public void addLaptop(Laptop laptop, String categoryName) {
         if (laptops.containsKey(String.valueOf(laptop.getProductId()))) {
@@ -234,6 +238,7 @@ public class LaptopService {
         }
     }
 
+    // Tăng số lượng sản phẩm
     public void increaseQuantity(int productId, int amount) {
         Laptop laptop = laptops.get(String.valueOf(productId));
         if (laptop != null) {
@@ -244,6 +249,7 @@ public class LaptopService {
         }
     }
 
+    // Giảm số lượng sản phẩm
     public void decreaseQuantity(int productId, int amount) {
         Laptop laptop = laptops.get(String.valueOf(productId));
         if (laptop != null) {

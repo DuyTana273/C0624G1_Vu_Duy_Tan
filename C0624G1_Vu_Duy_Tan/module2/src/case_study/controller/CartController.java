@@ -21,7 +21,6 @@ public class CartController {
     private CartView cartView;
     private UserView userView;
     private LaptopService laptopService;
-    private User user;
 
     public CartController(CartService cartService, CartView cartView, UserView userView, LaptopService laptopService) {
         this.cartService = cartService;
@@ -30,6 +29,7 @@ public class CartController {
         this.laptopService = laptopService;
     }
 
+    //===== MENU CHÍNH GIỎ HÀNG =====
     public void cartMenu() {
         while (true) {
             cartView.showCartMenu();
@@ -56,6 +56,7 @@ public class CartController {
         }
     }
 
+    //===== MANAGE CART =====
     public void addItemToCart() {
         String username = SessionManager.getCurrentUser().getUsername();
 
@@ -201,6 +202,7 @@ public class CartController {
         }
     }
 
+    //===== THANH TOÁN =====
     public void placeOrder() {
         String username = SessionManager.getCurrentUser().getUsername();
         Cart cart = cartService.getCart(username);

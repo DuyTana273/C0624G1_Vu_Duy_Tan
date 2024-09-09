@@ -1,12 +1,6 @@
 UserName,Password,PhoneNumber,Email,FullName,Role
 seller,seller,0123456,seller@gmail.com,seller,ROLE_SELLER
 tan,tan,0900000999,tan@gmail.com,Tân,ROLE_BUYER
-A,A,0900999000,a@a.com,a,ROLE_BUYER
 a,a,0909,a@a.com,a,ROLE_BUYER
 manager,manager,012345,manager@gmail.com,manager,ROLE_MANAGER
-tana,tana,09009900900,tan@gmail.com,tan,ROLE_MANAGER
-tan1,tan1,0900999333,tan@tan.com,Tân,ROLE_SELLER
-seller1,seller1,09399939393,sfsdf@gmail.com,selllerre,ROLE_SELLER
 admin,admin,123456789,admin@gmail.com,Administrator,ROLE_ADMIN
-phong,phong,0909,phong@gmail.com,Auphong,ROLE_BUYER
-phong1,phong,098,phong@gmail.com,phong,ROLE_MANAGER

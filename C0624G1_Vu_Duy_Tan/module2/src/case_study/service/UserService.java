@@ -11,7 +11,7 @@ import java.util.stream.Collectors;
 public class UserService {
 
     // Link File csv
-    private static final String USERS_FILE_PATH = "C0624G1_Vu_Duy_Tan/C0624G1_Vu_Duy_Tan/module2/src/case_study/store/users.csv";
+    private static final String USERS_FILE_PATH = "src/case_study/store/users.csv";
 
     //===== ĐỊNH NGHĨA THUỘC TÍNH =====
     private UserView userView;
@@ -31,7 +31,7 @@ public class UserService {
         return users.containsKey(username);
     }
 
-    //===== ĐĂNG KÝ NGƯỜI DÙNG MỚI =====
+    //===== ĐĂNG KÝ BUYER MỚI =====
     public void registerBuyer(String username, String password, String phoneNumber, String fullName, String email) {
         if (isUsername(username)) {
             userView.showMessage("Tên tài khoản đã tồn tại. Vui lòng chọn tên tài khoản khác.");
@@ -102,6 +102,7 @@ public class UserService {
             throw new IllegalArgumentException("Không tìm thấy người dùng với tài khoản: " + username);
         } else {
             user.addRole(role);
+            writeUsersToFile(users);
         }
     }
 
