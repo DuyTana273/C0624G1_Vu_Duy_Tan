@@ -152,9 +152,20 @@ public class MedicalRecordService {
     // Xóa bệnh án theo mã
     public void removeRecordById() {
         displayAllRecords();
-        String recordId = medicalRecordView.getInput("Nhập mã bệnh án cần xóa: ");
+
+        boolean confirm = medicalRecordView.confirmAction("Bạn có chắc chắn muốn xóa bệnh án này?");
+        if (!confirm) {
+            medicalRecordView.showMessage("Hành động xóa đã bị hủy.");
+            return;
+        }
+
+        // Nhập mã bệnh án cần xóa
+        String recordId = medicalRecordView.getInput("Nhập mã bệnh án cần xóa: ").toUpperCase();
+
+        // Tìm và xóa bệnh án
         boolean isRemoved = records.removeIf(record -> record.getRecordId().equals(recordId));
         if (isRemoved) {
+            // Ghi dữ liệu vào file sau khi xóa
             FileHandler.writeRecordsToFile(records);
             medicalRecordView.showMessage("Xóa bệnh án thành công.");
         } else {
