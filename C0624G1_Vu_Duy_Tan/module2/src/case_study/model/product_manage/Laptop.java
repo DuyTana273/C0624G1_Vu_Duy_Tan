@@ -44,7 +44,6 @@ public class Laptop implements Product {
         idCounter.set(maxProductId);
     }
 
-
     @Override
     public int getProductId() {
         return productId;

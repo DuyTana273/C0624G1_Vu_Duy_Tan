@@ -1,6 +1,5 @@
 package case_study.service;
 
-import case_study.model.cart_manage.Cart;
 import case_study.model.user_manage.*;
 import case_study.view.UserView;
 

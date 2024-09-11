@@ -5,21 +5,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c2d0f81d-a4bf-418f-9a3f-6af25e3d6e8c" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/exam/controller/MedicalRecordController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/exam/data/medical_records.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/exam/exception/DuplicateMedicalRecordException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/exam/model/MedicalRecord.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/exam/model/RegularPatientRecord.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/exam/model/VipPatientRecord.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/exam/service/MedicalRecordService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/exam/util/FileHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/exam/util/Validate.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/exam/view/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/exam/view/MedicalRecordView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/case_study/controller/CartController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/case_study/controller/CartController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/case_study/controller/LaptopController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/case_study/controller/LaptopController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/case_study/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/case_study/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/case_study/model/cart_manage/Cart.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/case_study/model/cart_manage/Cart.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/case_study/model/cart_manage/CartItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/case_study/model/cart_manage/CartItem.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/case_study/model/product_manage/Laptop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/case_study/model/product_manage/Laptop.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/case_study/model/user_manage/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/case_study/model/user_manage/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/case_study/service/CartService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/case_study/service/CartService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/case_study/service/LaptopService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/case_study/service/LaptopService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/case_study/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/case_study/service/UserService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/case_study/store/carts.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/case_study/store/carts.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/case_study/store/products.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/case_study/store/products.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/case_study/store/users.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/case_study/store/users.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/case_study/view/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/case_study/view/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/homework/thuc_hanh/ex_01/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/homework/thuc_hanh/ex_01/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -165,11 +168,11 @@
   </component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="case_study.view.Main" />
+      <option name="MAIN_CLASS_NAME" value="exam.view.Main" />
       <module name="module2" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="case_study.view.*" />
+          <option name="PATTERN" value="exam.view.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -233,7 +236,10 @@
       <workItem from="1725542864635" duration="4434000" />
       <workItem from="1725811098877" duration="3252000" />
       <workItem from="1725846551444" duration="6183000" />
-      <workItem from="1725923353155" duration="2664000" />
+      <workItem from="1725923353155" duration="3476000" />
+      <workItem from="1725932839939" duration="13768000" />
+      <workItem from="1725962509771" duration="102000" />
+      <workItem from="1726017990634" duration="8674000" />
     </task>
     <servers />
   </component>
