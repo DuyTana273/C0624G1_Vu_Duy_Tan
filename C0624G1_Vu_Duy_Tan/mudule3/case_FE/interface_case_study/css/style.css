@@ -1,0 +1,15 @@
+.navbar-nav {
+    flex-direction: row; /* Để các mục hiển thị theo hàng ngang */
+}
+
+.navbar-nav .nav-item {
+    margin-left: 15px; /* Tạo khoảng cách giữa các mục */
+}
+
+.navbar-brand {
+    margin-right: auto; /* Đẩy logo về bên trái */
+}
+
+.d-flex {
+    margin-left: auto; /* Đẩy phần tìm kiếm và login về bên phải */
+}
