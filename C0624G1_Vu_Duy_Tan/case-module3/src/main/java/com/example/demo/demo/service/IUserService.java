@@ -1,0 +1,22 @@
+
+package com.example.demo.demo.service;
+
+
+
+import com.example.demo.demo.model.User;
+
+import java.sql.SQLException;
+import java.util.List;
+
+public interface IUserService {
+    public boolean insertUser(User user) throws SQLException;
+    public User selectUser(int id);
+    public boolean updateUser(User user) throws SQLException;
+    User authenticateUser(String account, String password) throws SQLException;
+    List<User> getAllUsers() throws SQLException;
+    boolean changePassword(String pass,User user) throws SQLException;
+    boolean deleteUserByAccount(String account) throws SQLException;
+    boolean updateUser1(User user) throws SQLException;
+    boolean deleteUserById(int userId) throws SQLException;
+
+}

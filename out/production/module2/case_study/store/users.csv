@@ -1,0 +1,7 @@
+UserName,Password,PhoneNumber,Email,FullName,Role
+seller,seller,0123456,seller@gmail.com,seller,ROLE_SELLER
+tan,tan,0900000999,tan@gmail.com,Tân,ROLE_BUYER
+manager,manager,012345,manager@gmail.com,manager,ROLE_MANAGER
+test,test,09999,test@gmail.com,My Test,ROLE_BUYER
+tana,tana,099999,tan@tan.com,tana,ROLE_BUYER
+admin,admin,123456789,admin@gmail.com,Administrator,ROLE_ADMIN
